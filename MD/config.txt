@@ -1,0 +1,4 @@
+1. md_index.cu: profiling  (./md_index)
+2. md.cu: BEST ONE,original one ;  ulmo: 0.00104675s, gpu1:0.00222419s  (./md)
+3. 1.cu: array neighborList is put in texture memory; ulmo: 0.00112067s, gpu1:0.00222544s  (./1)
+

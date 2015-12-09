@@ -1,0 +1,8 @@
+ONLY ULMO 
+1. index.cu: profiling,  (./run_index)
+2. naive.cu: original one;  ulmo: 0.0004612s  (./run_naive.py ) 
+3. best.cu:  CDF put to constant memory;   ulmo: 0.000437s (./run.py)
+4. best1.cu: CDF put to constant memory; arrayX put to constant memory;  ulmo:0.00043859s (./run1.py)
+5. best2.cu: CDF put to constant memory; arrayY put to constant memory;  ulmo:0.0004306s  (./run2.py)
+6. best3.cu: BEST ONE, CDF put to constant memory and u put to shared memory;  ulmo:0.0002656s (./run3.py)
+

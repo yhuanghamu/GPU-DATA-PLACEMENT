@@ -1,0 +1,75 @@
+constant 250 120 48
+global 345 222 0
+readonly 380 267 141
+texture 351 233 103
+shared 48
+constant 250 120 48
+global 345 222 0
+readonly 380 267 141
+texture 351 233 103
+shared 48
+constant 250 120 48
+global 345 222 0
+readonly 380 267 141
+texture 351 233 103
+shared 48
+constant 250 120 48
+global 345 222 0
+readonly 380 267 141
+texture 351 233 103
+shared 48
+constant 250 120 48
+global 345 222 0
+readonly 380 267 141
+texture 351 233 103
+shared 48
+constant 250 120 48
+global 345 222 0
+readonly 380 267 141
+texture 351 233 103
+shared 48
+constant 250 120 48
+global 345 222 0
+readonly 3800000 26700000 1410000
+texture 351 233 103
+shared 48
+constant 250 120 48
+global 345 222 0
+readonly 380 267 141
+texture 351 233 103
+shared 48
+constant 250 120 48
+global 345 222 0
+readonly 380 267 141
+texture 351 233 103
+shared 48
+constant 250 120 48
+global 345 222 0
+readonly 380 267 141
+texture 351 233 103
+shared 48
+constant 250 120 48
+global 345 222 0
+readonly 380 267 141
+texture 351 233 103
+shared 48
+constant 250 120 48
+global 345 222 0
+readonly 380 267 141
+texture 351 233 103
+shared 48
+constant 250 120 48
+global 345 222 0
+readonly 380 267 141
+texture 351 233 103
+shared 48
+constant 250 120 48
+global 345 222 0
+readonly 380 267 141
+texture 351 233 103
+shared 48
+constant 250 120 48
+global 345 222 0
+readonly 380 267 141
+texture 351 233 103
+shared 48

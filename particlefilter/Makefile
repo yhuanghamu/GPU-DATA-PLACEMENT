@@ -1,0 +1,21 @@
+#makefile
+
+include ../../common/make.config
+
+CC := $(CUDA_DIR)/bin/nvcc
+
+INCLUDE := $(CUDA_DIR)/include
+
+all: naive float original
+
+original: original.cu
+	$(CC) -I$(INCLUDE) -L$(CUDA_LIB_DIR) -lcuda -g -lm -O3 -use_fast_math -arch sm_20 original.cu -o original
+
+naive: index.cu
+	$(CC) -I$(INCLUDE) -L$(CUDA_LIB_DIR) -lcuda -g -lm -O3 -use_fast_math -arch sm_20 index.cu -o index
+	
+float: ex_particle_CUDA_float_seq.cu
+	$(CC) -I$(INCLUDE) -L$(CUDA_LIB_DIR) -lcuda -g -lm -O3 -use_fast_math -arch sm_20 ex_particle_CUDA_float_seq.cu -o particlefilter_float
+
+clean:
+	rm particlefilter_naive particlefilter_float

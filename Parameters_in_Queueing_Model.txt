@@ -1,0 +1,10 @@
+one cycle of memory clock(T_clk)
+Row-buffer Hit rate (R)
+Column access latency (T_CL)
+precharge latency(T_PRE)
+activate latency (T_RCD)
+
+
+Stage 1: Average service time (R×1+(1−R)×3)×Tclk
+Stage 2: Average service time (TCL ×R+(TPRE +TRCD +TCL)×(1−R))
+Stage 3: BL × Tclk

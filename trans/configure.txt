@@ -1,0 +1,11 @@
+constant 65536 360 32768 256 140 4096 64 48
+global 5032706048 600 1572864 128 380 16384 128 80 
+readonly 5032706048 380 1228800 32 267 12288 32 141
+texture 134217728 65536 65536 617 1572864 128 400 12288 128 208
+shared 49152 32 48
+- L2: L2_global L2_texture L2_readonly
+- L2_constant: L2_constant
+-- L1_global: L1_global
+-- L1_texture: L1_texture
+-- L1_constant: L1_constant
+-- L1_readonly: L1_readonly

@@ -1,0 +1,4 @@
+1. mm_index.cu: profiling(ONLY ULMO)  (./mm_index)
+2. mm.cu: original one;  ulmo: 0.00252858s, gpu1:0.00289648s (./mm)
+3. 1.cu: BEST ONE,array A and B are put in texture memory and then shared memory;  ulmo:0.00192707s, gpu1: 0.00933997s  (./1)
+
