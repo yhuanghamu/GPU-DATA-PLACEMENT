@@ -142,13 +142,17 @@ run: build
 
 0:
 	#$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./0
+	$@
 1:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./1
+	$@
 2:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./2
+	$@
+convolution:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	./$@
+
 
 clean:
 	rm -f convolutionSeparable main.o convolutionSeparable_gold.o convolutionSeparable.o
