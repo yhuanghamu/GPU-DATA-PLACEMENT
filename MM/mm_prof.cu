@@ -164,7 +164,7 @@ cudaSetDevice(0);
   unsigned int size_B = uiWB * uiHB;
   unsigned int mem_size_B = sizeof(float) * size_B;
   float* h_B = (float*)malloc(mem_size_B);
-
+//printf("size A = %d bytes,size B=%d bytes\n",mem_size_A,mem_size_B);
   // initialize host memory
   randomInit(h_A, size_A);
   randomInit(h_B, size_B);
@@ -173,6 +173,7 @@ cudaSetDevice(0);
   float* d_A, *d_B, *d_C;
   unsigned int size_C = uiWC * uiHC;
   unsigned int mem_size_C = sizeof(float) * size_C;
+printf("size A = %d bytes,size B=%d bytes,size C=%d bytes\n",mem_size_A,mem_size_B,mem_size_C);
 
   // allocate host memory for the result
   float* h_C      = (float*) malloc(mem_size_C);
@@ -180,6 +181,7 @@ cudaSetDevice(0);
 
   checkCudaErrors(cudaMalloc((void**) &d_A, mem_size_A));
   checkCudaErrors(cudaMalloc((void**) &d_B, mem_size_B));
+
   // copy host memory to device
   checkCudaErrors(cudaMemcpy(d_A, h_A, mem_size_A, cudaMemcpyHostToDevice) );
   checkCudaErrors(cudaMemcpy(d_B, h_B, mem_size_B, cudaMemcpyHostToDevice) );
@@ -224,7 +226,7 @@ cudaSetDevice(0);
 
   // check result (matrixMul)
   bool resCUDA = sdkCompareL2fe(reference, h_C, size_C, 1.0e-6f);
-  printf("CUDA matrixMul compares %s\n", (true == resCUDA) ? "passed" : "FAIL");
+  printf("CUDA matrixMul compares %s\n\n", (true == resCUDA) ? "passed" : "FAIL");
 
 //   ofstream f1("mm_correct.txt");
 //   for(int i=0; i<size_C; ++i)

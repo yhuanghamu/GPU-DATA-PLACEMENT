@@ -175,8 +175,8 @@ int main(int argc, char **argv) {
    cudaChannelFormatDesc channelDescA =  cudaCreateChannelDesc<float>();
    cudaChannelFormatDesc channelDescB =  cudaCreateChannelDesc<float>();
     cudaArray* A_Array, *B_Array;
-    cudaMallocArray(&A_Array, &channelDescA, uiWA, uiHA);
-    cudaMallocArray(&B_Array, &channelDescB, uiWB, uiHB);
+    cudaMallocArray(&A_Array, &channelDescA, uiWA, uiHA);//,cudaArraySurfaceLoadStore);
+    cudaMallocArray(&B_Array, &channelDescB, uiWB, uiHB);//,cudaArraySurfaceLoadStore);
 
     // Copy to device memory some data located at address h_data
     // in host memory 
