@@ -120,7 +120,7 @@ endif
 INCLUDES      := -I$(CUDA_INC_PATH) -I. -I.. -I../../common/inc -I../include/
 
 # Target rules
-all: build
+all: 1 2 3 4 5 convolution
 
 build: convolutionSeparable
 
@@ -141,13 +141,22 @@ convolutionSeparable: main.o convolutionSeparable_gold.o convolutionSeparable.o
 run: build
 	./convolutionSeparable
 
-0:
-	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+#0:
+#	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+#	./$@
 1:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 	./$@
 2:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	./$@
+3:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	./$@
+4:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	./$@
+5:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 	./$@
 convolution:
