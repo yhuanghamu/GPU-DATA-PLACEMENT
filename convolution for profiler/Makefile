@@ -165,4 +165,4 @@ convolution:
 
 
 clean:
-	rm -f convolutionSeparable main.o convolutionSeparable_gold.o convolutionSeparable.o 0
+	rm -f convolutionSeparable main.o convolutionSeparable_gold.o convolutionSeparable.o 0 1 2 3 4 5 convolution
