@@ -331,12 +331,15 @@ int main(int argc, char **argv)
     }
 
     printf("Allocating and initializing CUDA arrays...\n");
-    checkCudaErrors(cudaMalloc((void **)&d_Input,   imageW * imageH * sizeof(float)));
-    checkCudaErrors(cudaMalloc((void **)&d_Output,  imageW * imageH * sizeof(float)));
-    checkCudaErrors(cudaMalloc((void **)&d_Buffer , imageW * imageH * sizeof(float)));
-
+    //checkCudaErrors(cudaMalloc((void **)&d_Input,   imageW * imageH * sizeof(float)));
+    //checkCudaErrors(cudaMalloc((void **)&d_Output,  imageW * imageH * sizeof(float)));
+    //checkCudaErrors(cudaMalloc((void **)&d_Buffer , imageW * imageH * sizeof(float)));
+    cudaMalloc((void **)&d_Input,   imageW * imageH * sizeof(float));
+    cudaMalloc((void **)&d_Output,  imageW * imageH * sizeof(float));
+    cudaMalloc((void **)&d_Buffer , imageW * imageH * sizeof(float));
     setConvolutionKernel(h_Kernel);
-    checkCudaErrors(cudaMemcpy(d_Input, h_Input, imageW * imageH * sizeof(float), cudaMemcpyHostToDevice));
+    //checkCudaErrors(cudaMemcpy(d_Input, h_Input, imageW * imageH * sizeof(float), cudaMemcpyHostToDevice));
+	cudaMemcpy(d_Input, h_Input, imageW * imageH * sizeof(float), cudaMemcpyHostToDevice);
 
     printf("Running GPU convolution (%u identical iterations)...\n\n", iterations);
 
@@ -345,7 +348,8 @@ int main(int argc, char **argv)
         //i == -1 -- warmup iteration
         if (i == 0)
         {
-            checkCudaErrors(cudaDeviceSynchronize());
+            //checkCudaErrors(cudaDeviceSynchronize());
+			cudaDeviceSynchronize();
            // clock_gettime(CLOCK_MONOTONIC,&t1);
         }
 if(i==1) clock_gettime(CLOCK_MONOTONIC,&t1);
@@ -365,15 +369,16 @@ if(i==1) clock_gettime(CLOCK_MONOTONIC,&t2);
         );
     }
 
-    checkCudaErrors(cudaDeviceSynchronize());
+    //checkCudaErrors(cudaDeviceSynchronize());
+	cudaDeviceSynchronize();
     //clock_gettime(CLOCK_MONOTONIC,&t2);
     double gpuTime = ((t2.tv_sec-t1.tv_sec)+ (t2.tv_nsec-t1.tv_nsec)/1.e9);/// (double)iterations;
     printf("convolutionSeparable, Throughput = %.4f MPixels/sec, Time = %.5f s, Size = %u Pixels, NumDevsUsed = %i, Workgroup = %u\n",
            (1.0e-6 * (double)(imageW * imageH)/ gpuTime), gpuTime, (imageW * imageH), 1, 0);
 
     printf("\nReading back GPU results...\n\n");
-    checkCudaErrors(cudaMemcpy(h_OutputGPU, d_Output, imageW * imageH * sizeof(float), cudaMemcpyDeviceToHost));
-
+    //checkCudaErrors(cudaMemcpy(h_OutputGPU, d_Output, imageW * imageH * sizeof(float), cudaMemcpyDeviceToHost));
+	cudaMemcpy(h_OutputGPU, d_Output, imageW * imageH * sizeof(float), cudaMemcpyDeviceToHost);
     printf("Checking the results...\n");
     printf(" ...running convolutionRowCPU()\n");
     convolutionRowCPU(
@@ -409,9 +414,12 @@ if(i==1) clock_gettime(CLOCK_MONOTONIC,&t2);
     printf("Shutting down...\n");
 
 
-    checkCudaErrors(cudaFree(d_Buffer));
-    checkCudaErrors(cudaFree(d_Output));
-    checkCudaErrors(cudaFree(d_Input));
+    //checkCudaErrors(cudaFree(d_Buffer));
+    //checkCudaErrors(cudaFree(d_Output));
+    //checkCudaErrors(cudaFree(d_Input));
+	cudaFree(d_Buffer);
+    cudaFree(d_Output);
+    cudaFree(d_Input);
     free(h_OutputGPU);
     free(h_OutputCPU);
     free(h_Buffer);
@@ -429,5 +437,6 @@ if(i==1) clock_gettime(CLOCK_MONOTONIC,&t2);
     }
 
     printf("Test passed\n");
+
     exit(EXIT_SUCCESS);
 }
