@@ -80,9 +80,10 @@ EXTRA_LDFLAGS   ?=
 # CUDA code generation flags
 #GENCODE_SM10    := -gencode arch=compute_10,code=sm_10
 GENCODE_SM20    := -gencode arch=compute_20,code=sm_20
-GENCODE_SM30    := -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35
+#GENCODE_SM30    := -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35
 #GENCODE_FLAGS   := $(GENCODE_SM10) $(GENCODE_SM20) $(GENCODE_SM30)
-GENCODE_FLAGS   := $(GENCODE_SM20) $(GENCODE_SM30)
+#GENCODE_FLAGS   := $(GENCODE_SM20) $(GENCODE_SM30)
+GENCODE_FLAGS   := $(GENCODE_SM20)
 
 # OS-specific build flags
 ifneq ($(DARWIN),) 
@@ -141,18 +142,18 @@ run: build
 	./convolutionSeparable
 
 0:
-	#$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	$@
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	./$@
 1:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	$@
+	./$@
 2:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	$@
+	./$@
 convolution:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 	./$@
 
 
 clean:
-	rm -f convolutionSeparable main.o convolutionSeparable_gold.o convolutionSeparable.o
+	rm -f convolutionSeparable main.o convolutionSeparable_gold.o convolutionSeparable.o 0
