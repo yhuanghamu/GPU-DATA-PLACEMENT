@@ -400,7 +400,7 @@ int main(int argc, char **argv)
 
     //printf("\nReading back GPU results...\n\n");
     //checkCudaErrors(cudaMemcpy(h_OutputGPU, d_Output, imageW * imageH * sizeof(float), cudaMemcpyDeviceToHost));
-	cudaMemcpy(h_OutputGPU, d_Output, imageW * imageH * sizeof(float), cudaMemcpyDeviceToHost)
+	cudaMemcpy(h_OutputGPU, d_Output, imageW * imageH * sizeof(float), cudaMemcpyDeviceToHost);
     /*
 	printf("Checking the results...\n");
     printf(" ...running convolutionRowCPU()\n");
