@@ -2,6 +2,12 @@ Sample: CUDA Separable Convolution
 Minimum spec: GeForce 8
 
 This sample implements a separable convolution filter of a 2D signal with a gaussian kernel.
+Usuage:
+	make all	-> build all executable.
+	make nvprof -> output profiling results.
+	make cuobjdump -> output ptx, sass and elf results.
+
+
 
 Key concepts:
 
