@@ -170,22 +170,18 @@ convolution:
 	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
 nvprof: 1 3 4 5 convolution
 	mkdir -p nvprof_result
-	cd nvprof_result/
-	nvprof  --events all --metrics all  --log-file 1_prof.txt ./1
-	nvprof  --events all --metrics all  --log-file 3_prof.txt ./3
-	nvprof  --events all --metrics all  --log-file 4_prof.txt ./4
-	nvprof  --events all --metrics all  --log-file 5_prof.txt ./5
-	nvprof  --events all --metrics all  --log-file convolution_prof.txt ./convolution
-	cd ..
+	nvprof  --events all --metrics all  --log-file nvprof_result/1_prof.txt ./1
+	nvprof  --events all --metrics all  --log-file nvprof_result/3_prof.txt ./3
+	nvprof  --events all --metrics all  --log-file nvprof_result/4_prof.txt ./4
+	nvprof  --events all --metrics all  --log-file nvprof_result/5_prof.txt ./5
+	nvprof  --events all --metrics all  --log-file nvprof_result/convolution_prof.txt ./convolution
 	
 cuobjdump: 1 3 4 5 convolution
 	mkdir -p cuobjdump_result
-	cd cuobjdump_result/
-	cuobjdump -ptx -sass -elf 1 > 1_cuobjdump.txt
-	cuobjdump -ptx -sass -elf 3 > 3_cuobjdump.txt
-	cuobjdump -ptx -sass -elf 4 > 4_cuobjdump.txt
-	cuobjdump -ptx -sass -elf 5 > 5_cuobjdump.txt
-	cuobjdump -ptx -sass -elf convolution > convolution_cuobjdump.txt
-	cd ..
+	cuobjdump -ptx -sass -elf 1 > cuobjdump_result/1_cuobjdump.txt
+	cuobjdump -ptx -sass -elf 3 > cuobjdump_result/3_cuobjdump.txt
+	cuobjdump -ptx -sass -elf 4 > cuobjdump_result/4_cuobjdump.txt
+	cuobjdump -ptx -sass -elf 5 > cuobjdump_result/5_cuobjdump.txt
+	cuobjdump -ptx -sass -elf convolution > cuobjdump_result/convolution_cuobjdump.txt
 clean:
 	rm -f convolutionSeparable main.o convolutionSeparable_gold.o convolutionSeparable.o 0 1 2 3 4 5 convolution
