@@ -146,23 +146,23 @@ run: build
 #	./$@
 1:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+	#./$@
 2:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+	#./$@
 3:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+	#./$@
 4:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+	#./$@
 5:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+	#./$@
 convolution:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
-
-
+	#./$@
+	nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
+	
 clean:
 	rm -f convolutionSeparable main.o convolutionSeparable_gold.o convolutionSeparable.o 0 1 2 3 4 5 convolution
