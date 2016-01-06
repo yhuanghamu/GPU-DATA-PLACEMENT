@@ -166,7 +166,7 @@ int main(int argc, char **argv) {
   //checkCudaErrors(cudaMemcpy(d_B, h_B, mem_size_B, cudaMemcpyHostToDevice) );
   cudaMemcpy(d_B, h_B, mem_size_B, cudaMemcpyHostToDevice);
 
-  checkCudaErrors(cudaMalloc((void**) &d_C, mem_size_C));
+  //checkCudaErrors(cudaMalloc((void**) &d_C, mem_size_C));
   cudaMalloc((void**) &d_C, mem_size_C);
 
   //cudaEvent_t kernel_start, kernel_stop;
@@ -194,7 +194,7 @@ int main(int argc, char **argv) {
   
   //cout << "kernel exe time: " << kernel_time << endl;
   // copy result from device to host
-  checkCudaErrors(cudaMemcpy(h_C, d_C, mem_size_C, cudaMemcpyDeviceToHost) );
+  //checkCudaErrors(cudaMemcpy(h_C, d_C, mem_size_C, cudaMemcpyDeviceToHost) );
   cudaMemcpy(h_C, d_C, mem_size_C, cudaMemcpyDeviceToHost);
   // compute reference solution
   //float* reference = (float*)malloc(mem_size_C);
@@ -219,7 +219,7 @@ int main(int argc, char **argv) {
   free(h_A);
   free(h_B);
   free(h_C);
-  free(reference);
+  //free(reference);
   checkCudaErrors(cudaFree(d_A));
   checkCudaErrors(cudaFree(d_B));
   checkCudaErrors(cudaFree(d_C));
