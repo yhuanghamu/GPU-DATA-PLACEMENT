@@ -162,9 +162,9 @@ int main(int argc, char **argv) {
 
   // copy host memory to device
   //checkCudaErrors(cudaMemcpy(d_A, h_A, mem_size_A, cudaMemcpyHostToDevice) );
-  cudaMemcpy(d_A, h_A, mem_size_A, cudaMemcpyHostToDevice)
+  cudaMemcpy(d_A, h_A, mem_size_A, cudaMemcpyHostToDevice);
   //checkCudaErrors(cudaMemcpy(d_B, h_B, mem_size_B, cudaMemcpyHostToDevice) );
-  cudaMemcpy(d_B, h_B, mem_size_B, cudaMemcpyHostToDevice)
+  cudaMemcpy(d_B, h_B, mem_size_B, cudaMemcpyHostToDevice);
 
   checkCudaErrors(cudaMalloc((void**) &d_C, mem_size_C));
   cudaMalloc((void**) &d_C, mem_size_C);
