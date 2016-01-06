@@ -178,7 +178,8 @@ nvprof: 1 3 4 5 convolution
 	
 cuobjdump: 1 3 4 5 convolution
 	mkdir -p cuobjdump_result
-	cuobjdump -ptx -sass -elf 1 > cuobjdump_result/1_cuobjdump.txt
+#	cuobjdump -ptx -sass -elf 1 > cuobjdump_result/1_cuobjdump.txt
+	cuobjdump -sass 1 > cuobjdump_result/1_cuobjdump.txt
 	cuobjdump -ptx -sass -elf 3 > cuobjdump_result/3_cuobjdump.txt
 	cuobjdump -ptx -sass -elf 4 > cuobjdump_result/4_cuobjdump.txt
 	cuobjdump -ptx -sass -elf 5 > cuobjdump_result/5_cuobjdump.txt
