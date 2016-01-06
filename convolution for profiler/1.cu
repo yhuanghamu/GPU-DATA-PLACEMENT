@@ -62,7 +62,7 @@ __global__ void convolutionRowsKernel(
     d_Dst += baseY * pitch + baseX;
 
     //Load main data
-#pragma unroll
+//#pragma unroll
 
     for (int i = ROWS_HALO_STEPS; i < ROWS_HALO_STEPS + ROWS_RESULT_STEPS; i++)
     {
@@ -70,7 +70,7 @@ __global__ void convolutionRowsKernel(
     }
 
     //Load left halo
-#pragma unroll
+//#pragma unroll
 
     for (int i = 0; i < ROWS_HALO_STEPS; i++)
     {
@@ -78,7 +78,7 @@ __global__ void convolutionRowsKernel(
     }
 
     //Load right halo
-#pragma unroll
+//#pragma unroll
 
     for (int i = ROWS_HALO_STEPS + ROWS_RESULT_STEPS; i < ROWS_HALO_STEPS + ROWS_RESULT_STEPS + ROWS_HALO_STEPS; i++)
     {
@@ -87,13 +87,13 @@ __global__ void convolutionRowsKernel(
 
     //Compute and store results
     __syncthreads();
-#pragma unroll
+//#pragma unroll
 
     for (int i = ROWS_HALO_STEPS; i < ROWS_HALO_STEPS + ROWS_RESULT_STEPS; i++)
     {
         float sum = 0;
 
-#pragma unroll
+//#pragma unroll
 
         for (int j = -KERNEL_RADIUS; j <= KERNEL_RADIUS; j++)
         {
@@ -127,7 +127,7 @@ void convolutionRowsGPU(
         imageW,
         c_Kernel
     );
-    getLastCudaError("convolutionRowsKernel() execution failed\n");
+    //getLastCudaError("convolutionRowsKernel() execution failed\n");
 }
 
 
@@ -158,7 +158,7 @@ __global__ void convolutionColumnsKernel(
     d_Dst += baseY * pitch + baseX;
 
     //Main data
-#pragma unroll
+//#pragma unroll
 
     for (int i = COLUMNS_HALO_STEPS; i < COLUMNS_HALO_STEPS + COLUMNS_RESULT_STEPS; i++)
     {
@@ -166,7 +166,7 @@ __global__ void convolutionColumnsKernel(
     }
 
     //Upper halo
-#pragma unroll
+//#pragma unroll
 
     for (int i = 0; i < COLUMNS_HALO_STEPS; i++)
     {
@@ -174,7 +174,7 @@ __global__ void convolutionColumnsKernel(
     }
 
     //Lower halo
-#pragma unroll
+//#pragma unroll
 
     for (int i = COLUMNS_HALO_STEPS + COLUMNS_RESULT_STEPS; i < COLUMNS_HALO_STEPS + COLUMNS_RESULT_STEPS + COLUMNS_HALO_STEPS; i++)
     {
@@ -183,12 +183,12 @@ __global__ void convolutionColumnsKernel(
 
     //Compute and store results
     __syncthreads();
-#pragma unroll
+//#pragma unroll
 
     for (int i = COLUMNS_HALO_STEPS; i < COLUMNS_HALO_STEPS + COLUMNS_RESULT_STEPS; i++)
     {
         float sum = 0;
-#pragma unroll
+//#pragma unroll
 
         for (int j = -KERNEL_RADIUS; j <= KERNEL_RADIUS; j++)
         {
@@ -222,9 +222,9 @@ void convolutionColumnsGPU(
         imageW,
         c_Kernel
     );
-    getLastCudaError("convolutionColumnsKernel() execution failed\n");
+    //getLastCudaError("convolutionColumnsKernel() execution failed\n");
 }
-
+/*
 void convolutionRowCPU(
     float *h_Dst,
     float *h_Src,
@@ -251,11 +251,12 @@ void convolutionRowCPU(
         }
 }
 
-
+*/
 
 ////////////////////////////////////////////////////////////////////////////////
 // Reference column convolution filter
 ////////////////////////////////////////////////////////////////////////////////
+/*
 void convolutionColumnCPU(
     float *h_Dst,
     float *h_Src,
@@ -281,7 +282,7 @@ void convolutionColumnCPU(
             h_Dst[y * imageW + x] = sum;
         }
 }
-
+*/
 
 
 ////////////////////////////////////////////////////////////////////////////////
