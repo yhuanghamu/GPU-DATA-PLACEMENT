@@ -156,7 +156,7 @@ int main(int argc, char **argv) {
   float* h_CUBLAS = (float*) malloc(mem_size_C);
 
   //checkCudaErrors(cudaMalloc((void**) &d_A, mem_size_A));
-  cudaMalloc((void**) &d_A, mem_size_A));
+  cudaMalloc((void**) &d_A, mem_size_A);
   //checkCudaErrors(cudaMalloc((void**) &d_B, mem_size_B));
   cudaMalloc((void**) &d_B, mem_size_B);
 
