@@ -61,24 +61,18 @@ __global__ void convolutionRowsKernel(
     d_Dst += baseY * pitch + baseX;
 
     //Load main data
-#pragma unroll
-
     for (int i = ROWS_HALO_STEPS; i < ROWS_HALO_STEPS + ROWS_RESULT_STEPS; i++)
     {
         s_Data[threadIdx.y][threadIdx.x + i * ROWS_BLOCKDIM_X] = d_Src[i * ROWS_BLOCKDIM_X];
     }
 
     //Load left halo
-#pragma unroll
-
     for (int i = 0; i < ROWS_HALO_STEPS; i++)
     {
         s_Data[threadIdx.y][threadIdx.x + i * ROWS_BLOCKDIM_X] = (baseX >= -i * ROWS_BLOCKDIM_X) ? d_Src[i * ROWS_BLOCKDIM_X] : 0;
     }
 
     //Load right halo
-#pragma unroll
-
     for (int i = ROWS_HALO_STEPS + ROWS_RESULT_STEPS; i < ROWS_HALO_STEPS + ROWS_RESULT_STEPS + ROWS_HALO_STEPS; i++)
     {
         s_Data[threadIdx.y][threadIdx.x + i * ROWS_BLOCKDIM_X] = (imageW - baseX > i * ROWS_BLOCKDIM_X) ? d_Src[i * ROWS_BLOCKDIM_X] : 0;
@@ -86,13 +80,10 @@ __global__ void convolutionRowsKernel(
 
     //Compute and store results
     __syncthreads();
-#pragma unroll
 
     for (int i = ROWS_HALO_STEPS; i < ROWS_HALO_STEPS + ROWS_RESULT_STEPS; i++)
     {
         float sum = 0;
-
-#pragma unroll
 
         for (int j = -KERNEL_RADIUS; j <= KERNEL_RADIUS; j++)
         {
