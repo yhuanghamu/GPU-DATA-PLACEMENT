@@ -83,6 +83,7 @@ GENCODE_SM20    := -gencode arch=compute_20,code=sm_20
 GENCODE_SM30    := -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35
 #GENCODE_FLAGS   := $(GENCODE_SM10) $(GENCODE_SM20) $(GENCODE_SM30)
 GENCODE_FLAGS   := $(GENCODE_SM20) $(GENCODE_SM30)
+#GENCODE_FLAGS   := $(GENCODE_SM20)
 
 # OS-specific build flags
 ifneq ($(DARWIN),) 
@@ -119,7 +120,7 @@ endif
 INCLUDES      := -I$(CUDA_INC_PATH) -I. -I.. -I../../common/inc -I../include/
 
 # Target rules
-all: build
+all: 1 2 3 4 5 convolution
 
 build: convolutionSeparable
 
@@ -140,19 +141,59 @@ convolutionSeparable: main.o convolutionSeparable_gold.o convolutionSeparable.o
 run: build
 	./convolutionSeparable
 
-0:
-	#$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	$@
+#0:
+#	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+#	./$@
 1:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	$@
-2:
+	#./$@
+	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
+#2:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	$@
+	#./$@
+	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
+3:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	#./$@
+	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
+4:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	#./$@
+	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
+5:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	#./$@
+	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
 convolution:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+	#./$@
+	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
+nvprof: 1 3 4 5 9 convolution
+	mkdir -p nvprof_result
+	nvprof  --events all --metrics all  --log-file nvprof_result/1_prof.txt ./1
+	nvprof  --events all --metrics all  --log-file nvprof_result/3_prof.txt ./3
+	nvprof  --events all --metrics all  --log-file nvprof_result/4_prof.txt ./4
+	nvprof  --events all --metrics all  --log-file nvprof_result/5_prof.txt ./5
+	nvprof  --events all --metrics all  --log-file nvprof_result/convolution_prof.txt ./convolution
+	nvprof  --events all --metrics all  --log-file nvprof_result/9_prof.txt ./9
+awk:
+	
+	awk -f dong_proc.awk 1_prof.txt >1_prof_awk.txt
+	awk -f dong_proc.awk 3_prof.txt >3_prof_awk.txt
+	awk -f dong_proc.awk 4_prof.txt >4_prof_awk.txt
+	awk -f dong_proc.awk 5_prof.txt >5_prof_awk.txt
+	awk -f dong_proc.awk convolution_prof.txt >convolution_prof_awk.txt
+	awk -f dong_proc.awk 9_prof.txt >9_prof_awk.txt
 
 
+	
+cuobjdump: 1 3 4 5 convolution
+	mkdir -p cuobjdump_result
+#	cuobjdump -ptx -sass -elf 1 > cuobjdump_result/1_cuobjdump.txt
+	cuobjdump -sass 1 > cuobjdump_result/1_cuobjdump.txt
+	cuobjdump -ptx -sass -elf 3 > cuobjdump_result/3_cuobjdump.txt
+	cuobjdump -ptx -sass -elf 4 > cuobjdump_result/4_cuobjdump.txt
+	cuobjdump -ptx -sass -elf 5 > cuobjdump_result/5_cuobjdump.txt
+	cuobjdump -ptx -sass -elf convolution > cuobjdump_result/convolution_cuobjdump.txt
 clean:
-	rm -f convolutionSeparable main.o convolutionSeparable_gold.o convolutionSeparable.o
+	rm -f convolutionSeparable main.o convolutionSeparable_gold.o convolutionSeparable.o 0 1 2 3 4 5 convolution
