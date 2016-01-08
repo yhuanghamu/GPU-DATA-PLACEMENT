@@ -120,7 +120,6 @@ endif
 INCLUDES      := -I$(CUDA_INC_PATH) -I. -I.. -I../../common/inc -I../include/
 
 # Target rules
-all: 1 2 3 4 5 convolution
 
 build: convolutionSeparable
 
@@ -144,7 +143,7 @@ run: build
 #0:
 #	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 #	./$@
-1:
+3:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 	#./$@
 	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
@@ -152,23 +151,36 @@ run: build
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 	#./$@
 	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
-3:
-	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	#./$@
-	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
 4:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 	#./$@
 	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
-5:
+6:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 	#./$@
 	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
-convolution:
+7:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 	#./$@
 	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
-nvprof: 1 3 4 5 9 convolution
+8:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	#./$@
+	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
+9:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	#./$@
+	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@	
+vd:
+	$(NVCC) -o $@ $@.cu
+	cuobjdump -ptx -sass  $@ > $@_instruction.txt
+vd_shared:
+	$(NVCC) -o $@ $@.cu
+	cuobjdump -ptx -sass  $@ > $@_instruction.txt
+vd_constant:
+	$(NVCC) -o $@ $@.cu
+	cuobjdump -ptx -sass  $@ > $@_instruction.txt
+nvprof:  3 4 6 7 8 9 
 	mkdir -p nvprof_result
 	nvprof  --events all --metrics all  --log-file nvprof_result/1_prof.txt ./1
 	nvprof  --events all --metrics all  --log-file nvprof_result/3_prof.txt ./3
@@ -187,13 +199,13 @@ awk:
 
 
 	
-cuobjdump: 1 3 4 5 convolution
+cuobjdump:  3 4 6 7 8 9 
 	mkdir -p cuobjdump_result
-#	cuobjdump -ptx -sass -elf 1 > cuobjdump_result/1_cuobjdump.txt
-	cuobjdump -sass 1 > cuobjdump_result/1_cuobjdump.txt
-	cuobjdump -ptx -sass -elf 3 > cuobjdump_result/3_cuobjdump.txt
-	cuobjdump -ptx -sass -elf 4 > cuobjdump_result/4_cuobjdump.txt
-	cuobjdump -ptx -sass -elf 5 > cuobjdump_result/5_cuobjdump.txt
-	cuobjdump -ptx -sass -elf convolution > cuobjdump_result/convolution_cuobjdump.txt
+	cuobjdump -ptx -sass  3 > cuobjdump_result/3_cuobjdump.txt
+	cuobjdump -ptx -sass  4 > cuobjdump_result/4_cuobjdump.txt
+	cuobjdump -ptx -sass  6 > cuobjdump_result/6_cuobjdump.txt
+	cuobjdump -ptx -sass  7 > cuobjdump_result/7_cuobjdump.txt
+	cuobjdump -ptx -sass  8 > cuobjdump_result/8_cuobjdump.txt
+	cuobjdump -ptx -sass  9 > cuobjdump_result/9.txt
 clean:
 	rm -f convolutionSeparable main.o convolutionSeparable_gold.o convolutionSeparable.o 0 1 2 3 4 5 convolution
