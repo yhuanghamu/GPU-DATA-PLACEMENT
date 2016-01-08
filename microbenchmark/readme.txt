@@ -7,7 +7,13 @@ Usuage:
 	make nvprof -> output profiling results.
 	make cuobjdump -> output ptx, sass and elf results.
 
-
+file		S_Data		D_Dst		D_Src		c_Kernel
+3.cu		Shared		Global		2Dtexture	Constant
+4.cu		Shared		Global		1Dtexture	Constant
+6.cu		Shared		Global		Global		Global
+7.cu		Shared		Global		Global		Constant
+8.cu		Shared		Global		Global		1Dtexture
+9.cu		Shared		Global		Global		Shared
 
 Key concepts:
 
@@ -19,3 +25,6 @@ Key concepts:
 5. 3.cu:  BEST ONE(c_Kernel in constant memory, d_Src in texture memory);  ulmo: Time = 0.00250 s,gpu1:0.00331 s (./3)
 6. 4.cu:  small size(c_Kernel in global memory, d_Src in constant memory); ulmo: Time = 0.00004 s,gpu1:0.00005 s (./4)
 7. 5.cu:  c_Kernel in texture memory, d_Src in global memory; ulmo: Time = 0.00279 s, gpu1:0.00734 s   (./5)
+
+
+
