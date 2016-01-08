@@ -173,6 +173,7 @@ run: build
 	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@	
 vd:
 	$(NVCC) -o $@ $@.cu
+	cuobjdump -ptx -sass  $@ > $@_instruction.txt
 nvprof:  3 4 6 7 8 9 
 	mkdir -p nvprof_result
 	nvprof  --events all --metrics all  --log-file nvprof_result/1_prof.txt ./1
