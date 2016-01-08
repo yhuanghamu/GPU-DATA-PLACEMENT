@@ -59,8 +59,8 @@ int main( int argc, char* argv[] )
     }
 	
     // Copy host vectors to device
-    cudaMemcpy( d_a, h_a, bytes, cudaMemcpyHostToDevice);
-    cudaMemcpy( d_b, h_b, bytes, cudaMemcpyHostToDevice);
+    checkCudaErrors(cudaMemcpy( d_a, h_a, bytes, cudaMemcpyHostToDevice));
+    checkCudaErrors(cudaMemcpy( d_b, h_b, bytes, cudaMemcpyHostToDevice));
 	
     int blockSize, gridSize;
 	
