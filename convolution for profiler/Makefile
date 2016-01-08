@@ -168,6 +168,10 @@ convolution:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 	#./$@
 	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
+9:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	#./$@
+	 #nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
 nvprof: 1 3 4 5 convolution
 	mkdir -p nvprof_result
 	nvprof  --events all --metrics all  --log-file nvprof_result/1_prof.txt ./1
