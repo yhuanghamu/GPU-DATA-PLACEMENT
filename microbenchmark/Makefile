@@ -190,13 +190,13 @@ awk:
 
 
 	
-cuobjdump:  3 4 5 convolution
+cuobjdump:  3 4 6 7 8 9 
 	mkdir -p cuobjdump_result
-	cuobjdump -ptx -sass -elf 9 > cuobjdump_result/1_cuobjdump.txt
-	cuobjdump -sass 1 > cuobjdump_result/1_cuobjdump.txt
-	cuobjdump -ptx -sass -elf 3 > cuobjdump_result/3_cuobjdump.txt
-	cuobjdump -ptx -sass -elf 4 > cuobjdump_result/4_cuobjdump.txt
-	cuobjdump -ptx -sass -elf 5 > cuobjdump_result/5_cuobjdump.txt
-	cuobjdump -ptx -sass -elf convolution > cuobjdump_result/convolution_cuobjdump.txt
+	cuobjdump -ptx -sass  3 > cuobjdump_result/3_cuobjdump.txt
+	cuobjdump -ptx -sass  4 > cuobjdump_result/4_cuobjdump.txt
+	cuobjdump -ptx -sass  6 > cuobjdump_result/6_cuobjdump.txt
+	cuobjdump -ptx -sass  7 > cuobjdump_result/7_cuobjdump.txt
+	cuobjdump -ptx -sass  8 > cuobjdump_result/8_cuobjdump.txt
+	cuobjdump -ptx -sass  9 > cuobjdump_result/9.txt
 clean:
 	rm -f convolutionSeparable main.o convolutionSeparable_gold.o convolutionSeparable.o 0 1 2 3 4 5 convolution
