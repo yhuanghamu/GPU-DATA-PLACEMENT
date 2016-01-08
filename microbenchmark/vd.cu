@@ -73,6 +73,7 @@ int main( int argc, char* argv[] )
         sum += h_c[i];
 		printf("h_c[%d]=%f\n",i,h_c[i]);
 	}
+	printf("Sum is %f\n",sum);
     printf("final result: %f\n", sum/N);
 	
     // Release device memory
