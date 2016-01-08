@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define N (1024*10)
+#define N (1024*5)
 // CUDA kernel. Each thread takes care of one element of c
 __global__ void vecAdd(float *a, float *b, float *c)
 {

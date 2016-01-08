@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define N 1024
+#define N (1024*5)
 
-__constant__ double c_a[N];
-__constant__ double c_b[N];
+__constant__ float c_a[N];
+__constant__ float c_b[N];
 
-void setConstant(double *h_a, double *h_b)
+void setConstant(float *h_a, float *h_b)
 {
-    cudaMemcpyToSymbol(c_a, h_a, N * sizeof(double));
-	cudaMemcpyToSymbol(c_b, h_b, N * sizeof(double));
+    cudaMemcpyToSymbol(c_a, h_a, N * sizeof(float));
+	cudaMemcpyToSymbol(c_b, h_b, N * sizeof(float));
 }
 // CUDA kernel. Each thread takes care of one element of c
-__global__ void vecAdd(double *c)
+__global__ void vecAdd(float *c)
 {
     // Get our global thread ID
     int id = blockIdx.x*blockDim.x+threadIdx.x;
@@ -28,24 +28,24 @@ int main( int argc, char* argv[] )
     //int n = 10000;
 	
     // Host input vectors
-    double *h_a;
-    double *h_b;
+    float *h_a;
+    float *h_b;
     //Host output vector
-    double *h_c;
+    float *h_c;
 	
     // Device input vectors
-    double *d_a;
-    double *d_b;
+    float *d_a;
+    float *d_b;
     //Device output vector
-    double *d_c;
+    float *d_c;
 	
     // Size, in bytes, of each vector
-    size_t bytes = N*sizeof(double);
+    size_t bytes = N*sizeof(float);
 	
     // Allocate memory for each vector on host
-    h_a = (double*)malloc(bytes);
-    h_b = (double*)malloc(bytes);
-    h_c = (double*)malloc(bytes);
+    h_a = (float*)malloc(bytes);
+    h_b = (float*)malloc(bytes);
+    h_c = (float*)malloc(bytes);
 	// Allocate memory for each vector on GPU
     cudaMalloc(&d_a, bytes);
     cudaMalloc(&d_b, bytes);
@@ -59,8 +59,8 @@ int main( int argc, char* argv[] )
     }
 	
     // Copy host vectors to device
-    checkCudaErrors(cudaMemcpy( d_a, h_a, bytes, cudaMemcpyHostToDevice));
-    checkCudaErrors(cudaMemcpy( d_b, h_b, bytes, cudaMemcpyHostToDevice));
+    cudaMemcpy( d_a, h_a, bytes, cudaMemcpyHostToDevice);
+    cudaMemcpy( d_b, h_b, bytes, cudaMemcpyHostToDevice);
 	
     int blockSize, gridSize;
 	
@@ -69,7 +69,7 @@ int main( int argc, char* argv[] )
 	
     // Number of thread blocks in grid
     gridSize = (int)ceil((float)N/blockSize);
-	
+	setConstant(float *ha, float *hb);
     // Execute the kernel
     vecAdd<<<gridSize, blockSize>>>(d_c);
 	
@@ -77,7 +77,7 @@ int main( int argc, char* argv[] )
     cudaMemcpy( h_c, d_c, bytes, cudaMemcpyDeviceToHost );
 	
     // Sum up vector c and print result divided by n, this should equal 1 within error
-    double sum = 0;
+    float sum = 0;
     for(i=0; i<N; i++)
         sum += h_c[i];
     printf("final result: %f\n", sum/N);
