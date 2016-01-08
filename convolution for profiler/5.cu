@@ -78,7 +78,7 @@ __global__ void convolutionRowsKernel(
     }
 
     //Load right halo
-//#pragma unroll
+#pragma unroll
  //   printf("%d,%d\n",ROWS_HALO_STEPS,ROWS_HALO_STEPS);
     for (int i = ROWS_HALO_STEPS + ROWS_RESULT_STEPS; i < ROWS_HALO_STEPS + ROWS_RESULT_STEPS + ROWS_HALO_STEPS; i++)
     {

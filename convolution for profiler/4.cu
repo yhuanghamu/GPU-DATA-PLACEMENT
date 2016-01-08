@@ -394,13 +394,11 @@ int main(int argc, char **argv)
     //checkCudaErrors(cudaDeviceSynchronize());
 	cudaDeviceSynchronize();
   //  clock_gettime(CLOCK_MONOTONIC,&t2);
-	/*
-    double gpuTime = ((t2.tv_sec-t1.tv_sec)+ (t2.tv_nsec-t1.tv_nsec)/1.e9);/// (double)iterations;
-    printf("convolutionSeparable, Throughput = %.4f MPixels/sec, Time = %.5f s, Size = %u Pixels, NumDevsUsed = %i, Workgroup = %u\n",
-           (1.0e-6 * (double)(imageW * imageH)/ gpuTime), gpuTime, (imageW * imageH), 1, 0);
+    // double gpuTime = ((t2.tv_sec-t1.tv_sec)+ (t2.tv_nsec-t1.tv_nsec)/1.e9);/// (double)iterations;
+    // printf("convolutionSeparable, Throughput = %.4f MPixels/sec, Time = %.5f s, Size = %u Pixels, NumDevsUsed = %i, Workgroup = %u\n",
+     //      (1.0e-6 * (double)(imageW * imageH)/ gpuTime), gpuTime, (imageW * imageH), 1, 0);
 
-    printf("\nReading back GPU results...\n\n");
-	*/
+    //printf("\nReading back GPU results...\n\n");
     //checkCudaErrors(cudaMemcpy(h_OutputGPU, d_Output, imageW * imageH * sizeof(float), cudaMemcpyDeviceToHost));
 	cudaMemcpy(h_OutputGPU, d_Output, imageW * imageH * sizeof(float), cudaMemcpyDeviceToHost);
 	//printf("Checking the results...\n");
