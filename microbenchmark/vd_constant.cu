@@ -69,7 +69,7 @@ int main( int argc, char* argv[] )
 	
     // Number of thread blocks in grid
     gridSize = (int)ceil((float)N/blockSize);
-	setConstant(float *ha, float *hb);
+	setConstant(ha, hb);
     // Execute the kernel
     vecAdd<<<gridSize, blockSize>>>(d_c);
 	
