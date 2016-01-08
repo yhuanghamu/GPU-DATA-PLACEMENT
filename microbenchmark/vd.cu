@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define N 1024
+#define N 1024*10
 // CUDA kernel. Each thread takes care of one element of c
-__global__ void vecAdd(double *a, double *b, double *c)
+__global__ void vecAdd(float *a, float *b, float *c)
 {
     // Get our global thread ID
     int id = blockIdx.x*blockDim.x+threadIdx.x;
@@ -19,24 +19,24 @@ int main( int argc, char* argv[] )
     //int n = 10000;
 	
     // Host input vectors
-    double *h_a;
-    double *h_b;
+    float *h_a;
+    float *h_b;
     //Host output vector
-    double *h_c;
+    float *h_c;
 	
     // Device input vectors
-    double *d_a;
-    double *d_b;
+    float *d_a;
+    float *d_b;
     //Device output vector
-    double *d_c;
+    float *d_c;
 	
     // Size, in bytes, of each vector
-    size_t bytes = N*sizeof(double);
+    size_t bytes = N*sizeof(float);
 	
     // Allocate memory for each vector on host
-    h_a = (double*)malloc(bytes);
-    h_b = (double*)malloc(bytes);
-    h_c = (double*)malloc(bytes);
+    h_a = (float*)malloc(bytes);
+    h_b = (float*)malloc(bytes);
+    h_c = (float*)malloc(bytes);
 	// Allocate memory for each vector on GPU
     cudaMalloc(&d_a, bytes);
     cudaMalloc(&d_b, bytes);
@@ -68,7 +68,7 @@ int main( int argc, char* argv[] )
     cudaMemcpy( h_c, d_c, bytes, cudaMemcpyDeviceToHost );
 	
     // Sum up vector c and print result divided by n, this should equal 1 within error
-    double sum = 0;
+    float sum = 0;
     for(i=0; i<N; i++)
         sum += h_c[i];
     printf("final result: %f\n", sum/N);
