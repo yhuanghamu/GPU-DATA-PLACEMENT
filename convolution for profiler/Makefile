@@ -168,13 +168,24 @@ convolution:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 	#./$@
 	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
-nvprof: 1 3 4 5 convolution
+nvprof: 1 3 4 5 9 convolution
 	mkdir -p nvprof_result
 	nvprof  --events all --metrics all  --log-file nvprof_result/1_prof.txt ./1
 	nvprof  --events all --metrics all  --log-file nvprof_result/3_prof.txt ./3
 	nvprof  --events all --metrics all  --log-file nvprof_result/4_prof.txt ./4
 	nvprof  --events all --metrics all  --log-file nvprof_result/5_prof.txt ./5
 	nvprof  --events all --metrics all  --log-file nvprof_result/convolution_prof.txt ./convolution
+	nvprof  --events all --metrics all  --log-file nvprof_result/9_prof.txt ./9
+awk:
+	
+	awk -f dong_proc.awk 1_prof.txt >1_prof_awk.txt
+	awk -f dong_proc.awk 3_prof.txt >3_prof_awk.txt
+	awk -f dong_proc.awk 4_prof.txt >4_prof_awk.txt
+	awk -f dong_proc.awk 5_prof.txt >5_prof_awk.txt
+	awk -f dong_proc.awk convolution_prof.txt >convolution_prof_awk.txt
+	awk -f dong_proc.awk 9_prof.txt >9_prof_awk.txt
+
+
 	
 cuobjdump: 1 3 4 5 convolution
 	mkdir -p cuobjdump_result
