@@ -137,7 +137,7 @@ int main(int argc, char **argv)
     *h_Kernel,
     *h_Input,
     *h_Buffer,
-	*h_OutputGPU;
+	*h_Output;
 
     float
     *d_Input,
