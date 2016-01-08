@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define N 1024*10
+#define N (1024*10)
 // CUDA kernel. Each thread takes care of one element of c
 __global__ void vecAdd(float *a, float *b, float *c)
 {
@@ -71,9 +71,9 @@ int main( int argc, char* argv[] )
     float sum = 0;
     for(i=0; i< N; i++) {
         sum += h_c[i];
-		printf("h_c[%d]=%f\n",i,h_c[i]);
+		//printf("h_c[%d]=%f\n",i,h_c[i]);
 	}
-	printf("Sum is %f\n",sum);
+	//printf("Sum is %f\n",sum);
     printf("final result: %f\n", sum/N);
 	
     // Release device memory
