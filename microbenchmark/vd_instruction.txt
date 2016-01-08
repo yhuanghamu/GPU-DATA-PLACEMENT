@@ -1,0 +1,105 @@
+
+Fatbin elf code:
+================
+arch = sm_20
+code version = [1,7]
+producer = <unknown>
+host = linux
+compile_size = 64bit
+
+	code for sm_20
+
+Fatbin elf code:
+================
+arch = sm_20
+code version = [1,7]
+producer = cuda
+host = linux
+compile_size = 64bit
+
+	code for sm_20
+		Function : _Z6vecAddPfS_S_
+	.headerflags    @"EF_CUDA_SM20 EF_CUDA_PTX_SM(EF_CUDA_SM20)"
+        /*0000*/         MOV R1, c[0x1][0x100];                    /* 0x2800440400005de4 */
+        /*0008*/         S2R R0, SR_CTAID.X;                       /* 0x2c00000094001c04 */
+        /*0010*/         S2R R2, SR_TID.X;                         /* 0x2c00000084009c04 */
+        /*0018*/         IMAD R0, R0, c[0x0][0x8], R2;             /* 0x2004400020001ca3 */
+        /*0020*/         ISETP.GT.AND P0, PT, R0, 0x27ff, PT;      /* 0x1a0ec09ffc01dc23 */
+        /*0028*/     @P0 BRA.U 0x88;                               /* 0x40000001600081e7 */
+        /*0030*/    @!P0 MOV32I R5, 0x4;                           /* 0x18000000100161e2 */
+        /*0038*/    @!P0 IMAD R2.CC, R0, R5, c[0x0][0x20];         /* 0x200b80008000a0a3 */
+        /*0040*/    @!P0 IMAD.HI.X R3, R0, R5, c[0x0][0x24];       /* 0x208a80009000e0e3 */
+        /*0048*/    @!P0 IMAD R6.CC, R0, R5, c[0x0][0x28];         /* 0x200b8000a001a0a3 */
+        /*0050*/    @!P0 LD.E R3, [R2];                            /* 0x840000000020e085 */
+        /*0058*/    @!P0 IMAD.HI.X R7, R0, R5, c[0x0][0x2c];       /* 0x208a8000b001e0e3 */
+        /*0060*/    @!P0 IMAD R4.CC, R0, R5, c[0x0][0x30];         /* 0x200b8000c00120a3 */
+        /*0068*/    @!P0 LD.E R2, [R6];                            /* 0x840000000060a085 */
+        /*0070*/    @!P0 IMAD.HI.X R5, R0, R5, c[0x0][0x34];       /* 0x208a8000d00160e3 */
+        /*0078*/    @!P0 FADD R0, R3, R2;                          /* 0x5000000008302000 */
+        /*0080*/    @!P0 ST.E [R4], R0;                            /* 0x9400000000402085 */
+        /*0088*/         EXIT;                                     /* 0x8000000000001de7 */
+		................................
+
+
+
+Fatbin ptx code:
+================
+arch = sm_20
+code version = [4,2]
+producer = cuda
+host = linux
+compile_size = 64bit
+compressed
+
+
+
+
+
+
+
+
+.version 4.2
+.target sm_20
+.address_size 64
+
+
+
+.visible .entry _Z6vecAddPfS_S_(
+.param .u64 _Z6vecAddPfS_S__param_0,
+.param .u64 _Z6vecAddPfS_S__param_1,
+.param .u64 _Z6vecAddPfS_S__param_2
+)
+{
+.reg .pred %p<2>;
+.reg .f32 %f<4>;
+.reg .s32 %r<5>;
+.reg .s64 %rd<11>;
+
+
+ld.param.u64 %rd1, [_Z6vecAddPfS_S__param_0];
+ld.param.u64 %rd2, [_Z6vecAddPfS_S__param_1];
+ld.param.u64 %rd3, [_Z6vecAddPfS_S__param_2];
+mov.u32 %r2, %ctaid.x;
+mov.u32 %r3, %ntid.x;
+mov.u32 %r4, %tid.x;
+mad.lo.s32 %r1, %r3, %r2, %r4;
+setp.gt.s32	%p1, %r1, 10239;
+@%p1 bra BB0_2;
+
+cvta.to.global.u64 %rd4, %rd1;
+mul.wide.s32 %rd5, %r1, 4;
+add.s64 %rd6, %rd4, %rd5;
+cvta.to.global.u64 %rd7, %rd2;
+add.s64 %rd8, %rd7, %rd5;
+ld.global.f32 %f1, [%rd8];
+ld.global.f32 %f2, [%rd6];
+add.f32 %f3, %f2, %f1;
+cvta.to.global.u64 %rd9, %rd3;
+add.s64 %rd10, %rd9, %rd5;
+st.global.f32 [%rd10], %f3;
+
+BB0_2:
+ret;
+}
+
+
