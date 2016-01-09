@@ -7,7 +7,14 @@ Usuage:
 	make nvprof -> output profiling results.
 	make cuobjdump -> output ptx, sass and elf results.
 
-
+file		S_Data		D_Dst		D_Src		c_Kernel	Kernel-Execution-time			
+															(Row)		(Column)
+3.cu		Shared		Global		2Dtexture	Constant	1.5757ms	1.3252ms
+4.cu		Shared		Global		1Dtexture	Constant	1.6040ms	1.3447ms
+6.cu		Shared		Global		Global		Global		9.5030ms	9.5014ms
+7.cu		Shared		Global		Global		Constant	1.8963ms	1.3445ms
+8.cu		Shared		Global		Global		1Dtexture	1.9092ms	1.3719ms
+9.cu		Shared		Global		Global		Shared		3.3111ms	3.1719ms
 
 Key concepts:
 
