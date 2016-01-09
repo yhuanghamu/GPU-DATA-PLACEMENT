@@ -120,7 +120,7 @@ endif
 INCLUDES      := -I$(CUDA_INC_PATH) -I. -I.. -I../../common/inc -I../include/
 
 # Target rules
-all: 1 2 3 4 5 convolution
+all: 3 4 6 7 8 9 
 
 build: convolutionSeparable
 
@@ -144,14 +144,6 @@ run: build
 #0:
 #	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 #	./$@
-1:
-	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	#./$@
-	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
-#2:
-	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	#./$@
-	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
 3:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 	#./$@
@@ -160,15 +152,23 @@ run: build
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 	#./$@
 	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
-5:
+6:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 	#./$@
 	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
-convolution:
+7:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 	#./$@
 	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
-nvprof: 1 3 4 5 9 convolution
+8:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	#./$@
+	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
+9:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	#./$@
+	#nvprof  --events all --metrics all  --log-file $@_prof.txt ./$@
+nvprof:  3 4 6 7 8 9 
 	mkdir -p nvprof_result
 	nvprof  --events all --metrics all  --log-file nvprof_result/1_prof.txt ./1
 	nvprof  --events all --metrics all  --log-file nvprof_result/3_prof.txt ./3
