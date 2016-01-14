@@ -1,0 +1,96 @@
+
+Fatbin elf code:
+================
+arch = sm_20
+code version = [1,7]
+producer = <unknown>
+host = linux
+compile_size = 64bit
+
+	code for sm_20
+
+Fatbin elf code:
+================
+arch = sm_20
+code version = [1,7]
+producer = cuda
+host = linux
+compile_size = 64bit
+
+	code for sm_20
+		Function : _Z6vecAddPf
+	.headerflags    @"EF_CUDA_SM20 EF_CUDA_PTX_SM(EF_CUDA_SM20)"
+        /*0000*/         MOV R1, c[0x1][0x100];                    /* 0x2800440400005de4 */
+        /*0008*/         S2R R0, SR_CTAID.X;                       /* 0x2c00000094001c04 */
+        /*0010*/         S2R R2, SR_TID.X;                         /* 0x2c00000084009c04 */
+        /*0018*/         IMAD R0, R0, c[0x0][0x8], R2;             /* 0x2004400020001ca3 */
+        /*0020*/         ISETP.GT.AND P0, PT, R0, 0x13ff, PT;      /* 0x1a0ec04ffc01dc23 */
+        /*0028*/     @P0 BRA.U 0x68;                               /* 0x40000000e00081e7 */
+        /*0030*/    @!P0 TLD.LZ.T R2, R0, 0x0, 1D, 0x1;            /* 0x90004000fc00a086 */
+        /*0038*/    @!P0 TLD.LZ.T R3, R0, 0x1, 1D, 0x1;            /* 0x90004101fc00e086 */
+        /*0040*/    @!P0 MOV32I R5, 0x4;                           /* 0x18000000100161e2 */
+        /*0048*/    @!P0 IMAD R4.CC, R0, R5, c[0x0][0x20];         /* 0x200b8000800120a3 */
+        /*0050*/    @!P0 IMAD.HI.X R5, R0, R5, c[0x0][0x24];       /* 0x208a8000900160e3 */
+        /*0058*/    @!P0 FADD R0, R2, R3;                          /* 0x500000000c202000 */
+        /*0060*/    @!P0 ST.E [R4], R0;                            /* 0x9400000000402085 */
+        /*0068*/         EXIT;                                     /* 0x8000000000001de7 */
+		............................
+
+
+
+Fatbin ptx code:
+================
+arch = sm_20
+code version = [4,2]
+producer = cuda
+host = linux
+compile_size = 64bit
+compressed
+
+
+
+
+
+
+
+
+.version 4.2
+.target sm_20
+.address_size 64
+
+
+.global .texref tex_a;
+.global .texref tex_b;
+.global .texref tex_c;
+
+.visible .entry _Z6vecAddPf(
+.param .u64 _Z6vecAddPf_param_0
+)
+{
+.reg .pred %p<2>;
+.reg .f32 %f<10>;
+.reg .s32 %r<5>;
+.reg .s64 %rd<7>;
+
+
+ld.param.u64 %rd1, [_Z6vecAddPf_param_0];
+mov.u32 %r2, %ctaid.x;
+mov.u32 %r3, %ntid.x;
+mov.u32 %r4, %tid.x;
+mad.lo.s32 %r1, %r3, %r2, %r4;
+setp.gt.s32	%p1, %r1, 5119;
+@%p1 bra BB0_2;
+
+cvta.to.global.u64 %rd2, %rd1;
+tex.1d.v4.f32.s32	{%f1, %f2, %f3, %f4}, [tex_a, {%r1}];
+tex.1d.v4.f32.s32	{%f5, %f6, %f7, %f8}, [tex_b, {%r1}];
+add.f32 %f9, %f1, %f5;
+mul.wide.s32 %rd5, %r1, 4;
+add.s64 %rd6, %rd2, %rd5;
+st.global.f32 [%rd6], %f9;
+
+BB0_2:
+ret;
+}
+
+
