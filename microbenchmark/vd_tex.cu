@@ -4,9 +4,9 @@
 #include <cuda.h>
 #define N (1024*5)
 
-texture<float,1> tex_a;
-texture<float,1> tex_b;
-texture<float,1> tex_c;
+texture<float> tex_a;
+texture<float> tex_b;
+texture<float> tex_c;
 
 // CUDA kernel. Each thread takes care of one element of c
 __global__ void vecAdd(float *c)
@@ -16,7 +16,7 @@ __global__ void vecAdd(float *c)
     // Make sure we do not go out of bounds
     if (id < N) {
 		
-		c[id] = tex1Dfetch[tex_a,id] + tex1Dfetch[tex_b,id];
+		c[id] = tex1Dfetch(tex_a,id) + tex1Dfetch(tex_b,id);
 	}
         
 }
