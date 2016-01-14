@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <cuda.h>
 #define N (1024*5)
 
-texture<float> tex_a;
-texture<float> tex_b;
-texture<float> tex_c;
+texture<float,1> tex_a;
+texture<float,1> tex_b;
+texture<float,1> tex_c;
 
 // CUDA kernel. Each thread takes care of one element of c
 __global__ void vecAdd(float *c)
