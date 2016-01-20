@@ -7,13 +7,7 @@ Usuage:
 	make nvprof -> output profiling results.
 	make cuobjdump -> output ptx, sass and elf results.
 
-file		S_Data		D_Dst		D_Src		c_Kernel
-3.cu		Shared		Global		2Dtexture	Constant
-4.cu		Shared		Global		1Dtexture	Constant
-6.cu		Shared		Global		Global		Global
-7.cu		Shared		Global		Global		Constant
-8.cu		Shared		Global		Global		1Dtexture
-9.cu		Shared		Global		Global		Shared
+
 
 Key concepts:
 

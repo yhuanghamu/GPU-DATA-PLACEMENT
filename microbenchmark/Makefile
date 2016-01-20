@@ -8,8 +8,8 @@ CUDA_LIB_PATH  ?= $(CUDA_PATH)/lib64
 NVCC            ?= $(CUDA_BIN_PATH)/nvcc
 all: vd vd_shared vd_constant vd_tex	
 vd:
-	$(NVCC) -o $@ $@.cu
-	cuobjdump -ptx -sass  $@ > instruction/$@_instruction.txt
+	$(NVCC) --generate-line-info --cubin -o $@ $@.cu
+	nvdisasm  --print-line-info $@.cubin  > instruction/$@_instruction.txt
 vd_shared:
 	$(NVCC) -o $@ $@.cu
 	cuobjdump -ptx -sass  $@ > instruction/$@_instruction.txt
@@ -21,3 +21,6 @@ vd_tex:
 	cuobjdump -ptx -sass  $@ > instruction/$@_instruction.txt
 clean:
 	rm -f vd vd_shared vd_constant vd_tex
+	
+# nvcc --generate-line-info --cubin  vd.cu
+# nvdisasm  --print-line-info vd.cubin
