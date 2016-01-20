@@ -12,16 +12,19 @@ vd:
 	$(NVCC) -o $@ $@.cu
 	nvdisasm  --print-line-info $@.cubin  > instruction/$@_instruction.txt
 vd_shared:
+	$(NVCC) --generate-line-info --cubin $@.cu
 	$(NVCC) -o $@ $@.cu
-	cuobjdump -ptx -sass  $@ > instruction/$@_instruction.txt
+	nvdisasm  --print-line-info $@.cubin  > instruction/$@_instruction.txt
 vd_constant:
+	$(NVCC) --generate-line-info --cubin $@.cu
 	$(NVCC) -o $@ $@.cu
-	cuobjdump -ptx -sass  $@ > instruction/$@_instruction.txt
+	nvdisasm  --print-line-info $@.cubin  > instruction/$@_instruction.txt
 vd_tex:
+	$(NVCC) --generate-line-info --cubin $@.cu
 	$(NVCC) -o $@ $@.cu
-	cuobjdump -ptx -sass  $@ > instruction/$@_instruction.txt
+	nvdisasm  --print-line-info $@.cubin  > instruction/$@_instruction.txt
 clean:
-	rm -f vd vd_shared vd_constant vd_tex
+	rm -f vd vd_shared vd_constant vd_tex *.cubin
 	
 # nvcc --generate-line-info --cubin  vd.cu
 # nvdisasm  --print-line-info vd.cubin
