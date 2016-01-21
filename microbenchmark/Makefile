@@ -23,6 +23,23 @@ vd_tex:
 	$(NVCC) --generate-line-info --cubin $@.cu
 	$(NVCC) -o $@ $@.cu
 	nvdisasm  --print-line-info $@.cubin  > instruction/$@_instruction.txt
+
+vd2:
+	$(NVCC) --generate-line-info --cubin $@.cu
+	$(NVCC) -o $@ $@.cu
+	nvdisasm  --print-line-info $@.cubin  > instruction/$@_instruction.txt
+vd_shared2:
+	$(NVCC) --generate-line-info --cubin $@.cu
+	$(NVCC) -o $@ $@.cu
+	nvdisasm  --print-line-info $@.cubin  > instruction/$@_instruction.txt
+vd_constant2:
+	$(NVCC) --generate-line-info --cubin $@.cu
+	$(NVCC) -o $@ $@.cu
+	nvdisasm  --print-line-info $@.cubin  > instruction/$@_instruction.txt
+vd_tex2:
+	$(NVCC) --generate-line-info --cubin $@.cu
+	$(NVCC) -o $@ $@.cu
+	nvdisasm  --print-line-info $@.cubin  > instruction/$@_instruction.txt
 clean:
 	rm -f vd vd_shared vd_constant vd_tex *.cubin
 	
