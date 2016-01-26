@@ -214,23 +214,23 @@
 _Z6vecAddPfS_S_:
 .text._Z6vecAddPfS_S_:
 	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/microbenchmark/vd2.cu", line 14
-        /*0000*/         MOV R1, c[0x1][0x100];
+        /*0000*/         MOV R1, c[0x1][0x100];      //Indicate the begining of function?
 	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/microbenchmark/vd2.cu", line 9
-        /*0008*/         S2R R0, SR_CTAID.X;
-        /*0010*/         S2R R2, SR_TID.X;
-        /*0018*/         MOV32I R5, 0x4;
-        /*0020*/         IMAD R3, R0, c[0x0][0x8], R2;
-        /*0028*/         IMAD R6.CC, R3, R5, c[0x0][0x20];
-        /*0030*/         IMAD.HI.X R7, R3, R5, c[0x0][0x24];
+        /*0008*/         S2R R0, SR_CTAID.X;		//special register to Register;SR_CTAID->blockIdx.x;
+        /*0010*/         S2R R2, SR_TID.X;// SR_TID.X->threadIdx.x;
+        /*0018*/         MOV32I R5, 0x4; //load immediate
+        /*0020*/         IMAD R3, R0, c[0x0][0x8], R2; //R3= R0*c[0x0][0x8]+R2; R3->id
+        /*0028*/         IMAD R6.CC, R3, R5, c[0x0][0x20]; 		//<1>
+        /*0030*/         IMAD.HI.X R7, R3, R5, c[0x0][0x24];	//<1>
 	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/microbenchmark/vd2.cu", line 13
-        /*0038*/         IMAD R8.CC, R3, R5, c[0x0][0x28];
-        /*0040*/         LD.E R2, [R6];
-        /*0048*/         IMAD.HI.X R9, R3, R5, c[0x0][0x2c];
-        /*0050*/         IMAD R4.CC, R3, R5, c[0x0][0x30];
-        /*0058*/         LD.E R0, [R8];
-        /*0060*/         IMAD.HI.X R5, R3, R5, c[0x0][0x34];
-        /*0068*/         FADD R0, R2, R0;
-        /*0070*/         ST.E [R4], R0;
+        /*0038*/         IMAD R8.CC, R3, R5, c[0x0][0x28];		//<2>
+        /*0040*/         LD.E R2, [R6];							//<1>
+        /*0048*/         IMAD.HI.X R9, R3, R5, c[0x0][0x2c];	//<2>
+        /*0050*/         IMAD R4.CC, R3, R5, c[0x0][0x30];		//<3>
+        /*0058*/         LD.E R0, [R8];							//<2>
+        /*0060*/         IMAD.HI.X R5, R3, R5, c[0x0][0x34];	//<3>
+        /*0068*/         FADD R0, R2, R0;						//addition
+        /*0070*/         ST.E [R4], R0;							//<>3; store
 	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/microbenchmark/vd2.cu", line 14
         /*0078*/         EXIT;
 .L_15:
