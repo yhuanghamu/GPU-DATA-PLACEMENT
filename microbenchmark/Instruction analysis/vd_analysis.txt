@@ -1,21 +1,22 @@
 vd
+c[0x0][0x8]  = block dimension
+c[0x0][0x20] -> address of array a
+c[0x0][0x28] -> address of array b
 ************************************************************
 //Start
-        /*0000*/         MOV R1, c[0x1][0x100];
+        /*0000*/         MOV R1, c[0x1][0x100];    <1>
         
 //Compute id
-        /*0008*/         S2R R0, SR_CTAID.X; //R0=blockId.x ; R0= 0
-        /*0010*/         S2R R2, SR_TID.X; // R2 = threadId.x; R2 = 0~1023;
-        /*0018*/         MOV32I R5, 0x4; //R5=4; size of a float?
-        /*0020*/         IMAD R3, R0, c[0x0][0x8], R2;  //R3=R0*c[0x0][0x8]+R2; R3=R2=0~1023;
+        /*0008*/         S2R R0, SR_CTAID.X; //R0=blockId.x ;  <2>
+        /*0010*/         S2R R2, SR_TID.X; // R2 = threadId.x; <2>
+        /*0020*/         IMAD R3, R0, c[0x0][0x8], R2;  //R3=blockIdx.x*blockDim.x+threadIdx.x;<2>
 
 //compute the address of a and load
-        /*0028*/         IMAD R6.CC, R3, R5, c[0x0][0x20]; //c[0x0][0x20] -> address of array a
+        /*0018*/         MOV32I R5, 0x4; //R5=4; size of a float?
 		
-		//R6 = R3*R5+c[0x0][0x20]; R6 = (0~1023)*4+base_address // R6= a[0] ~a[1023]
-		
-        /*0030*/         IMAD.HI.X R7, R3, R5, c[0x0][0x24];
-        /*0040*/         LD.E R2, [R6];
+        /*0028*/         IMAD R6.CC, R3, R5, c[0x0][0x20]; //address of first byte
+        /*0030*/         IMAD.HI.X R7, R3, R5, c[0x0][0x24]; //
+        /*0040*/         LD.E R2, [R6]; //load
 
 //compute the address of b and load
         /*0038*/         IMAD R8.CC, R3, R5, c[0x0][0x28];
@@ -25,10 +26,10 @@ vd
  //compute the address of c and do addition.
         /*0050*/         IMAD R4.CC, R3, R5, c[0x0][0x30];
         /*0060*/         IMAD.HI.X R5, R3, R5, c[0x0][0x34];
-        /*0068*/         FADD R0, R2, R0; //addition
+        /*0068*/         FADD R0, R2, R0; //addition <4>
         /*0070*/         ST.E [R4], R0;
 
 //Exit
-        /*0078*/         EXIT;
+        /*0078*/         EXIT;<5>
 
 R0 = 0

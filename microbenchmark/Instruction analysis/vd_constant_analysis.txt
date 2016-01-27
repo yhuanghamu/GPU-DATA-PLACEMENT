@@ -1,25 +1,29 @@
 vd_constant
+c[0x0][0x8] = block dimension
+c[0x2][0x0~0xFFF] -> c_a
+c[0x2][0x1000 ~0x2000] -> c_b
 ************************************************************
 //Start
         /*0000*/         MOV R1, c[0x1][0x100];
 
 //compute id 
-        /*0008*/         S2R R0, SR_CTAID.X;
-        /*0010*/         S2R R2, SR_TID.X;
-        /*0018*/         MOV R3, c[0x0][0x24];
-        /*0020*/         IMAD R0, R0, c[0x0][0x8], R2;
-        /*0028*/         SHL.W R2, R0, 0x2;
+        /*0008*/         S2R R0, SR_CTAID.X;//R0=blockId.x ; 
+        /*0010*/         S2R R2, SR_TID.X; // R2=threadId.x; 
+        /*0020*/         IMAD R0, R0, c[0x0][0x8], R2; //R0=blockIdx.x*blockDim.x+threadIdx.x;
 
+        /*0028*/         SHL.W R2, R0, 0x2;	//R2 = R0 *4 =4*id		
 //compute the address of a and load from constant memory
-        /*0030*/         LDC R4, c[0x2][R2];
+        /*0030*/         LDC R4, c[0x2][R2];//load form c[0x2][4*id] 
 
 //compute the address of b and load from constant memory
-        /*0038*/         LDC R5, c[0x2][R2+0x1000];
+        /*0038*/         LDC R5, c[0x2][R2+0x1000];//load form c[0x2][4*id+0x1000]
 
  //compute the address of c and do addition.
-        /*0040*/         IADD R2.CC, R2, c[0x0][0x20];
-        /*0048*/         IMAD.HI.X R3, R0, 0x4, R3;
+        /*0040*/         IADD R2.CC, R2, c[0x0][0x20]; //R2 = 4*id + address of array a
+		/*0018*/         MOV R3, c[0x0][0x24]; // R3 = Constant
+        /*0048*/         IMAD.HI.X R3, R0, 0x4, R3; 
         /*0050*/         FADD R0, R4, R5;
         /*0058*/         ST.E [R2], R0;
 //Exit
         /*0060*/         EXIT;
+
