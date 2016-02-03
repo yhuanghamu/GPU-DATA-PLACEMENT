@@ -15,7 +15,10 @@ c[0x0][0x28] -> address of array b
 //compute the address of a and load from global memory
 
 
-        /*0028*/         SHL.W R3, R0, 0x2;//R3 = 4*id		
+        /*0028*/         SHL.W R3, R0, 0x2;//R3 = 4*id	
+		
+		
+		
         /*0030*/         SHR R4, R0, 0x1e;//R4=id shift right 32bit 0.
 		
         /*0038*/         IADD R6.CC, R3, c[0x0][0x20];
