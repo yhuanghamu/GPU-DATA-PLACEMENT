@@ -1,0 +1,4 @@
+1. spmv_index.cu: profiling  (./spmv_index)
+2. spmv.cu: original one; ulmo:0.0012433s, gpu1:0.00372541s  (./spmv)
+3. 1.cu: array rowDeli is put in shared memory; ulmo:0.00127757s, gpu1:0.00376586s (./1)
+4. 2.cu: BEST ONE,array rowDeli is put in constant memory; ulmo: 0.00122829s, gpu1:0.00372298s (./2)
