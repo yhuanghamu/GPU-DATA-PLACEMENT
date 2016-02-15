@@ -21,6 +21,7 @@ spmv:
 	$(NVCC) --generate-line-info --cubin $@.cu
 	$(NVCC) -o $@ $@.cu
 	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
+	rm $@.cubin
 	
 prof_spmv:
 	nvprof  --events all --metrics all  --csv --log-file spmv.csv ./spmv
