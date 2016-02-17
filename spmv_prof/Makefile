@@ -33,3 +33,7 @@ clean:
 #Hints
 #nvprof --print-gpu-trace ./spmv
 #nvprof --print-api-trace ./spmv_index
+
+# Metrics and event reference
+reference:
+	nvprof --query-metrics --query-events > prof/reference.txt
