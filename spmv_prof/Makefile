@@ -20,17 +20,18 @@ NVCC            ?= $(CUDA_BIN_PATH)/nvcc
 #all: $(objects).cu
 #	$(NVCC) -o $(objects) $(objects).cu
 all:
-	nvcc -o 0 1.cu
-	nvcc -o 0 2.cu
-	nvcc -o 0 3.cu
-	nvcc -o 0 4.cu
-	nvcc -o 0 5.cu
-	nvcc -o 0 6.cu
-	nvcc -o 0 7.cu
-	nvcc -o 0 8.cu
-	nvcc -o 0 9.cu
-	nvcc -o 0 10.cu
-	nvcc -o 0 11.cu
+	nvcc -o 0 0.cu
+	nvcc -o 1 1.cu
+	nvcc -o 2 2.cu
+	nvcc -o 3 3.cu
+	nvcc -o 4 4.cu
+	nvcc -o 5 5.cu
+	nvcc -o 6 6.cu
+	nvcc -o 7 7.cu
+	nvcc -o 8 8.cu
+	nvcc -o 9 9.cu
+	nvcc -o 10 10.cu
+	nvcc -o 11 11.cu
 
 prof: 0 1 2 4 5 6 7 8 9 10 11
 	nvprof  --events all --metrics all  --csv --log-file 0.csv ./0
