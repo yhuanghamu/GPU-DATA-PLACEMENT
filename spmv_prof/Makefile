@@ -17,8 +17,8 @@ NVCC            ?= $(CUDA_BIN_PATH)/nvcc
 #prof_spmv_index:
 #	nvprof  --events all --metrics all --csv --log-file spmv_index_prof.csv ./spmv_index
 objects = 0 1 2 3 4 5 6 7 8 9 10 11	
-all: %.cu
-	$(NVCC) -o % %.cu
+all: $(objects).cu
+	$(NVCC) -o $(objects) $(objects).cu
 
 prof: 0 1 2 4 5 6 7 8 9 10 11
 	nvprof  --events all --metrics all  --csv --log-file 0.csv ./0
@@ -33,35 +33,34 @@ prof: 0 1 2 4 5 6 7 8 9 10 11
 	nvprof  --events all --metrics all  --csv --log-file 9.csv ./9
 	nvprof  --events all --metrics all  --csv --log-file 10.csv ./10
 	nvprof  --events all --metrics all  --csv --log-file 10.csv ./11
-0:
-	$(NVCC) --generate-line-info --cubin $@.cu
-	$(NVCC) -o $@ $@.cu
-	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
+#0:
+#	$(NVCC) --generate-line-info --cubin $@.cu
+#	$(NVCC) -o $@ $@.cu
+#	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
 	
-2:
-	$(NVCC) --generate-line-info --cubin $@.cu
-	$(NVCC) -o $@ $@.cu
-	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
-4:
-	$(NVCC) --generate-line-info --cubin $@.cu
-	$(NVCC) -o $@ $@.cu
-	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
-5:
-	$(NVCC) --generate-line-info --cubin $@.cu
-	$(NVCC) -o $@ $@.cu
-	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
-6:
-	$(NVCC) --generate-line-info --cubin $@.cu
-	$(NVCC) -o $@ $@.cu
-	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
-spmv:
-	$(NVCC) --generate-line-info --cubin $@.cu
-	$(NVCC) -o $@ $@.cu
-	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
+#2:
+#	$(NVCC) --generate-line-info --cubin $@.cu
+#	$(NVCC) -o $@ $@.cu
+#	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
+#4:
+#	$(NVCC) --generate-line-info --cubin $@.cu
+#	$(NVCC) -o $@ $@.cu
+#	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
+#5:
+#	$(NVCC) --generate-line-info --cubin $@.cu
+#	$(NVCC) -o $@ $@.cu
+#	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
+#6:
+#	$(NVCC) --generate-line-info --cubin $@.cu
+#	$(NVCC) -o $@ $@.cu
+#	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
+#spmv:
+#	$(NVCC) --generate-line-info --cubin $@.cu
+#	$(NVCC) -o $@ $@.cu
+#	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
 
-prof:
-prof_spmv:
-	nvprof  --events all --metrics all  --csv --log-file spmv.csv ./spmv
+#prof_spmv:
+#	nvprof  --events all --metrics all  --csv --log-file spmv.csv ./spmv
 	
 trace_spmv:
 	nvprof --print-gpu-trace ./spmv
