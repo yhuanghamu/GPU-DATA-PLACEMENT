@@ -16,11 +16,28 @@ NVCC            ?= $(CUDA_BIN_PATH)/nvcc
 #	nvprof  --events all --metrics all  --csv --log-file spmv_prof.csv ./spmv 
 #prof_spmv_index:
 #	nvprof  --events all --metrics all --csv --log-file spmv_index_prof.csv ./spmv_index
-all: spmv 1 2 4 5 6
-spmv:
+		
+all: %.cu
+	$(NVCC) -o %^ %.cu
+
+prof: 0 1 2 4 5 6 7 8 9 10 11
+	nvprof  --events all --metrics all  --csv --log-file 0.csv ./0
+	nvprof  --events all --metrics all  --csv --log-file 1.csv ./1
+	nvprof  --events all --metrics all  --csv --log-file 2.csv ./2
+	nvprof  --events all --metrics all  --csv --log-file 3.csv ./3
+	nvprof  --events all --metrics all  --csv --log-file 4.csv ./4
+	nvprof  --events all --metrics all  --csv --log-file 5.csv ./5
+	nvprof  --events all --metrics all  --csv --log-file 6.csv ./6
+	nvprof  --events all --metrics all  --csv --log-file 7.csv ./7
+	nvprof  --events all --metrics all  --csv --log-file 8.csv ./8
+	nvprof  --events all --metrics all  --csv --log-file 9.csv ./9
+	nvprof  --events all --metrics all  --csv --log-file 10.csv ./10
+	nvprof  --events all --metrics all  --csv --log-file 10.csv ./11
+0:
 	$(NVCC) --generate-line-info --cubin $@.cu
 	$(NVCC) -o $@ $@.cu
 	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
+	
 2:
 	$(NVCC) --generate-line-info --cubin $@.cu
 	$(NVCC) -o $@ $@.cu
