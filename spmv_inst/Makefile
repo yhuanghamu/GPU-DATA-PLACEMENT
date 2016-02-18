@@ -48,25 +48,26 @@ prof: 0 1 2 4 5 6 7 8 9 10 11
 	nvprof  --events all --metrics all  --csv --log-file 10.csv ./11
 inst:
 	nvcc --generate-line-info --cubin 0.cu
-	nvdisasm  --print-line-info 0.cubin  > instruction/0.txt
-	$(NVCC) --generate-line-info --cubin 1.cu
-	nvdisasm  --print-line-info 1.cubin  > instruction/1.txt
-	$(NVCC) --generate-line-info --cubin 2.cu
-	nvdisasm  --print-line-info 2.cubin  > instruction/2.txt
-	$(NVCC) --generate-line-info --cubin 3.cu
-	nvdisasm  --print-line-info 3.cubin  > instruction/3.txt
-	$(NVCC) --generate-line-info --cubin 4.cu
-	nvdisasm  --print-line-info 4.cubin  > instruction/4.txt
-	$(NVCC) --generate-line-info --cubin 5.cu
-	nvdisasm  --print-line-info 5.cubin  > instruction/5.txt
-	$(NVCC) --generate-line-info --cubin 6.cu
-	nvdisasm  --print-line-info 6.cubin  > instruction/6.txt
-	$(NVCC) --generate-line-info --cubin 7.cu
-	nvdisasm  --print-line-info 7.cubin  > instruction/7.txt
-	$(NVCC) --generate-line-info --cubin 8.cu
-	nvdisasm  --print-line-info 8.cubin  > instruction/8.txt
-	$(NVCC) --generate-line-info --cubin 9.cu
-	nvdisasm  --print-line-info 9.cubin  > instruction/9.txt
+	nvdisasm  -g -c 0.cubin  > instruction/0.txt
+	nvcc --generate-line-info --cubin 1.cu
+	nvdisasm  -g -c 1.cubin  > instruction/1.txt
+	nvcc --generate-line-info --cubin 2.cu
+	nvdisasm  -g -c 2.cubin  > instruction/2.txt
+	nvcc --generate-line-info --cubin 3.cu
+	nvdisasm  -g -c 3.cubin  > instruction/3.txt
+	nvcc --generate-line-info --cubin 4.cu
+	nvdisasm  -g -c 4.cubin  > instruction/4.txt
+	nvcc --generate-line-info --cubin 5.cu
+	nvdisasm  -g -c 5.cubin  > instruction/5.txt
+	nvcc --generate-line-info --cubin 6.cu
+	nvdisasm  -g -c 6.cubin  > instruction/6.txt
+	nvcc --generate-line-info --cubin 7.cu
+	nvdisasm  -g -c 7.cubin  > instruction/7.txt
+	nvcc --generate-line-info --cubin 8.cu
+	nvdisasm  -g -c 8.cubin  > instruction/8.txt
+	nvcc --generate-line-info --cubin 9.cu
+	nvdisasm  -g -c 9.cubin  > instruction/9.txt
+
 	
 #2:
 #	$(NVCC) --generate-line-info --cubin $@.cu
