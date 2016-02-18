@@ -1,0 +1,199 @@
+	.headerflags	@"EF_CUDA_TEXMODE_UNIFIED EF_CUDA_64BIT_ADDRESS EF_CUDA_SM20 EF_CUDA_PTX_SM(EF_CUDA_SM20)"
+
+
+//--------------------- .text._Z11spmv_kernelPKfPKiS2_S0_iPf --------------------------
+	.section	.text._Z11spmv_kernelPKfPKiS2_S0_iPf,"ax",@progbits
+	.sectioninfo	@"SHI_REGISTERS=23"
+	.align	4
+        .global         _Z11spmv_kernelPKfPKiS2_S0_iPf
+        .type           _Z11spmv_kernelPKfPKiS2_S0_iPf,@function
+        .size           _Z11spmv_kernelPKfPKiS2_S0_iPf,(.L_33 - _Z11spmv_kernelPKfPKiS2_S0_iPf)
+        .other          _Z11spmv_kernelPKfPKiS2_S0_iPf,@"STO_CUDA_ENTRY STV_DEFAULT"
+_Z11spmv_kernelPKfPKiS2_S0_iPf:
+.text._Z11spmv_kernelPKfPKiS2_S0_iPf:
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 188
+        /*0000*/         MOV R1, c[0x1][0x100];
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 157
+        /*0008*/         S2R R9, SR_TID.X;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 160
+        /*0010*/         MOV R2, c[0x0][0x8];
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 162
+        /*0018*/         SHR R0, R9, 0x1f;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 160
+        /*0020*/         SHR.U32 R2, R2, 0x5;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 162
+        /*0028*/         IMAD.U32.U32.HI R3, R0, 0x20, R9;
+        /*0030*/         S2R R0, SR_CTAID.X;
+        /*0038*/         SHR R3, R3, 0x5;
+        /*0040*/         IMAD R2, R0, R2, R3;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 159
+        /*0048*/         LOP.AND R0, R9, 0x1f;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 166
+        /*0050*/         ISETP.GE.AND P0, PT, R2, c[0x0][0x40], PT;
+        /*0058*/     @P0 EXIT;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 157
+        /*0060*/         SHL.W R11, R2, 0x2;
+        /*0068*/         SHR R12, R2, 0x1e;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 169
+        /*0070*/         MOV R14, RZ;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 157
+        /*0078*/         IADD R4.CC, R11, c[0x0][0x30];
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 171
+        /*0080*/         SSY `(.L_1);
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 157
+        /*0088*/         IADD.X R5, R12, c[0x0][0x34];
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 168
+        /*0090*/         LD.E R2, [R4];
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 169
+        /*0098*/         LD.E R10, [R4+0x4];
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 171
+        /*00a0*/         IADD R13, R2, R0;
+        /*00a8*/         ISETP.GE.AND P0, PT, R13, R10, PT;
+        /*00b0*/     @P0 BRA `(.L_2);
+        /*00b8*/         ISUB R3, R10, R13;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 173
+        /*00c0*/         IADD R2, R2, R0;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 157
+        /*00c8*/         MOV R15, c[0x0][0x20];
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 171
+        /*00d0*/         ISETP.GT.AND P0, PT, R3, 0x20, PT;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 157
+        /*00d8*/         MOV R18, c[0x0][0x24];
+        /*00e0*/         MOV R19, c[0x0][0x28];
+        /*00e8*/         MOV R20, c[0x0][0x2c];
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 173
+        /*00f0*/         MOV R14, RZ;
+        /*00f8*/         SHL R8, R2, 0x2;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 171
+        /*0100*/         SSY `(.L_3);
+        /*0108*/    @!P0 BRA `(.L_4);
+        /*0110*/         IADD R21, R10, -0x20;
+.L_5:
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 173
+        /*0118*/         ISET.LT.AND R3, R8, RZ, PT;
+        /*0120*/         IADD R16.CC, R19, R8;
+        /*0128*/         MOV32I R7, 0x4;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 171
+        /*0130*/         IADD R13, R13, 0x40;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 173
+        /*0138*/         IADD.X R17, R20, R3;
+        /*0140*/         IADD R2.CC, R15, R8;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 171
+        /*0148*/         ISETP.LT.AND P0, PT, R13, R21, PT;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 173
+        /*0150*/         LD.E R5, [R16];
+        /*0158*/         LD.E R22, [R16+0x80];
+        /*0160*/         IADD.X R3, R18, R3;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 174
+        /*0168*/         LD.E R16, [R2];
+        /*0170*/         LD.E R17, [R2+0x80];
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 173
+        /*0178*/         IMAD R4.CC, R5, R7, c[0x0][0x38];
+        /*0180*/         IMAD.HI.X R5, R5, R7, c[0x0][0x3c];
+        /*0188*/         IMAD R6.CC, R22, R7, c[0x0][0x38];
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 174
+        /*0190*/         LD.E R4, [R4];
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 173
+        /*0198*/         IMAD.HI.X R7, R22, R7, c[0x0][0x3c];
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 174
+        /*01a0*/         IADD R15.CC, R15, 0x100;
+        /*01a8*/         LD.E R6, [R6];
+        /*01b0*/         IADD.X R18, R18, RZ;
+        /*01b8*/         IADD R19.CC, R19, 0x100;
+        /*01c0*/         IADD.X R20, R20, RZ;
+        /*01c8*/         FFMA R2, R16, R4, R14;
+        /*01d0*/         FFMA R14, R17, R6, R2;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 171
+        /*01d8*/     @P0 BRA `(.L_5);
+.L_4:
+        /*01e0*/         ISETP.LT.AND.S P0, PT, R13, R10, PT;
+.L_3:
+        /*01e8*/    @!P0 BRA `(.L_2);
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 173
+        /*01f0*/         ISET.LT.AND R6, R8, RZ, PT;
+        /*01f8*/         MOV32I R7, 0x4;
+.L_6:
+        /*0200*/         IADD R4.CC, R19, R8;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 171
+        /*0208*/         IADD R13, R13, 0x20;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 173
+        /*0210*/         IADD.X R5, R20, R6;
+        /*0218*/         IADD R2.CC, R15, R8;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 171
+        /*0220*/         ISETP.LT.AND P0, PT, R13, R10, PT;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 173
+        /*0228*/         LD.E R5, [R4];
+        /*0230*/         IADD.X R3, R18, R6;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 174
+        /*0238*/         LD.E R2, [R2];
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 173
+        /*0240*/         IMAD R4.CC, R5, R7, c[0x0][0x38];
+        /*0248*/         IMAD.HI.X R5, R5, R7, c[0x0][0x3c];
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 174
+        /*0250*/         IADD R15.CC, R15, 0x80;
+        /*0258*/         LD.E R4, [R4];
+        /*0260*/         IADD.X R18, R18, RZ;
+        /*0268*/         IADD R19.CC, R19, 0x80;
+        /*0270*/         IADD.X R20, R20, RZ;
+        /*0278*/         FFMA R14, R2, R4, R14;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 171
+        /*0280*/     @P0 BRA `(.L_6);
+.L_2:
+        /*0288*/         SHL.W.S R2, R9, 0x2;
+.L_1:
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 179
+        /*0290*/         ISETP.GT.U32.AND P0, PT, R0, 0xf, PT;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 176
+        /*0298*/         STS [R2], R14;
+        /*02a0*/         SSY `(.L_7);
+        /*02a8*/     @P0 NOP.S;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 179
+        /*02b0*/         LDS R3, [R2];
+        /*02b8*/         LDS R4, [R2+0x40];
+        /*02c0*/         FADD R3, R4, R3;
+        /*02c8*/         STS.S [R2], R3;
+.L_7:
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 180
+        /*02d0*/         ISETP.GT.U32.AND P0, PT, R0, 0x7, PT;
+        /*02d8*/         SSY `(.L_8);
+        /*02e0*/     @P0 NOP.S;
+        /*02e8*/         LDS R3, [R2];
+        /*02f0*/         LDS R4, [R2+0x20];
+        /*02f8*/         FADD R3, R4, R3;
+        /*0300*/         STS.S [R2], R3;
+.L_8:
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 181
+        /*0308*/         ISETP.GT.U32.AND P0, PT, R0, 0x3, PT;
+        /*0310*/         SSY `(.L_9);
+        /*0318*/     @P0 NOP.S;
+        /*0320*/         LDS R3, [R2];
+        /*0328*/         LDS R4, [R2+0x10];
+        /*0330*/         FADD R3, R4, R3;
+        /*0338*/         STS.S [R2], R3;
+.L_9:
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 182
+        /*0340*/         ISETP.GT.U32.AND P0, PT, R0, 0x1, PT;
+        /*0348*/         SSY `(.L_10);
+        /*0350*/     @P0 NOP.S;
+        /*0358*/         LDS R3, [R2];
+        /*0360*/         LDS R4, [R2+0x8];
+        /*0368*/         FADD R3, R4, R3;
+        /*0370*/         STS.S [R2], R3;
+.L_10:
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 183
+        /*0378*/         ISETP.NE.AND P0, PT, R0, RZ, PT;
+        /*0380*/     @P0 EXIT;
+        /*0388*/         LDS R0, [R2];
+        /*0390*/         LDS R3, [R2+0x4];
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 188
+        /*0398*/         IADD R4.CC, R11, c[0x0][0x48];
+        /*03a0*/         IADD.X R5, R12, c[0x0][0x4c];
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 183
+        /*03a8*/         FADD R0, R3, R0;
+        /*03b0*/         STS [R2], R0;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 188
+        /*03b8*/         LDS R3, [R2];
+        /*03c0*/         ST.E [R4], R3;
+	//## File "/home/ychuang/benchmark/GPU-DATA-PLACEMENT/spmv_inst/0.cu", line 191
+        /*03c8*/         EXIT;
+.L_33:
