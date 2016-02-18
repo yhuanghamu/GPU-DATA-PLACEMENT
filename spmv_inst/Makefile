@@ -97,7 +97,7 @@ trace_spmv:
 	nvprof --print-gpu-trace ./spmv
 	nvprof --print-api-trace ./spmv
 clean:
-	rm spmv
+	rm *.cubin
 #Hints
 #nvprof --print-gpu-trace ./spmv
 #nvprof --print-api-trace ./spmv_index
