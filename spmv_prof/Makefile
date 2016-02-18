@@ -16,7 +16,27 @@ NVCC            ?= $(CUDA_BIN_PATH)/nvcc
 #	nvprof  --events all --metrics all  --csv --log-file spmv_prof.csv ./spmv 
 #prof_spmv_index:
 #	nvprof  --events all --metrics all --csv --log-file spmv_index_prof.csv ./spmv_index
-
+all: spmv 1 2 4 5 6
+spmv:
+	$(NVCC) --generate-line-info --cubin $@.cu
+	$(NVCC) -o $@ $@.cu
+	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
+2:
+	$(NVCC) --generate-line-info --cubin $@.cu
+	$(NVCC) -o $@ $@.cu
+	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
+4:
+	$(NVCC) --generate-line-info --cubin $@.cu
+	$(NVCC) -o $@ $@.cu
+	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
+5:
+	$(NVCC) --generate-line-info --cubin $@.cu
+	$(NVCC) -o $@ $@.cu
+	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
+6:
+	$(NVCC) --generate-line-info --cubin $@.cu
+	$(NVCC) -o $@ $@.cu
+	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
 spmv:
 	$(NVCC) --generate-line-info --cubin $@.cu
 	$(NVCC) -o $@ $@.cu
@@ -37,3 +57,5 @@ clean:
 # Metrics and event reference
 reference:
 	nvprof --query-metrics --query-events > prof/reference.txt
+#Qucik implement
+# nvcc -o 6 6.cu
