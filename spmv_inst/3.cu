@@ -22,7 +22,7 @@ using namespace std;
 #define spmv_NBLOCKS 12*8*21
 #define spmv_BLOCK_SIZE 256
 #define WARP_SIZE 32
-
+texture<int,1,cudaReadModeElementType> tex_row;
 static const double MAX_RELATIVE_ERROR = .02;
 
 static const int PAD_FACTOR = 16;
@@ -161,17 +161,13 @@ spmv_kernel(const float* val,
   int warpsPerBlock = blockDim.x / WARP_SIZE;
   // One row per warp
   int myRow = (blockIdx.x * warpsPerBlock) + (t / WARP_SIZE);
-  __shared__ int rowDeli[spmv_BLOCK_SIZE/WARP_SIZE+1];
+
   __shared__ volatile float partialSums[spmv_BLOCK_SIZE];
-  if(t==0)
-    for(int i=0;i<spmv_BLOCK_SIZE/WARP_SIZE+1;i++)
-    rowDeli[i]= rowDelimiters[myRow+i];
- //  if(t==spmv_BLOCK_SIZE-1) rowDeli[t/WARP_SIZE+1]= rowDelimiters[myRow+1];
-  __syncthreads();
+
   if (myRow < dim) 
-  { // printf("%d\n",rowDelimiters[myRow]);
-    int warpStart =rowDeli[t/WARP_SIZE];//rowDelimiters[myRow];
-    int warpEnd = rowDeli[t/WARP_SIZE+1];//rowDelimiters[myRow+1];
+  {
+    int warpStart = tex1Dfetch(tex_row,myRow);//rowDelimiters[myRow];
+    int warpEnd =tex1Dfetch(tex_row,myRow+1);// rowDelimiters[myRow+1];
     float mySum = 0;
     for (int j = warpStart + id; j < warpEnd; j += WARP_SIZE)
     {
@@ -243,6 +239,7 @@ int main(int argc, char **argv) {
   cudaMemcpy(d_spmv_vec, h_spmv_vec, spmv_numRows * sizeof(float), cudaMemcpyHostToDevice);
   cudaMemcpy(d_rowDelimiters, h_rowDelimiters, (spmv_numRows+1) * sizeof(int), cudaMemcpyHostToDevice);
 
+  cudaBindTexture(0,tex_row,d_rowDelimiters,(spmv_numRows+1) * sizeof(int));
   cudaEvent_t kernel_start, kernel_stop;
   cudaEventCreate(&kernel_start);
   cudaEventCreate(&kernel_stop);

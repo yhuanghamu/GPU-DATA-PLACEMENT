@@ -14,12 +14,11 @@
 #include <algorithm>
 #include <iterator>
 #include <fstream>
-#include "../include/common.h"
 #define K 1
 using namespace std;
 
 
-#define spmv_NBLOCKS 12*8*21 //22
+#define spmv_NBLOCKS 12*8*21
 #define spmv_BLOCK_SIZE 256
 #define WARP_SIZE 32
 
@@ -152,7 +151,7 @@ spmv_kernel(const float* val,
                        const int    * cols,
                        const int    * rowDelimiters,
                        const float  * vec,
-                       const int dim, float * out,int *index_rowDeli)
+                       const int dim, float * out)
 {
   // Thread ID in block
   int t = threadIdx.x; 
@@ -168,10 +167,6 @@ spmv_kernel(const float* val,
   {
     int warpStart = rowDelimiters[myRow];
     int warpEnd = rowDelimiters[myRow+1];
-  if (blockIdx.x==1&&threadIdx.x<16)
-  {atomicAdd(&index_rowDeli[threadIdx.x*(dim+1)+myRow],1);
-  atomicAdd(&index_rowDeli[threadIdx.x*(dim+1)+myRow+1],1); 
-   }
     float mySum = 0;
     for (int j = warpStart + id; j < warpEnd; j += WARP_SIZE)
     {
@@ -179,7 +174,7 @@ spmv_kernel(const float* val,
       mySum += val[j] * vec[col];
     }
     partialSums[t] = mySum;
-
+	
     // Reduce partial sums
     if (id < 16) partialSums[t] += partialSums[t+16];
     if (id <  8) partialSums[t] += partialSums[t+ 8];
@@ -252,12 +247,9 @@ int main(int argc, char **argv) {
 
   // Setup thread configuration
   int spmv_grid = (int) ceil(spmv_numRows / (float)(spmv_BLOCK_SIZE / WARP_SIZE));
-  int *rowDeli_index=(int *)malloc(16*(spmv_numRows+1)*sizeof(int));
-  int *index_rowDeli;
-  cudaMalloc((void **)&index_rowDeli,16*(spmv_numRows+1)*sizeof(int));
-  cudaMemset(index_rowDeli,0,16*(spmv_numRows+1)*sizeof(int));
+
   spmv_kernel <<<spmv_grid, spmv_BLOCK_SIZE>>>
-  (d_spmv_val, d_spmv_cols, d_rowDelimiters, d_spmv_vec, spmv_numRows, d_spmv_out,index_rowDeli);
+  (d_spmv_val, d_spmv_cols, d_rowDelimiters, d_spmv_vec, spmv_numRows, d_spmv_out);
 
   cudaDeviceSynchronize();
 
@@ -271,19 +263,8 @@ int main(int argc, char **argv) {
   
   cout << "kernel exe time: " << kernel_time << endl;
   cudaMemcpy(h_spmv_out, d_spmv_out, spmv_numRows * sizeof(float), cudaMemcpyDeviceToHost);
-  cudaMemcpy(rowDeli_index,index_rowDeli,16*(spmv_numRows+1)*sizeof(int),cudaMemcpyDeviceToHost);
- FILE *f2=fopen("rowDeli_D1.txt","w");
- for(int ii=0;ii<16;ii++){
-    // fprintf(f2,"\n");
-     for(int jj=0;jj<spmv_numRows+1;jj++)
-    {if(rowDeli_index[ii*(spmv_numRows+1)+jj]!=0)
-     fprintf(f2,"%d,%d ;",jj,rowDeli_index[ii*(spmv_numRows+1)+jj]);
-   }
-    fprintf(f2,"\n");
-  }
   spmv_verifyResults(spmv_refOut, h_spmv_out, spmv_numRows);
-  printf("Profiling results saved to \"rowDeli_D1.txt\"\n");
-    printf("Please use analysis.py to analysis them\n");
+
   return 0;
 }
 
