@@ -16,9 +16,21 @@ NVCC            ?= $(CUDA_BIN_PATH)/nvcc
 #	nvprof  --events all --metrics all  --csv --log-file spmv_prof.csv ./spmv 
 #prof_spmv_index:
 #	nvprof  --events all --metrics all --csv --log-file spmv_index_prof.csv ./spmv_index
-objects = 0 1 2 3 4 5 6 7 8 9 10 11	
-all: $(objects).cu
-	$(NVCC) -o $(objects) $(objects).cu
+#objects = 0 1 2 3 4 5 6 7 8 9 10 11	
+#all: $(objects).cu
+#	$(NVCC) -o $(objects) $(objects).cu
+all:
+	nvcc -o 0 1.cu
+	nvcc -o 0 2.cu
+	nvcc -o 0 3.cu
+	nvcc -o 0 4.cu
+	nvcc -o 0 5.cu
+	nvcc -o 0 6.cu
+	nvcc -o 0 7.cu
+	nvcc -o 0 8.cu
+	nvcc -o 0 9.cu
+	nvcc -o 0 10.cu
+	nvcc -o 0 11.cu
 
 prof: 0 1 2 4 5 6 7 8 9 10 11
 	nvprof  --events all --metrics all  --csv --log-file 0.csv ./0
