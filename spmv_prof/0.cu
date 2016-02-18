@@ -18,7 +18,7 @@
 using namespace std;
 
 
-#define spmv_NBLOCKS 12*8*22 //22
+#define spmv_NBLOCKS 12*8*21
 #define spmv_BLOCK_SIZE 256
 #define WARP_SIZE 32
 
@@ -172,9 +172,9 @@ spmv_kernel(const float* val,
     {
       int col = cols[j]; 
       mySum += val[j] * vec[col];
-      //cudaEventRecord time1[j];
     }
     partialSums[t] = mySum;
+	
     // Reduce partial sums
     if (id < 16) partialSums[t] += partialSums[t+16];
     if (id <  8) partialSums[t] += partialSums[t+ 8];
@@ -247,7 +247,6 @@ int main(int argc, char **argv) {
 
   // Setup thread configuration
   int spmv_grid = (int) ceil(spmv_numRows / (float)(spmv_BLOCK_SIZE / WARP_SIZE));
-//for(int i=0;i<100;i++)
 
   spmv_kernel <<<spmv_grid, spmv_BLOCK_SIZE>>>
   (d_spmv_val, d_spmv_cols, d_rowDelimiters, d_spmv_vec, spmv_numRows, d_spmv_out);
