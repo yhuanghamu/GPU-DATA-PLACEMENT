@@ -47,7 +47,7 @@ prof: 0 1 2 4 5 6 7 8 9 10 11
 	nvprof  --events all --metrics all  --csv --log-file 10.csv ./10
 	nvprof  --events all --metrics all  --csv --log-file 10.csv ./11
 inst:
-	$(NVCC) --generate-line-info --cubin 0.cu
+	nvcc --generate-line-info --cubin 0.cu
 	nvdisasm  --print-line-info 0.cubin  > instruction/0.txt
 	$(NVCC) --generate-line-info --cubin 1.cu
 	nvdisasm  --print-line-info 1.cubin  > instruction/1.txt
