@@ -19,7 +19,7 @@
 using namespace std;
 
 
-#define spmv_NBLOCKS 12*21
+#define spmv_NBLOCKS 256
 #define spmv_BLOCK_SIZE 128
 #define WARP_SIZE 32
 texture<int,1,cudaReadModeElementType> tex_row;

@@ -18,7 +18,7 @@
 using namespace std;
 
 
-#define spmv_NBLOCKS 12*21
+#define spmv_NBLOCKS 256
 #define spmv_BLOCK_SIZE 128
 #define WARP_SIZE 32
 
@@ -164,10 +164,9 @@ spmv_kernel(const float* val,
   __shared__ volatile float partialSums[spmv_BLOCK_SIZE];
   __shared__ float s_vec[spmv_NBLOCKS * (spmv_BLOCK_SIZE/WARP_SIZE)];
   
-  //int tid = blockIdx.x*blockDim.x+threadIdx.x;
-  if (t==0)
-	  for (int i=0;i<spmv_NBLOCKS * (spmv_BLOCK_SIZE/WARP_SIZE);i++)
-			s_vec[i]= vec[i];
+  int tid = blockIdx.x*blockDim.x+threadIdx.x;
+  if (tid < spmv_NBLOCKS * (spmv_BLOCK_SIZE/WARP_SIZE))
+			s_vec[tid]= vec[tid];
 //  if(t==spmv_BLOCK_SIZE-1) rowDeli[t/WARP_SIZE+1]= rowDelimiters[myRow+1];
   __syncthreads();
   

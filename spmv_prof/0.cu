@@ -18,7 +18,7 @@
 using namespace std;
 
 
-#define spmv_NBLOCKS 12*21
+#define spmv_NBLOCKS 256
 #define spmv_BLOCK_SIZE 128
 #define WARP_SIZE 32
 
@@ -199,7 +199,7 @@ int main(int argc, char **argv) {
   float *h_spmv_vec, *h_spmv_out, *spmv_refOut;
   int spmv_nItems, nItemsPadded, spmv_numRows;
 
-  spmv_numRows = 12 * (spmv_BLOCK_SIZE/WARP_SIZE);
+  spmv_numRows = spmv_NBLOCKS * (spmv_BLOCK_SIZE/WARP_SIZE);
   spmv_nItems = spmv_numRows * spmv_numRows / 50; // 1% of entries will be non-zero
   float maxval = 200.0;
   cudaMallocHost(&h_spmv_val, spmv_nItems * sizeof(float)); 
