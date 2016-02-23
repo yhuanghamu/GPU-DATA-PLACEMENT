@@ -18,8 +18,8 @@
 using namespace std;
 
 
-#define spmv_NBLOCKS 12*8*21
-#define spmv_BLOCK_SIZE 256
+#define spmv_NBLOCKS 13*21
+#define spmv_BLOCK_SIZE 128
 #define WARP_SIZE 32
 
 static const double MAX_RELATIVE_ERROR = .02;
