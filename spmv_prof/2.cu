@@ -19,8 +19,8 @@
 using namespace std;
 
 
-#define spmv_NBLOCKS 12*8*21 //22
-#define spmv_BLOCK_SIZE 256
+#define spmv_NBLOCKS 12*21
+#define spmv_BLOCK_SIZE 128
 #define WARP_SIZE 32
 texture<float,1,cudaReadModeElementType> tex_vec;
 

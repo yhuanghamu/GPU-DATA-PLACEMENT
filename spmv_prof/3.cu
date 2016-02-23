@@ -19,11 +19,11 @@
 using namespace std;
 
 
-#define spmv_NBLOCKS 12*8*21 //22
-#define spmv_BLOCK_SIZE 256
+#define spmv_NBLOCKS 12*21
+#define spmv_BLOCK_SIZE 128
 #define WARP_SIZE 32
 texture<int,1,cudaReadModeElementType> tex_row;
-__constant__ float vec[64512/4];
+__constant__ float vec[spmv_NBLOCKS*spmv_BLOCK_SIZE/WARP_SIZE];
 
 static const double MAX_RELATIVE_ERROR = .02;
 
