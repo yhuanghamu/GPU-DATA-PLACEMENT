@@ -162,7 +162,13 @@ spmv_kernel(const float* val,
   int myRow = (blockIdx.x * warpsPerBlock) + (t / WARP_SIZE);
 
   __shared__ volatile float partialSums[spmv_BLOCK_SIZE];
-
+  __shared__ float s_vec[spmv_NBLOCKS * (spmv_BLOCK_SIZE/WARP_SIZE)];
+  
+  int tid = blockIdx.x*blockDim.x+theadIdx.x;
+  s_vec[tid]= vec[tid];
+//  if(t==spmv_BLOCK_SIZE-1) rowDeli[t/WARP_SIZE+1]= rowDelimiters[myRow+1];
+  __syncthreads();
+  
   if (myRow < dim) 
   {
     int warpStart = rowDelimiters[myRow];
@@ -171,7 +177,8 @@ spmv_kernel(const float* val,
     for (int j = warpStart + id; j < warpEnd; j += WARP_SIZE)
     {
       int col = cols[j]; 
-      mySum += val[j] * vec[col];
+      //mySum += val[j] * vec[col];
+	  mySum += val[j] * s_vec[col];
     }
     partialSums[t] = mySum;
 	
