@@ -19,12 +19,10 @@
 using namespace std;
 
 
-#define spmv_NBLOCKS 12*8*21 //22
+#define spmv_NBLOCKS 12*8*21 //*22
 #define spmv_BLOCK_SIZE 256
 #define WARP_SIZE 32
-texture<int,1,cudaReadModeElementType> tex_row;
-__constant__ float vec[64512/4];
-
+__constant__ int yy[spmv_NBLOCKS * (spmv_BLOCK_SIZE/WARP_SIZE)+1];
 static const double MAX_RELATIVE_ERROR = .02;
 
 static const int PAD_FACTOR = 16;
@@ -126,7 +124,7 @@ void spmvCpu(const float *val, const int *cols, const int *rowDelimiters,
     for (int j = rowDelimiters[i]; j < rowDelimiters[i + 1]; j++)
     {
       int col = cols[j]; 
-      t += val[j] * vec[col];//tex1Dfetch(tex_vec,col);
+      t += val[j] * vec[col];
     }    
     out[i] = t; 
   }
@@ -152,8 +150,8 @@ void spmv_verifyResults(const float *cpuResults, const float *gpuResults,
 __global__ void 
 spmv_kernel(const float* val,
                        const int    * cols,
-                       const int    * rowDelimiters,
-                       const float  * vec1,
+  //                     const int    * rowDelimiters,
+                       const float  * vec,
                        const int dim, float * out)
 {
   // Thread ID in block
@@ -168,13 +166,13 @@ spmv_kernel(const float* val,
 
   if (myRow < dim) 
   {
-    int warpStart = tex1Dfetch(tex_row,myRow);//rowDelimiters[myRow];
-    int warpEnd =tex1Dfetch(tex_row,myRow+1);// rowDelimiters[myRow+1];
+    int warpStart = yy[myRow];//rowDelimiters[myRow];
+    int warpEnd = yy[myRow+1];//rowDelimiters[myRow+1];
     float mySum = 0;
     for (int j = warpStart + id; j < warpEnd; j += WARP_SIZE)
     {
       int col = cols[j]; 
-      mySum += val[j] * vec[col];//tex1Dfetch(tex_vec,col);//vec[col];
+      mySum += val[j] * vec[col];
     }
     partialSums[t] = mySum;
 
@@ -239,10 +237,8 @@ int main(int argc, char **argv) {
   cudaMemcpy(d_spmv_val, h_spmv_val,   spmv_nItems * sizeof(float), cudaMemcpyHostToDevice);
   cudaMemcpy(d_spmv_cols, h_spmv_cols, spmv_nItems * sizeof(int), cudaMemcpyHostToDevice);
   cudaMemcpy(d_spmv_vec, h_spmv_vec, spmv_numRows * sizeof(float), cudaMemcpyHostToDevice);
-  cudaMemcpy(d_rowDelimiters, h_rowDelimiters, (spmv_numRows+1) * sizeof(int), cudaMemcpyHostToDevice);
- 
-  cudaBindTexture(0,tex_row,d_rowDelimiters,(spmv_numRows+1) * sizeof(int));
-  cudaMemcpyToSymbol(vec, h_spmv_vec, spmv_numRows * sizeof(float));
+//  cudaMemcpy(d_rowDelimiters, h_rowDelimiters, (spmv_numRows+1) * sizeof(int), cudaMemcpyHostToDevice);
+  cudaMemcpyToSymbol(yy,h_rowDelimiters,(spmv_numRows+1)*sizeof(int));
   cudaEvent_t kernel_start, kernel_stop;
   cudaEventCreate(&kernel_start);
   cudaEventCreate(&kernel_stop);
@@ -254,7 +250,8 @@ int main(int argc, char **argv) {
   int spmv_grid = (int) ceil(spmv_numRows / (float)(spmv_BLOCK_SIZE / WARP_SIZE));
 
   spmv_kernel <<<spmv_grid, spmv_BLOCK_SIZE>>>
-  (d_spmv_val, d_spmv_cols, d_rowDelimiters, d_spmv_vec, spmv_numRows, d_spmv_out);
+  (d_spmv_val, d_spmv_cols, //d_rowDelimiters,
+   d_spmv_vec, spmv_numRows, d_spmv_out);
 
   cudaDeviceSynchronize();
 
