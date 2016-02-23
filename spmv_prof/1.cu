@@ -164,7 +164,7 @@ spmv_kernel(const float* val,
   __shared__ volatile float partialSums[spmv_BLOCK_SIZE];
   __shared__ float s_vec[spmv_NBLOCKS * (spmv_BLOCK_SIZE/WARP_SIZE)];
   
-  int tid = blockIdx.x*blockDim.x+threadIdx.x;
+  int tid = blockIdx.x*spmv_BLOCK_SIZE+threadIdx.x;
   if (tid < spmv_NBLOCKS * (spmv_BLOCK_SIZE/WARP_SIZE))
 			s_vec[tid]= vec[tid];
 //  if(t==spmv_BLOCK_SIZE-1) rowDeli[t/WARP_SIZE+1]= rowDelimiters[myRow+1];
