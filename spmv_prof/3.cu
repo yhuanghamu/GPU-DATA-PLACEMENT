@@ -14,7 +14,6 @@
 #include <algorithm>
 #include <iterator>
 #include <fstream>
-#include "../include/common.h"
 #define K 1
 using namespace std;
 
@@ -22,7 +21,6 @@ using namespace std;
 #define spmv_NBLOCKS 256
 #define spmv_BLOCK_SIZE 128
 #define WARP_SIZE 32
-texture<int,1,cudaReadModeElementType> tex_row;
 __constant__ float vec[spmv_NBLOCKS*spmv_BLOCK_SIZE/WARP_SIZE];
 
 static const double MAX_RELATIVE_ERROR = .02;
@@ -126,7 +124,7 @@ void spmvCpu(const float *val, const int *cols, const int *rowDelimiters,
     for (int j = rowDelimiters[i]; j < rowDelimiters[i + 1]; j++)
     {
       int col = cols[j]; 
-      t += val[j] * vec[col];//tex1Dfetch(tex_vec,col);
+      t += val[j] * vec[col];
     }    
     out[i] = t; 
   }
@@ -168,8 +166,8 @@ spmv_kernel(const float* val,
 
   if (myRow < dim) 
   {
-    int warpStart = tex1Dfetch(tex_row,myRow);//rowDelimiters[myRow];
-    int warpEnd =tex1Dfetch(tex_row,myRow+1);// rowDelimiters[myRow+1];
+    int warpStart = rowDelimiters[myRow];
+    int warpEnd = rowDelimiters[myRow+1];
     float mySum = 0;
     for (int j = warpStart + id; j < warpEnd; j += WARP_SIZE)
     {
