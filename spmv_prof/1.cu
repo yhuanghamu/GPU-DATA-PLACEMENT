@@ -169,6 +169,7 @@ spmv_kernel(const float* val,
   if (tid == 0) {
 	  for (int i = 0 ; i<(spmv_NBLOCKS * (spmv_BLOCK_SIZE/WARP_SIZE));i++)
 			s_vec[i]= vec[i];
+  }
 //  if(t==spmv_BLOCK_SIZE-1) rowDeli[t/WARP_SIZE+1]= rowDelimiters[myRow+1];
   __syncthreads();
   
