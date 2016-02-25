@@ -239,7 +239,6 @@ int main(int argc, char **argv) {
   cudaMemcpy(d_spmv_vec, h_spmv_vec, spmv_numRows * sizeof(float), cudaMemcpyHostToDevice);
   cudaMemcpy(d_rowDelimiters, h_rowDelimiters, (spmv_numRows+1) * sizeof(int), cudaMemcpyHostToDevice);
  
-  cudaBindTexture(0,tex_row,d_rowDelimiters,(spmv_numRows+1) * sizeof(int));
   cudaMemcpyToSymbol(vec, h_spmv_vec, spmv_numRows * sizeof(float));
   cudaEvent_t kernel_start, kernel_stop;
   cudaEventCreate(&kernel_start);
