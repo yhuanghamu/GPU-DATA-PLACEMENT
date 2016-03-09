@@ -23,13 +23,13 @@ all:
 #nvcc 7.cu -o 7 $(FLAGS)
 	./7
 	
-prof:md 1 2 3 4 5 6 6_overheaad 7
-	nvprof  --events all --metrics all  --csv --log-file 1.csv ./0
-	nvprof  --events all --metrics all  --csv --log-file 2.csv ./0
-	nvprof  --events all --metrics all  --csv --log-file 3.csv ./0
-	nvprof  --events all --metrics all  --csv --log-file 4.csv ./0
-	nvprof  --events all --metrics all  --csv --log-file 5.csv ./0
-	nvprof  --events all --metrics all  --csv --log-file 6.csv ./0
+prof: md 1 2 3 4 5 6 6_overhead 7
+	nvprof  --events all --metrics all  --csv --log-file 1.csv ./1
+	nvprof  --events all --metrics all  --csv --log-file 2.csv ./2
+	nvprof  --events all --metrics all  --csv --log-file 3.csv ./3
+	nvprof  --events all --metrics all  --csv --log-file 4.csv ./4
+	nvprof  --events all --metrics all  --csv --log-file 5.csv ./5
+	nvprof  --events all --metrics all  --csv --log-file 6.csv ./6
 	nvprof  --events all --metrics all  --csv --log-file 6_overhead.csv ./6_overhead
 	nvprof  --events all --metrics all  --csv --log-file 7.csv ./7
 
