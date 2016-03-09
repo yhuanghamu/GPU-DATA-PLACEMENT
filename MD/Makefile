@@ -21,9 +21,9 @@ all:
 	nvcc 6_overhead.cu -o 6_overhead $(FLAGS)
 	./6_overhead
 #nvcc 7.cu -o 7 $(FLAGS)
-	./7
+#./7
 	
-prof: md 1 2 3 4 5 6 6_overhead 7
+prof: md 1 2 3 4 5 6 6_overhead 
 	nvprof  --events all --metrics all  --csv --log-file 1.csv ./1
 	nvprof  --events all --metrics all  --csv --log-file 2.csv ./2
 	nvprof  --events all --metrics all  --csv --log-file 3.csv ./3
@@ -31,5 +31,5 @@ prof: md 1 2 3 4 5 6 6_overhead 7
 	nvprof  --events all --metrics all  --csv --log-file 5.csv ./5
 	nvprof  --events all --metrics all  --csv --log-file 6.csv ./6
 	nvprof  --events all --metrics all  --csv --log-file 6_overhead.csv ./6_overhead
-	nvprof  --events all --metrics all  --csv --log-file 7.csv ./7
+
 
