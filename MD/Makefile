@@ -24,6 +24,7 @@ all:
 #./7
 	
 prof: md 1 2 3 4 5 6 6_overhead 
+	nvprof  --events all --metrics all  --csv --log-file md.csv ./md
 	nvprof  --events all --metrics all  --csv --log-file 1.csv ./1
 	nvprof  --events all --metrics all  --csv --log-file 2.csv ./2
 	nvprof  --events all --metrics all  --csv --log-file 3.csv ./3
