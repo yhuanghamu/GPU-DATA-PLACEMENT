@@ -1,7 +1,7 @@
-FLAGS ?= -arch=sm_30
+FLAGS ?= -arch=sm_35
 all:
-	nvcc md_index.cu -o $(FLAGS) 
-	./md_index
+#nvcc md_index.cu -o $(FLAGS) 
+#./md_index
 	nvcc md.cu -o md $(FLAGS)
 	./md
 	nvcc 1.cu -o 1 $(FLAGS)
@@ -21,3 +21,14 @@ all:
 	nvcc 6_overhead.cu -o 6_overhead $(FLAGS)
 	./6_overhead
 #nvcc 7.cu -o 7 $(FLAGS)
+	
+prof:md 1 2 3 4 5 6 6_overheaad 7
+	nvprof  --events all --metrics all  --csv --log-file 1.csv ./0
+	nvprof  --events all --metrics all  --csv --log-file 2.csv ./0
+	nvprof  --events all --metrics all  --csv --log-file 3.csv ./0
+	nvprof  --events all --metrics all  --csv --log-file 4.csv ./0
+	nvprof  --events all --metrics all  --csv --log-file 5.csv ./0
+	nvprof  --events all --metrics all  --csv --log-file 6.csv ./0
+	nvprof  --events all --metrics all  --csv --log-file 6_overheaad.csv ./6_overheaad
+	nvprof  --events all --metrics all  --csv --log-file 7.csv ./7
+
