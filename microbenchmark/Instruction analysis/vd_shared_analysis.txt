@@ -1,0 +1,58 @@
+vd_shared
+c[0x0][0x8]  = block dimension
+c[0x0][0x20] -> address of array a
+c[0x0][0x28] -> address of array b
+************************************************************
+//Start
+        /*0000*/         MOV R1, c[0x1][0x100];
+
+//compute id
+        /*0008*/         S2R R0, SR_CTAID.X;//R0=blockId.x
+        /*0010*/         S2R R2, SR_TID.X;//R2=threadId.x
+        /*0020*/         IMAD R0, R0, c[0x0][0x8], R2;//R0=id
+
+
+//compute the address of a and load from global memory
+
+
+        /*0028*/         SHL.W R3, R0, 0x2;//R3 = 4*id	
+		
+		
+		
+        /*0030*/         SHR R4, R0, 0x1e;//R4=id shift right 32bit 0.
+		
+        /*0038*/         IADD R6.CC, R3, c[0x0][0x20];
+        /*0040*/         IADD.X R7, R4, c[0x0][0x24];
+        /*0050*/         LD.E R2, [R6];//R2 = a[0~1023]
+
+		
+		
+//store a to shared memory s_a
+        /*0068*/         STS [R3], R2; //R3=0~1023
+
+//compute the address of b and load from global memory
+        /*0048*/         IADD R8.CC, R3, c[0x0][0x28];
+        /*0058*/         IADD.X R9, R4, c[0x0][0x2c];
+        /*0060*/         LD.E R0, [R8];
+        
+//store b to shared memory s_b
+        /*0070*/         STS [R3+0x1000], R0;
+
+//syncthreads
+        /*0018*/         IMAD.U32.U32 RZ, R1, RZ, RZ; //related to syncthreads?
+        /*0078*/         BAR.RED.POPC RZ, RZ, RZ, PT;
+
+//compute the address of s_a and load from shared memory
+        /*0080*/         LDS R2, [R3];
+
+//compute the address of s_b and load from shared memory
+        /*0088*/         LDS R0, [R3+0x1000];
+
+//compute the address of c and do addition.
+        /*0090*/         IADD R6.CC, R3, c[0x0][0x30];
+        /*0098*/         IADD.X R7, R4, c[0x0][0x34];
+        /*00a0*/         FADD R0, R2, R0;
+        /*00a8*/         ST.E [R6], R0;
+
+//Exit
+        /*00b0*/         EXIT;

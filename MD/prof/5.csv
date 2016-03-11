@@ -1,0 +1,274 @@
+==31401== NVPROF is profiling process 31401, command: ./5
+==31401== Warning: Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==31401== Profiling application: ./5
+==31401== Profiling result:
+==31401== Event result:
+"Device","Kernel","Invocations","Event Name","Min","Max","Avg"
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"tex0_cache_sector_queries",184320,184320,184320
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"tex1_cache_sector_queries",184320,184320,184320
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"tex2_cache_sector_queries",184320,184320,184320
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"tex3_cache_sector_queries",184320,184320,184320
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"tex0_cache_sector_misses",92160,92160,92160
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"tex1_cache_sector_misses",92160,92160,92160
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"tex2_cache_sector_misses",92160,92160,92160
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"tex3_cache_sector_misses",92160,92160,92160
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"fb_subp0_read_sectors",304804,304804,304804
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"fb_subp1_read_sectors",305262,305262,305262
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"fb_subp0_write_sectors",23539,23539,23539
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"fb_subp1_write_sectors",23550,23550,23550
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp0_write_sector_misses",9446,9446,9446
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp1_write_sector_misses",9409,9409,9409
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp2_write_sector_misses",9356,9356,9356
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp3_write_sector_misses",9470,9470,9470
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp0_read_sector_misses",111716,111716,111716
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp1_read_sector_misses",112159,112159,112159
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp2_read_sector_misses",112196,112196,112196
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp3_read_sector_misses",112091,112091,112091
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp0_write_l1_sector_queries",27916,27916,27916
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp1_write_l1_sector_queries",27648,27648,27648
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp2_write_l1_sector_queries",27648,27648,27648
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp3_write_l1_sector_queries",27648,27648,27648
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp0_read_l1_sector_queries",2214670,2214670,2214670
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp1_read_l1_sector_queries",2213722,2213722,2213722
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp2_read_l1_sector_queries",2218756,2218756,2218756
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp3_read_l1_sector_queries",2218891,2218891,2218891
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp0_read_l1_hit_sectors",2195127,2195127,2195127
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp1_read_l1_hit_sectors",2193802,2193802,2193802
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp2_read_l1_hit_sectors",2199312,2199312,2199312
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp3_read_l1_hit_sectors",2199143,2199143,2199143
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp0_read_tex_sector_queries",92160,92160,92160
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp1_read_tex_sector_queries",92160,92160,92160
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp2_read_tex_sector_queries",92160,92160,92160
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp3_read_tex_sector_queries",92160,92160,92160
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp0_read_tex_hit_sectors",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp1_read_tex_hit_sectors",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp2_read_tex_hit_sectors",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp3_read_tex_hit_sectors",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp0_gld_thread_count_32b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp1_gld_thread_count_32b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp2_gld_thread_count_32b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp3_gld_thread_count_32b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp0_gld_thread_count_64b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp1_gld_thread_count_64b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp2_gld_thread_count_64b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp3_gld_thread_count_64b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp0_gld_thread_count_128b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp1_gld_thread_count_128b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp2_gld_thread_count_128b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp3_gld_thread_count_128b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp0_gld_warp_count_32b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp1_gld_warp_count_32b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp2_gld_warp_count_32b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp3_gld_warp_count_32b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp0_gld_warp_count_64b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp1_gld_warp_count_64b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp2_gld_warp_count_64b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp3_gld_warp_count_64b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp0_gld_warp_count_128b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp1_gld_warp_count_128b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp2_gld_warp_count_128b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_subp3_gld_warp_count_128b",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp0_read_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp1_read_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp2_read_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp3_read_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp0_write_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp1_write_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp2_write_sysmem_sector_queries",4,4,4
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp3_write_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp0_total_read_sector_queries",2306875,2306875,2306875
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp1_total_read_sector_queries",2305922,2305922,2305922
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp2_total_read_sector_queries",2310936,2310936,2310936
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp3_total_read_sector_queries",2311136,2311136,2311136
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp0_total_write_sector_queries",27840,27840,27840
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp1_total_write_sector_queries",27743,27743,27743
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp2_total_write_sector_queries",27758,27758,27758
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_subp3_total_write_sector_queries",27979,27979,27979
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"elapsed_cycles_sm",18948176,18948176,18948176
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gld_inst_8bit",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gld_inst_16bit",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gld_inst_32bit",9142272,9142272,9142272
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gld_inst_64bit",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gld_inst_128bit",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gst_inst_8bit",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gst_inst_16bit",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gst_inst_32bit",294912,294912,294912
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gst_inst_64bit",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gst_inst_128bit",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_gld_inst_8bit",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_gld_inst_16bit",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_gld_inst_32bit",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_gld_inst_64bit",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"rocache_gld_inst_128bit",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"prof_trigger_00",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"prof_trigger_01",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"prof_trigger_02",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"prof_trigger_03",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"prof_trigger_04",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"prof_trigger_05",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"prof_trigger_06",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"prof_trigger_07",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"atom_cas_count",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"warps_launched",3072,3072,3072
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"threads_launched",98304,98304,98304
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"inst_executed",2941568,2941568,2941568
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"inst_issued1",10813953,10813953,10813953
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"inst_issued2",451610,451610,451610
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"thread_inst_executed",63312102,63312102,63312102
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"shared_load",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"shared_store",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"local_load",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"local_store",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gld_request",285696,285696,285696
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gst_request",9216,9216,9216
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"active_cycles",17508796,17508796,17508796
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"active_warps",1008067386,1008067386,1008067386
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"sm_cta_launched",384,384,384
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"not_predicated_off_thread_inst_executed",63037656,63037656,63037656
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l1_local_load_hit",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l1_local_load_miss",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l1_local_store_hit",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l1_local_store_miss",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l1_global_load_hit",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l1_global_load_miss",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"uncached_global_load_transaction",8526387,8526387,8526387
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"global_store_transaction",27648,27648,27648
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"shared_load_replay",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"shared_store_replay",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"global_ld_mem_divergence_replays",8240691,8240691,8240691
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"global_st_mem_divergence_replays",18432,18432,18432
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"local_load_transactions",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"local_store_transactions",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l1_shared_load_transactions",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l1_shared_store_transactions",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"__l1_global_load_transactions",8652014,8652014,8652014
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"__l1_global_store_transactions",27648,27648,27648
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"atom_count",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gred_count",0,0,0
+
+==31401== Metric result:
+"Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l1_cache_global_hit_rate","L1 Global Hit Rate",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l1_cache_local_hit_rate","L1 Local Hit Rate",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"sm_efficiency","Multiprocessor Activity",92.438892%,92.438892%,92.438892%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"ipc","Executed IPC",0.167941,0.167941,0.167941
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"achieved_occupancy","Achieved Occupancy",0.899192,0.899192,0.899192
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gld_requested_throughput","Requested Global Load Throughput",14.119824GB/s,14.119824GB/s,14.119824GB/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gst_requested_throughput","Requested Global Store Throughput",455.478199MB/s,455.478199MB/s,455.478199MB/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"sm_efficiency_instance","Multiprocessor Activity",92.438892%,92.438892%,92.438892%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"ipc_instance","Executed IPC",0.167941,0.167941,0.167941
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"inst_replay_overhead","Instruction Replay Overhead",2.983309,2.983309,2.983309
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"shared_replay_overhead","Shared Memory Replay Overhead",0.000000,0.000000,0.000000
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"global_replay_overhead","Global Memory Replay Overhead",2.807728,2.807728,2.807728
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"global_cache_replay_overhead","Global Memory Cache Replay Overhead",0.000000,0.000000,0.000000
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"tex_cache_hit_rate","Texture Cache Hit Rate",50.000000%,50.000000%,50.000000%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"tex_cache_throughput","Texture Cache Throughput",9.109564GB/s,9.109564GB/s,9.109564GB/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"dram_read_throughput","Device Memory Read Throughput",7.537754GB/s,7.537754GB/s,7.537754GB/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"dram_write_throughput","Device Memory Write Throughput",581.814587MB/s,581.814587MB/s,581.814587MB/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gst_throughput","Global Store Throughput",1.366435GB/s,1.366435GB/s,1.366435GB/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gld_throughput","Global Load Throughput",109.545559GB/s,109.545559GB/s,109.545559GB/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"local_replay_overhead","Local Memory Cache Replay Overhead",0.000000,0.000000,0.000000
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"shared_efficiency","Shared Memory Efficiency",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gld_efficiency","Global Memory Load Efficiency",12.889454%,12.889454%,12.889454%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gst_efficiency","Global Memory Store Efficiency",33.333333%,33.333333%,33.333333%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_l1_read_hit_rate","L2 Hit Rate (L1 Reads)",99.112851%,99.112851%,99.112851%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_texture_read_hit_rate","L2 Hit Rate (Texture Reads)",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_l1_read_throughput","L2 Throughput (L1 Reads)",109.545559GB/s,109.545559GB/s,109.545559GB/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_texture_read_throughput","L2 Throughput (Texture Reads)",4.554782GB/s,4.554782GB/s,4.554782GB/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"local_memory_overhead","Local Memory Overhead",0.002985%,0.002985%,0.002985%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"warp_execution_efficiency","Warp Execution Efficiency",67.260155%,67.260155%,67.260155%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"nc_gld_requested_throughput","Requested Non-Coherent Global Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"issued_ipc","Issued IPC",0.668961,0.668961,0.668961
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"inst_per_warp","Instructions per warp",957.541667,957.541667,957.541667
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"issue_slot_utilization","Issue Slot Utilization",16.079434%,16.079434%,16.079434%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"local_load_transactions_per_request","Local Memory Load Transactions Per Request",0.000000,0.000000,0.000000
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"local_store_transactions_per_request","Local Memory Store Transactions Per Request",0.000000,0.000000,0.000000
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",0.000000,0.000000,0.000000
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"shared_store_transactions_per_request","Shared Memory Store Transactions Per Request",0.000000,0.000000,0.000000
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gld_transactions_per_request","Global Load Transactions Per Request",29.844265,29.844265,29.844265
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gst_transactions_per_request","Global Store Transactions Per Request",3.000000,3.000000,3.000000
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"local_load_transactions","Local Load Transactions",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"local_store_transactions","Local Store Transactions",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"shared_load_transactions","Shared Load Transactions",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"shared_store_transactions","Shared Store Transactions",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gld_transactions","Global Load Transactions",8526387,8526387,8526387
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"gst_transactions","Global Store Transactions",27648,27648,27648
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"sysmem_read_transactions","System Memory Read Transactions",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"sysmem_write_transactions","System Memory Write Transactions",4,4,4
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"tex_cache_transactions","Texture Cache Transactions",737280,737280,737280
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"dram_read_transactions","Device Memory Read Transactions",610066,610066,610066
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"dram_write_transactions","Device Memory Write Transactions",47089,47089,47089
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_read_transactions","L2 Read Transactions",9234869,9234869,9234869
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_write_transactions","L2 Write Transactions",111320,111320,111320
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"local_load_throughput","Local Memory Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"local_store_throughput","Local Memory Store Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"shared_load_throughput","Shared Memory Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"shared_store_throughput","Shared Memory Store Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_read_throughput","L2 Throughput (Reads)",114.102688GB/s,114.102688GB/s,114.102688GB/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_write_throughput","L2 Throughput (Writes)",1.375430GB/s,1.375430GB/s,1.375430GB/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"sysmem_read_throughput","System Memory Read Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"sysmem_write_throughput","System Memory Write Throughput",49.422000KB/s,49.422000KB/s,49.422000KB/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"warp_nonpred_execution_efficiency","Warp Non-Predicated Execution Efficiency",66.968595%,66.968595%,66.968595%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"cf_issued","Issued Control-Flow Instructions",535129,535129,535129
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"cf_executed","Executed Control-Flow Instructions",534144,534144,534144
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"ldst_issued","Issued Load/Store Instructions",8770961,8770961,8770961
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"ldst_executed","Executed Load/Store Instructions",387072,387072,387072
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"flop_count_sp","Floating Point Operations(Single Precision)",24838336,24838336,24838336
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"flop_count_sp_add","Floating Point Operations(Single Precision Add)",8847360,8847360,8847360
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"flop_count_sp_mul","Floating Point Operation(Single Precision Mul)",3260464,3260464,3260464
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"flop_count_sp_fma","Floating Point Operations(Single Precision FMA)",6365256,6365256,6365256
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"flop_count_dp","Floating Point Operations(Double Precision)",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"flop_count_dp_add","Floating Point Operations(Double Precision Add)",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"flop_count_dp_mul","Floating Point Operations(Double Precision Mul)",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"flop_count_dp_fma","Floating Point Operations(Double Precison FMA)",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"flop_count_sp_special","Floating Point Operations(Single Precision Special)",77836,77836,77836
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"stall_inst_fetch","Issue Stall Reasons (Instructions Fetch)",0.698748%,0.698748%,0.698748%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"stall_exec_dependency","Issue Stall Reasons (Execution Dependency)",2.519163%,2.519163%,2.519163%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"stall_memory_dependency","Issue Stall Reasons (Data Request)",23.330092%,23.330092%,23.330092%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"stall_texture","Issue Stall Reasons (Texture)",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"stall_sync","Issue Stall Reasons (Synchronization)",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"stall_other","Issue Stall Reasons (Other)",0.288436%,0.288436%,0.288436%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l1_shared_utilization","L1/Shared Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_utilization","L2 Cache Utilization","Low (3)","Low (3)","Low (3)"
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"tex_utilization","Texture Cache Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"dram_utilization","Device Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"sysmem_utilization","System Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"ldst_fu_utilization","Load/Store Function Unit Utilization","Mid (5)","Mid (5)","Mid (5)"
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"alu_fu_utilization","Arithmetic Function Unit Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"cf_fu_utilization","Control-Flow Function Unit Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"tex_fu_utilization","Texture Function Unit Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"inst_executed","Instructions Executed",2941568,2941568,2941568
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"inst_issued","Instructions Issued",11717173,11717173,11717173
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"issue_slots","Issue Slots",11265563,11265563,11265563
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"nc_l2_read_throughput","L2 Throughput (Non-Coherent Reads)",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"nc_l2_read_transactions","L2 Non-Coherent Read Transactions",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"nc_cache_global_hit_rate","Non-Coherent Global Hit Rate",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"nc_gld_throughput","Non-Coherent Global Memory Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"nc_gld_efficiency","Non-Coherent Global Load Efficiency",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_atomic_throughput","L2 Throughput (Atomic requests)",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"inst_fp_32","FP Instructions(Single)",21500036,21500036,21500036
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"inst_fp_64","FP Instructions(Double)",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"inst_integer","Integer Instructions",15568932,15568932,15568932
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"inst_bit_convert","Bit-Convert Instructions",77836,77836,77836
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"inst_control","Control-Flow Instructions",3182628,3182628,3182628
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"inst_compute_ld_st","Load/Store Instructions",15335424,15335424,15335424
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"inst_misc","Misc Instructions",4423680,4423680,4423680
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"inst_inter_thread_communication","Inter-Thread Instructions",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"atomic_replay_overhead","Atomic Replay Overhead",0.000000,0.000000,0.000000
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"atomic_transactions","Atomic Transactions",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"atomic_transactions_per_request","Atomic Transactions Per Request",0.000000,0.000000,0.000000
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_l1_read_transactions","L2 Read Transactions (L1 read requests)",8866039,8866039,8866039
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_l1_write_transactions","L2 Write Transactions (L1 write requests)",110860,110860,110860
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_tex_read_transactions","L2 Transactions (Texture Reads)",368640,368640,368640
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_l1_write_throughput","L2 Throughput (L1 Writes)",1.369746GB/s,1.369746GB/s,1.369746GB/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"l2_atomic_transactions","L2 Transactions (Atomic requests)",0,0,0
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"ecc_transactions","ECC Transactions",171312,171312,171312
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"ecc_throughput","ECC Throughput",2.116669GB/s,2.116669GB/s,2.116669GB/s
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"stall_pipe_busy","Issue Stall Reasons (Pipe Busy)",20.782267%,20.782267%,20.782267%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"stall_constant_memory_dependency","Issue Stall Reasons (Immediate constant)",0.021999%,0.021999%,0.021999%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"flop_sp_efficiency","FLOP Efficiency(Peak Single)",0.341369%,0.341369%,0.341369%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"flop_dp_efficiency","FLOP Efficiency(Peak Double)",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"stall_memory_throttle","Issue Stall Reasons (Memory Throttle)",17.182596%,17.182596%,17.182596%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"stall_not_selected","Issue Stall Reasons (Not Selected)",35.176699%,35.176699%,35.176699%
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"eligible_warps_per_cycle","Eligible Warps Per Active Cycle",20.861406,20.861406,20.861406
+"Tesla K80 (0)","md_kernel(float3*, float3 const *, int, int*, float, float, float, int)",1,"atomic_throughput","Atomic Throughput",0.000000B/s,0.000000B/s,0.000000B/s

@@ -1,0 +1,28 @@
+vd tex
+************************************************************
+//Start
+        /*0000*/         MOV R1, c[0x1][0x100];
+
+//compute id
+        /*0008*/         S2R R0, SR_CTAID.X; // R0 = blockId.x
+        /*0010*/         S2R R2, SR_TID.X; // R2 = threadId.x
+        /*0018*/         IMAD R0, R0, c[0x0][0x8], R2; // R0 =id
+
+
+//compute the address of a and load from texture memory
+        /*0020*/         TLD.LZ.T R2, R0, 0x0, 1D, 0x1;  //0x0 ~ tex_a
+ 
+//compute the address of b and load from texture memory
+        /*0028*/         TLD.LZ.T R3, R0, 0x1, 1D, 0x1;
+
+
+//compute the address of c and do addition.
+        /*0030*/         MOV32I R5, 0x4; // R5 = 4
+        /*0038*/         IMAD R4.CC, R0, R5, c[0x0][0x20];
+        /*0040*/         IMAD.HI.X R5, R0, R5, c[0x0][0x24];
+        /*0048*/         FADD R0, R2, R3;
+        /*0050*/         ST.E [R4], R0;
+
+//Exit
+        /*0058*/         EXIT;
+
