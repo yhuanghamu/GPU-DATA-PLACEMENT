@@ -16,13 +16,14 @@ NVCC            ?= $(CUDA_BIN_PATH)/nvcc
 #	nvprof  --events all --metrics all  --csv --log-file spmv_prof.csv ./spmv 
 #prof_spmv_index:
 #	nvprof  --events all --metrics all --csv --log-file spmv_index_prof.csv ./spmv_index
-
+all  = 1 2 3 4 4_overhead 5 6 7 7_overhead 8 9 10 11 combine spmv spmv_cpu
 spmv:
 	$(NVCC) --generate-line-info --cubin $@.cu
 	$(NVCC) -o $@ $@.cu
 	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
 	rm $@.cubin
-	
+1 2 3 4 4_overhead 5 6 7 7_overhead 8 9 10 11 combine spmv spmv_cpu:
+	$(NVCC) -o $@ $@.cu
 prof_spmv:
 	nvprof  --events all --metrics all  --csv --log-file spmv.csv ./spmv
 	
