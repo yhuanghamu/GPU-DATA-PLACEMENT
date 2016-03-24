@@ -1,0 +1,539 @@
+==12479== NVPROF is profiling process 12479, command: ./small
+==12479== Warning: Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==12479== Profiling application: ./small
+==12479== Profiling result:
+==12479== Event result:
+"Device","Kernel","Invocations","Event Name","Min","Max","Avg"
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"tex0_cache_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"tex1_cache_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"tex2_cache_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"tex3_cache_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"tex0_cache_sector_misses",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"tex1_cache_sector_misses",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"tex2_cache_sector_misses",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"tex3_cache_sector_misses",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"fb_subp0_read_sectors",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"fb_subp1_read_sectors",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"fb_subp0_write_sectors",414,429,420
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"fb_subp1_write_sectors",419,433,426
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp0_write_sector_misses",160,161,160
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp1_write_sector_misses",160,161,160
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp2_write_sector_misses",164,165,164
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp3_write_sector_misses",164,172,165
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp0_read_sector_misses",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp1_read_sector_misses",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp2_read_sector_misses",0,4,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp3_read_sector_misses",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp0_write_l1_sector_queries",160,160,160
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp1_write_l1_sector_queries",160,160,160
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp2_write_l1_sector_queries",164,164,164
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp3_write_l1_sector_queries",164,164,164
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp0_read_l1_sector_queries",232,232,232
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp1_read_l1_sector_queries",232,232,232
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp2_read_l1_sector_queries",236,236,236
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp3_read_l1_sector_queries",236,236,236
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp0_read_l1_hit_sectors",232,232,232
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp1_read_l1_hit_sectors",232,232,232
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp2_read_l1_hit_sectors",236,236,236
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp3_read_l1_hit_sectors",236,236,236
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp0_read_tex_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp1_read_tex_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp2_read_tex_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp3_read_tex_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp0_read_tex_hit_sectors",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp1_read_tex_hit_sectors",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp2_read_tex_hit_sectors",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp3_read_tex_hit_sectors",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp0_gld_thread_count_32b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp1_gld_thread_count_32b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp2_gld_thread_count_32b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp3_gld_thread_count_32b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp0_gld_thread_count_64b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp1_gld_thread_count_64b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp2_gld_thread_count_64b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp3_gld_thread_count_64b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp0_gld_thread_count_128b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp1_gld_thread_count_128b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp2_gld_thread_count_128b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp3_gld_thread_count_128b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp0_gld_warp_count_32b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp1_gld_warp_count_32b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp2_gld_warp_count_32b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp3_gld_warp_count_32b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp0_gld_warp_count_64b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp1_gld_warp_count_64b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp2_gld_warp_count_64b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp3_gld_warp_count_64b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp0_gld_warp_count_128b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp1_gld_warp_count_128b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp2_gld_warp_count_128b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_subp3_gld_warp_count_128b",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp0_read_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp1_read_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp2_read_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp3_read_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp0_write_sysmem_sector_queries",0,4,1
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp1_write_sysmem_sector_queries",0,5,2
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp2_write_sysmem_sector_queries",0,4,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp3_write_sysmem_sector_queries",0,4,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp0_total_read_sector_queries",272,335,284
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp1_total_read_sector_queries",272,337,296
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp2_total_read_sector_queries",256,319,272
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp3_total_read_sector_queries",256,321,275
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp0_total_write_sector_queries",160,166,162
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp1_total_write_sector_queries",160,165,161
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp2_total_write_sector_queries",164,169,165
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_subp3_total_write_sector_queries",164,173,166
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"elapsed_cycles_sm",81532,84700,82330
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gld_inst_8bit",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gld_inst_16bit",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gld_inst_32bit",7488,7488,7488
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gld_inst_64bit",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gld_inst_128bit",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gst_inst_8bit",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gst_inst_16bit",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gst_inst_32bit",5184,5184,5184
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gst_inst_64bit",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gst_inst_128bit",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_gld_inst_8bit",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_gld_inst_16bit",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_gld_inst_32bit",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_gld_inst_64bit",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"rocache_gld_inst_128bit",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"prof_trigger_00",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"prof_trigger_01",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"prof_trigger_02",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"prof_trigger_03",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"prof_trigger_04",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"prof_trigger_05",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"prof_trigger_06",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"prof_trigger_07",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"atom_cas_count",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"warps_launched",54,54,54
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"threads_launched",1728,1728,1728
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"inst_executed",6228,6228,6228
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"inst_issued1",6692,6707,6699
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"inst_issued2",1993,1998,1994
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"thread_inst_executed",199296,199296,199296
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"shared_load",1350,1350,1350
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"shared_store",270,270,270
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"local_load",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"local_store",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gld_request",234,234,234
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gst_request",162,162,162
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"active_cycles",31722,33882,32030
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"active_warps",127984,137372,130793
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"sm_cta_launched",27,27,27
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"not_predicated_off_thread_inst_executed",196992,196992,196992
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l1_local_load_hit",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l1_local_load_miss",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l1_local_store_hit",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l1_local_store_miss",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l1_global_load_hit",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l1_global_load_miss",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"uncached_global_load_transaction",936,936,936
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"global_store_transaction",648,648,648
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"shared_load_replay",1350,1350,1350
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"shared_store_replay",270,270,270
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"global_ld_mem_divergence_replays",702,702,702
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"global_st_mem_divergence_replays",486,486,486
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"local_load_transactions",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"local_store_transactions",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l1_shared_load_transactions",2700,2700,2700
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l1_shared_store_transactions",540,540,540
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"__l1_global_load_transactions",936,936,936
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"__l1_global_store_transactions",648,648,648
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"atom_count",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gred_count",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"tex0_cache_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"tex1_cache_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"tex2_cache_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"tex3_cache_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"tex0_cache_sector_misses",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"tex1_cache_sector_misses",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"tex2_cache_sector_misses",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"tex3_cache_sector_misses",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"fb_subp0_read_sectors",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"fb_subp1_read_sectors",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"fb_subp0_write_sectors",566,627,599
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"fb_subp1_write_sectors",553,626,588
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp0_write_sector_misses",197,221,208
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp1_write_sector_misses",196,222,206
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp2_write_sector_misses",191,212,201
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp3_write_sector_misses",188,207,198
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp0_read_sector_misses",0,4,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp1_read_sector_misses",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp2_read_sector_misses",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp3_read_sector_misses",0,4,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp0_write_l1_sector_queries",328,332,328
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp1_write_l1_sector_queries",328,344,330
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp2_write_l1_sector_queries",320,332,321
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp3_write_l1_sector_queries",320,328,320
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp0_read_l1_sector_queries",390,390,390
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp1_read_l1_sector_queries",395,395,395
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp2_read_l1_sector_queries",401,401,401
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp3_read_l1_sector_queries",398,398,398
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp0_read_l1_hit_sectors",390,390,390
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp1_read_l1_hit_sectors",395,395,395
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp2_read_l1_hit_sectors",401,401,401
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp3_read_l1_hit_sectors",398,398,398
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp0_read_tex_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp1_read_tex_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp2_read_tex_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp3_read_tex_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp0_read_tex_hit_sectors",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp1_read_tex_hit_sectors",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp2_read_tex_hit_sectors",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp3_read_tex_hit_sectors",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp0_gld_thread_count_32b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp1_gld_thread_count_32b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp2_gld_thread_count_32b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp3_gld_thread_count_32b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp0_gld_thread_count_64b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp1_gld_thread_count_64b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp2_gld_thread_count_64b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp3_gld_thread_count_64b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp0_gld_thread_count_128b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp1_gld_thread_count_128b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp2_gld_thread_count_128b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp3_gld_thread_count_128b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp0_gld_warp_count_32b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp1_gld_warp_count_32b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp2_gld_warp_count_32b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp3_gld_warp_count_32b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp0_gld_warp_count_64b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp1_gld_warp_count_64b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp2_gld_warp_count_64b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp3_gld_warp_count_64b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp0_gld_warp_count_128b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp1_gld_warp_count_128b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp2_gld_warp_count_128b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_subp3_gld_warp_count_128b",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp0_read_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp1_read_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp2_read_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp3_read_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp0_write_sysmem_sector_queries",0,5,1
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp1_write_sysmem_sector_queries",0,5,1
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp2_write_sysmem_sector_queries",0,5,1
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp3_write_sysmem_sector_queries",0,4,1
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp0_total_read_sector_queries",430,515,451
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp1_total_read_sector_queries",435,520,466
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp2_total_read_sector_queries",421,486,453
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp3_total_read_sector_queries",418,481,440
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp0_total_write_sector_queries",328,344,330
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp1_total_write_sector_queries",328,338,330
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp2_total_write_sector_queries",320,329,322
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_subp3_total_write_sector_queries",320,325,321
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"elapsed_cycles_sm",85538,88168,86914
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gld_inst_8bit",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gld_inst_16bit",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gld_inst_32bit",6336,6336,6336
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gld_inst_64bit",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gld_inst_128bit",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gst_inst_8bit",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gst_inst_16bit",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gst_inst_32bit",5184,5184,5184
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gst_inst_64bit",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gst_inst_128bit",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_gld_inst_8bit",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_gld_inst_16bit",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_gld_inst_32bit",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_gld_inst_64bit",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"rocache_gld_inst_128bit",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"prof_trigger_00",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"prof_trigger_01",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"prof_trigger_02",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"prof_trigger_03",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"prof_trigger_04",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"prof_trigger_05",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"prof_trigger_06",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"prof_trigger_07",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"atom_cas_count",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"warps_launched",54,54,54
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"threads_launched",864,864,864
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"inst_executed",7344,7344,7344
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"inst_issued1",9126,9150,9138
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"inst_issued2",2068,2092,2079
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"thread_inst_executed",117504,117504,117504
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"shared_load",1566,1566,1566
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"shared_store",432,432,432
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"local_load",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"local_store",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gld_request",432,432,432
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gst_request",324,324,324
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"active_cycles",34806,37183,35679
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"active_warps",141028,151058,145289
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"sm_cta_launched",54,54,54
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"not_predicated_off_thread_inst_executed",116928,116928,116928
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l1_local_load_hit",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l1_local_load_miss",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l1_local_store_hit",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l1_local_store_miss",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l1_global_load_hit",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l1_global_load_miss",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"uncached_global_load_transaction",1584,1584,1584
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"global_store_transaction",1296,1296,1296
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"shared_load_replay",1566,1566,1566
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"shared_store_replay",432,432,432
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"global_ld_mem_divergence_replays",1188,1188,1188
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"global_st_mem_divergence_replays",972,972,972
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"local_load_transactions",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"local_store_transactions",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l1_shared_load_transactions",3132,3132,3132
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l1_shared_store_transactions",864,864,864
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"__l1_global_load_transactions",1620,1620,1620
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"__l1_global_store_transactions",1296,1296,1296
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"atom_count",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gred_count",0,0,0
+
+==12479== Metric result:
+"Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l1_cache_global_hit_rate","L1 Global Hit Rate",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l1_cache_local_hit_rate","L1 Local Hit Rate",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"sm_efficiency","Multiprocessor Activity",38.398127%,40.365639%,39.044806%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"ipc","Executed IPC",0.183652,0.196263,0.193145
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"achieved_occupancy","Achieved Occupancy",0.062880,0.063233,0.063089
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gld_requested_throughput","Requested Global Load Throughput",3.472293GB/s,3.484411GB/s,3.479225GB/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gst_requested_throughput","Requested Global Store Throughput",2.403895GB/s,2.412285GB/s,2.408694GB/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"sm_efficiency_instance","Multiprocessor Activity",38.398127%,40.365639%,39.044806%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"ipc_instance","Executed IPC",0.183652,0.196263,0.193145
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"inst_replay_overhead","Instruction Replay Overhead",0.714676,0.717405,0.716357
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"shared_replay_overhead","Shared Memory Replay Overhead",0.260116,0.260116,0.260116
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"global_replay_overhead","Global Memory Replay Overhead",0.190751,0.190751,0.190751
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"global_cache_replay_overhead","Global Memory Cache Replay Overhead",0.000000,0.000000,0.000000
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"tex_cache_hit_rate","Texture Cache Hit Rate",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"tex_cache_throughput","Texture Cache Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"dram_read_throughput","Device Memory Read Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"dram_write_throughput","Device Memory Write Throughput",3.107553GB/s,3.178783GB/s,3.148186GB/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gst_throughput","Global Store Throughput",2.403895GB/s,2.412285GB/s,2.408694GB/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gld_throughput","Global Load Throughput",3.472293GB/s,3.484411GB/s,3.479225GB/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"local_replay_overhead","Local Memory Cache Replay Overhead",0.000000,0.000000,0.000000
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"shared_efficiency","Shared Memory Efficiency",25.000000%,25.000000%,25.000000%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gld_efficiency","Global Memory Load Efficiency",100.000000%,100.000000%,100.000000%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gst_efficiency","Global Memory Store Efficiency",100.000000%,100.000000%,100.000000%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_l1_read_hit_rate","L2 Hit Rate (L1 Reads)",100.000000%,100.000000%,100.000000%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_texture_read_hit_rate","L2 Hit Rate (Texture Reads)",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_l1_read_throughput","L2 Throughput (L1 Reads)",3.472293GB/s,3.484411GB/s,3.479225GB/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_texture_read_throughput","L2 Throughput (Texture Reads)",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"local_memory_overhead","Local Memory Overhead",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"warp_execution_efficiency","Warp Execution Efficiency",100.000000%,100.000000%,100.000000%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"nc_gld_requested_throughput","Requested Non-Coherent Global Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"issued_ipc","Issued IPC",0.315258,0.336999,0.332682
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"inst_per_warp","Instructions per warp",115.333333,115.333333,115.333333
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"issue_slot_utilization","Issue Slot Utilization",6.409954%,6.853416%,6.764997%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"local_load_transactions_per_request","Local Memory Load Transactions Per Request",0.000000,0.000000,0.000000
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"local_store_transactions_per_request","Local Memory Store Transactions Per Request",0.000000,0.000000,0.000000
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",2.000000,2.000000,2.000000
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"shared_store_transactions_per_request","Shared Memory Store Transactions Per Request",2.000000,2.000000,2.000000
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gld_transactions_per_request","Global Load Transactions Per Request",4.000000,4.000000,4.000000
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gst_transactions_per_request","Global Store Transactions Per Request",4.000000,4.000000,4.000000
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"local_load_transactions","Local Load Transactions",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"local_store_transactions","Local Store Transactions",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"shared_load_transactions","Shared Load Transactions",2700,2700,2700
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"shared_store_transactions","Shared Store Transactions",540,540,540
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gld_transactions","Global Load Transactions",936,936,936
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"gst_transactions","Global Store Transactions",648,648,648
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"sysmem_read_transactions","System Memory Read Transactions",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"sysmem_write_transactions","System Memory Write Transactions",0,13,4
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"tex_cache_transactions","Texture Cache Transactions",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"dram_read_transactions","Device Memory Read Transactions",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"dram_write_transactions","Device Memory Write Transactions",837,855,846
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_read_transactions","L2 Read Transactions",1056,1246,1128
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_write_transactions","L2 Write Transactions",650,663,656
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"local_load_throughput","Local Memory Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"local_store_throughput","Local Memory Store Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"shared_load_throughput","Shared Memory Load Throughput",80.129840GB/s,80.409493GB/s,80.289799GB/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"shared_store_throughput","Shared Memory Store Throughput",16.025968GB/s,16.081899GB/s,16.057960GB/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_read_throughput","L2 Throughput (Reads)",3.925195GB/s,4.627669GB/s,4.194196GB/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_write_throughput","L2 Throughput (Writes)",2.415024GB/s,2.464402GB/s,2.439307GB/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"sysmem_read_throughput","System Memory Read Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"sysmem_write_throughput","System Memory Write Throughput",0.000000B/s,48.310300MB/s,18.151169MB/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"warp_nonpred_execution_efficiency","Warp Non-Predicated Execution Efficiency",98.843931%,98.843931%,98.843931%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"cf_issued","Issued Control-Flow Instructions",377,378,377
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"cf_executed","Executed Control-Flow Instructions",216,216,216
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"ldst_issued","Issued Load/Store Instructions",5395,5399,5397
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"ldst_executed","Executed Load/Store Instructions",2016,2016,2016
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"flop_count_sp","Floating Point Operations(Single Precision)",93312,93312,93312
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"flop_count_sp_add","Floating Point Operations(Single Precision Add)",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"flop_count_sp_mul","Floating Point Operation(Single Precision Mul)",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"flop_count_sp_fma","Floating Point Operations(Single Precision FMA)",46656,46656,46656
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"flop_count_dp","Floating Point Operations(Double Precision)",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"flop_count_dp_add","Floating Point Operations(Double Precision Add)",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"flop_count_dp_mul","Floating Point Operations(Double Precision Mul)",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"flop_count_dp_fma","Floating Point Operations(Double Precison FMA)",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"flop_count_sp_special","Floating Point Operations(Single Precision Special)",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"stall_inst_fetch","Issue Stall Reasons (Instructions Fetch)",2.150353%,12.098147%,4.278965%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"stall_exec_dependency","Issue Stall Reasons (Execution Dependency)",26.615923%,29.740798%,28.998704%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"stall_memory_dependency","Issue Stall Reasons (Data Request)",12.068752%,13.447901%,13.096584%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"stall_texture","Issue Stall Reasons (Texture)",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"stall_sync","Issue Stall Reasons (Synchronization)",1.369164%,1.551391%,1.468823%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"stall_other","Issue Stall Reasons (Other)",1.739874%,1.987213%,1.893885%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l1_shared_utilization","L1/Shared Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_utilization","L2 Cache Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"tex_utilization","Texture Cache Utilization","Idle (0)","Idle (0)","Idle (0)"
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"dram_utilization","Device Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"sysmem_utilization","System Memory Utilization","Idle (0)","Low (1)","Idle (0)"
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"ldst_fu_utilization","Load/Store Function Unit Utilization","Low (2)","Low (2)","Low (2)"
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"alu_fu_utilization","Arithmetic Function Unit Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"cf_fu_utilization","Control-Flow Function Unit Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"tex_fu_utilization","Texture Function Unit Utilization","Idle (0)","Idle (0)","Idle (0)"
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"inst_executed","Instructions Executed",6228,6228,6228
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"inst_issued","Instructions Issued",10679,10696,10689
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"issue_slots","Issue Slots",8686,8701,8694
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"nc_l2_read_throughput","L2 Throughput (Non-Coherent Reads)",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"nc_l2_read_transactions","L2 Non-Coherent Read Transactions",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"nc_cache_global_hit_rate","Non-Coherent Global Hit Rate",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"nc_gld_throughput","Non-Coherent Global Memory Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"nc_gld_efficiency","Non-Coherent Global Load Efficiency",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_atomic_throughput","L2 Throughput (Atomic requests)",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"inst_fp_32","FP Instructions(Single)",46656,46656,46656
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"inst_fp_64","FP Instructions(Double)",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"inst_integer","Integer Instructions",63936,63936,63936
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"inst_bit_convert","Bit-Convert Instructions",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"inst_control","Control-Flow Instructions",2880,2880,2880
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"inst_compute_ld_st","Load/Store Instructions",64512,64512,64512
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"inst_misc","Misc Instructions",19008,19008,19008
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"inst_inter_thread_communication","Inter-Thread Instructions",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"atomic_replay_overhead","Atomic Replay Overhead",0.000000,0.000000,0.000000
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"atomic_transactions","Atomic Transactions",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"atomic_transactions_per_request","Atomic Transactions Per Request",0.000000,0.000000,0.000000
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_l1_read_transactions","L2 Read Transactions (L1 read requests)",936,936,936
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_l1_write_transactions","L2 Write Transactions (L1 write requests)",648,648,648
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_tex_read_transactions","L2 Transactions (Texture Reads)",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_l1_write_throughput","L2 Throughput (L1 Writes)",2.403895GB/s,2.412285GB/s,2.408694GB/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"l2_atomic_transactions","L2 Transactions (Atomic requests)",0,0,0
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"ecc_transactions","ECC Transactions",187,207,196
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"ecc_throughput","ECC Throughput",694.280078MB/s,768.802228MB/s,731.181915MB/s
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"stall_pipe_busy","Issue Stall Reasons (Pipe Busy)",0.211950%,0.253636%,0.237827%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"stall_constant_memory_dependency","Issue Stall Reasons (Immediate constant)",16.954423%,19.406768%,18.550645%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"flop_sp_efficiency","FLOP Efficiency(Peak Single)",0.286895%,0.298042%,0.295193%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"flop_dp_efficiency","FLOP Efficiency(Peak Double)",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"stall_memory_throttle","Issue Stall Reasons (Memory Throttle)",28.670442%,32.020045%,31.241346%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"stall_not_selected","Issue Stall Reasons (Not Selected)",0.215718%,0.247325%,0.233221%
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"eligible_warps_per_cycle","Eligible Warps Per Active Cycle",0.264250,0.283082,0.279218
+"Tesla K80 (0)","convolutionColumnsKernel(float*, float*, int, int, int)",17,"atomic_throughput","Atomic Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l1_cache_global_hit_rate","L1 Global Hit Rate",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l1_cache_local_hit_rate","L1 Local Hit Rate",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"sm_efficiency","Multiprocessor Activity",39.895798%,42.154859%,40.726265%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"ipc","Executed IPC",0.198176,0.210956,0.206248
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"achieved_occupancy","Achieved Occupancy",0.063285,0.063531,0.063417
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gld_requested_throughput","Requested Global Load Throughput",2.740188GB/s,2.756580GB/s,2.749866GB/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gst_requested_throughput","Requested Global Store Throughput",2.241972GB/s,2.255384GB/s,2.249891GB/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"sm_efficiency_instance","Multiprocessor Activity",39.895798%,42.154859%,40.726265%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"ipc_instance","Executed IPC",0.198176,0.210956,0.206248
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"inst_replay_overhead","Instruction Replay Overhead",0.806645,0.815632,0.810610
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"shared_replay_overhead","Shared Memory Replay Overhead",0.272059,0.272059,0.272059
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"global_replay_overhead","Global Memory Replay Overhead",0.294118,0.294118,0.294118
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"global_cache_replay_overhead","Global Memory Cache Replay Overhead",0.000000,0.000000,0.000000
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"tex_cache_hit_rate","Texture Cache Hit Rate",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"tex_cache_throughput","Texture Cache Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"dram_read_throughput","Device Memory Read Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"dram_write_throughput","Device Memory Write Throughput",3.915890GB/s,4.347183GB/s,4.124231GB/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gst_throughput","Global Store Throughput",4.483944GB/s,4.510768GB/s,4.499781GB/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gld_throughput","Global Load Throughput",5.480376GB/s,5.513161GB/s,5.499733GB/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"local_replay_overhead","Local Memory Cache Replay Overhead",0.000000,0.000000,0.000000
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"shared_efficiency","Shared Memory Efficiency",12.500000%,12.500000%,12.500000%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gld_efficiency","Global Memory Load Efficiency",50.000000%,50.000000%,50.000000%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gst_efficiency","Global Memory Store Efficiency",50.000000%,50.000000%,50.000000%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_l1_read_hit_rate","L2 Hit Rate (L1 Reads)",100.000000%,100.000000%,100.000000%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_texture_read_hit_rate","L2 Hit Rate (Texture Reads)",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_l1_read_throughput","L2 Throughput (L1 Reads)",5.480376GB/s,5.513161GB/s,5.499733GB/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_texture_read_throughput","L2 Throughput (Texture Reads)",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"local_memory_overhead","Local Memory Overhead",0.000000%,0.689655%,0.162766%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"warp_execution_efficiency","Warp Execution Efficiency",50.000000%,50.000000%,50.000000%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"nc_gld_requested_throughput","Requested Non-Coherent Global Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"issued_ipc","Issued IPC",0.358554,0.382357,0.375860
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"inst_per_warp","Instructions per warp",136.000000,136.000000,136.000000
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"issue_slot_utilization","Issue Slot Utilization",7.561525%,8.059489%,7.926994%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"local_load_transactions_per_request","Local Memory Load Transactions Per Request",0.000000,0.000000,0.000000
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"local_store_transactions_per_request","Local Memory Store Transactions Per Request",0.000000,0.000000,0.000000
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",2.000000,2.000000,2.000000
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"shared_store_transactions_per_request","Shared Memory Store Transactions Per Request",2.000000,2.000000,2.000000
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gld_transactions_per_request","Global Load Transactions Per Request",4.000000,4.000000,4.000000
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gst_transactions_per_request","Global Store Transactions Per Request",4.000000,4.000000,4.000000
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"local_load_transactions","Local Load Transactions",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"local_store_transactions","Local Store Transactions",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"shared_load_transactions","Shared Load Transactions",3132,3132,3132
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"shared_store_transactions","Shared Store Transactions",864,864,864
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gld_transactions","Global Load Transactions",1584,1584,1584
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"gst_transactions","Global Store Transactions",1296,1296,1296
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"sysmem_read_transactions","System Memory Read Transactions",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"sysmem_write_transactions","System Memory Write Transactions",0,13,6
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"tex_cache_transactions","Texture Cache Transactions",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"dram_read_transactions","Device Memory Read Transactions",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"dram_write_transactions","Device Memory Write Transactions",1129,1249,1187
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_read_transactions","L2 Read Transactions",1712,1927,1810
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_write_transactions","L2 Write Transactions",1297,1316,1304
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"local_load_throughput","Local Memory Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"local_store_throughput","Local Memory Store Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"shared_load_throughput","Shared Memory Load Throughput",86.689588GB/s,87.208179GB/s,86.995775GB/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"shared_store_throughput","Shared Memory Store Throughput",23.914369GB/s,24.057429GB/s,23.998835GB/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_read_throughput","L2 Throughput (Reads)",5.923235GB/s,6.672871GB/s,6.286392GB/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_write_throughput","L2 Throughput (Writes)",4.501243GB/s,4.571925GB/s,4.530215GB/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"sysmem_read_throughput","System Memory Read Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"sysmem_write_throughput","System Memory Write Throughput",0.000000B/s,45.222306MB/s,20.831420MB/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"warp_nonpred_execution_efficiency","Warp Non-Predicated Execution Efficiency",49.754902%,49.754902%,49.754902%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"cf_issued","Issued Control-Flow Instructions",216,216,216
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"cf_executed","Executed Control-Flow Instructions",108,108,108
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"ldst_issued","Issued Load/Store Instructions",7918,7944,7933
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"ldst_executed","Executed Load/Store Instructions",2754,2754,2754
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"flop_count_sp","Floating Point Operations(Single Precision)",93312,93312,93312
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"flop_count_sp_add","Floating Point Operations(Single Precision Add)",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"flop_count_sp_mul","Floating Point Operation(Single Precision Mul)",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"flop_count_sp_fma","Floating Point Operations(Single Precision FMA)",46656,46656,46656
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"flop_count_dp","Floating Point Operations(Double Precision)",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"flop_count_dp_add","Floating Point Operations(Double Precision Add)",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"flop_count_dp_mul","Floating Point Operations(Double Precision Mul)",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"flop_count_dp_fma","Floating Point Operations(Double Precison FMA)",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"flop_count_sp_special","Floating Point Operations(Single Precision Special)",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"stall_inst_fetch","Issue Stall Reasons (Instructions Fetch)",1.987011%,7.240182%,3.552490%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"stall_exec_dependency","Issue Stall Reasons (Execution Dependency)",28.859770%,31.054490%,30.372368%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"stall_memory_dependency","Issue Stall Reasons (Data Request)",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"stall_texture","Issue Stall Reasons (Texture)",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"stall_sync","Issue Stall Reasons (Synchronization)",0.900491%,0.983250%,0.956671%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"stall_other","Issue Stall Reasons (Other)",0.260011%,0.365886%,0.323971%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l1_shared_utilization","L1/Shared Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_utilization","L2 Cache Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"tex_utilization","Texture Cache Utilization","Idle (0)","Idle (0)","Idle (0)"
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"dram_utilization","Device Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"sysmem_utilization","System Memory Utilization","Idle (0)","Low (1)","Idle (0)"
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"ldst_fu_utilization","Load/Store Function Unit Utilization","Low (3)","Low (3)","Low (3)"
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"alu_fu_utilization","Arithmetic Function Unit Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"cf_fu_utilization","Control-Flow Function Unit Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"tex_fu_utilization","Texture Function Unit Utilization","Idle (0)","Idle (0)","Idle (0)"
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"inst_executed","Instructions Executed",7344,7344,7344
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"inst_issued","Instructions Issued",13268,13334,13297
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"issue_slots","Issue Slots",11197,11242,11217
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"nc_l2_read_throughput","L2 Throughput (Non-Coherent Reads)",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"nc_l2_read_transactions","L2 Non-Coherent Read Transactions",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"nc_cache_global_hit_rate","Non-Coherent Global Hit Rate",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"nc_gld_throughput","Non-Coherent Global Memory Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"nc_gld_efficiency","Non-Coherent Global Load Efficiency",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_atomic_throughput","L2 Throughput (Atomic requests)",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"inst_fp_32","FP Instructions(Single)",46656,46656,46656
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"inst_fp_64","FP Instructions(Double)",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"inst_integer","Integer Instructions",17280,17280,17280
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"inst_bit_convert","Bit-Convert Instructions",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"inst_control","Control-Flow Instructions",864,864,864
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"inst_compute_ld_st","Load/Store Instructions",43488,43488,43488
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"inst_misc","Misc Instructions",8640,8640,8640
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"inst_inter_thread_communication","Inter-Thread Instructions",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"atomic_replay_overhead","Atomic Replay Overhead",0.000000,0.000000,0.000000
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"atomic_transactions","Atomic Transactions",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"atomic_transactions_per_request","Atomic Transactions Per Request",0.000000,0.000000,0.000000
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_l1_read_transactions","L2 Read Transactions (L1 read requests)",1584,1584,1584
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_l1_write_transactions","L2 Write Transactions (L1 write requests)",1296,1316,1300
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_tex_read_transactions","L2 Transactions (Texture Reads)",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_l1_write_throughput","L2 Throughput (L1 Writes)",4.483944GB/s,4.569940GB/s,4.516114GB/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"l2_atomic_transactions","L2 Transactions (Atomic requests)",0,0,0
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"ecc_transactions","ECC Transactions",311,428,371
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"ecc_throughput","ECC Throughput",1.078691GB/s,1.489667GB/s,1.291013GB/s
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"stall_pipe_busy","Issue Stall Reasons (Pipe Busy)",0.251446%,0.295481%,0.270773%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"stall_constant_memory_dependency","Issue Stall Reasons (Immediate constant)",15.939996%,18.311427%,16.994843%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"flop_sp_efficiency","FLOP Efficiency(Peak Single)",0.275610%,0.284084%,0.279609%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"flop_dp_efficiency","FLOP Efficiency(Peak Double)",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"stall_memory_throttle","Issue Stall Reasons (Memory Throttle)",44.792432%,48.355622%,47.205017%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"stall_not_selected","Issue Stall Reasons (Not Selected)",0.280577%,0.371870%,0.323868%
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"eligible_warps_per_cycle","Eligible Warps Per Active Cycle",0.312973,0.335266,0.328959
+"Tesla K80 (0)","convolutionRowsKernel(float*, float*, int, int, int)",17,"atomic_throughput","Atomic Throughput",0.000000B/s,0.000000B/s,0.000000B/s

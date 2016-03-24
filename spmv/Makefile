@@ -16,21 +16,24 @@ NVCC            ?= $(CUDA_BIN_PATH)/nvcc
 #	nvprof  --events all --metrics all  --csv --log-file spmv_prof.csv ./spmv 
 #prof_spmv_index:
 #	nvprof  --events all --metrics all --csv --log-file spmv_index_prof.csv ./spmv_index
-
-spmv:
-	$(NVCC) --generate-line-info --cubin $@.cu
+objects = 1 2 3 4  5 6 7 8 9 10 11 spmv
+#spmv:
+#	$(NVCC) --generate-line-info --cubin $@.cu
+#	$(NVCC) -o $@ $@.cu
+#	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
+#	rm $@.cubin
+all: $(objects)
+1 2 3 4  5 6 7 8 9 10 11 spmv:
 	$(NVCC) -o $@ $@.cu
-	nvdisasm  --print-line-info $@.cubin  > instruction/$@.txt
-	rm $@.cubin
+	nvprof  --events all --metrics all  --csv --log-file $@.csv ./$@
+#prof_spmv:
+#	nvprof  --events all --metrics all  --csv --log-file spmv.csv ./spmv
 	
-prof_spmv:
-	nvprof  --events all --metrics all  --csv --log-file spmv.csv ./spmv
-	
-trace_spmv:
-	nvprof --print-gpu-trace ./spmv
-	nvprof --print-api-trace ./spmv
+#trace_spmv:
+#	nvprof --print-gpu-trace ./spmv
+#	nvprof --print-api-trace ./spmv
 clean:
-	rm spmv
+	rm $(objects)
 #Hints
 #nvprof --print-gpu-trace ./spmv
 #nvprof --print-api-trace ./spmv_index

@@ -140,19 +140,72 @@ convolutionSeparable: main.o convolutionSeparable_gold.o convolutionSeparable.o
 run: build
 	./convolutionSeparable
 
-0:
-	#$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	$@
+#0:
+#	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+#	$@
 1:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	$@
+	./$@
 2:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	$@
+	./$@
+2_re:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	./$@
+3:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	./$@
+4:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	./$@
+#4_overhead:
+#	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+#	./$@
+5:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	./$@
+6:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	./$@
+con_rule:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	./$@
+convolution_cpu:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	./$@
 convolution:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 	./$@
-
-
+convolution_index:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	./$@
+#convolution_prof:
+#	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+#	./$@
+#convolutionSeparable:	
+#	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+#	./$@
+#mm_pf:
+#	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+#	./$@
+#read:
+#	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+#	./$@
+small:
+	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
+	./$@
+prof: 1 2 2_re 3 4 5 6 con_rule convolution_cpu convolution convolution_index small
+	nvprof  --events all --metrics all  --csv --log-file 1.csv ./1
+	nvprof  --events all --metrics all  --csv --log-file 2.csv ./2
+	nvprof  --events all --metrics all  --csv --log-file 2_re.csv ./2_re
+	nvprof  --events all --metrics all  --csv --log-file 3.csv ./3
+	nvprof  --events all --metrics all  --csv --log-file 4.csv ./4
+	nvprof  --events all --metrics all  --csv --log-file 5.csv ./5
+	nvprof  --events all --metrics all  --csv --log-file 6.csv ./6
+	nvprof  --events all --metrics all  --csv --log-file con_rule.csv ./con_rule
+	nvprof  --events all --metrics all  --csv --log-file convolution_cpu.csv ./convolution_cpu
+	nvprof  --events all --metrics all  --csv --log-file convolution.csv ./convolution
+	nvprof  --events all --metrics all  --csv --log-file convolution_index.csv ./convolution_index
+	nvprof  --events all --metrics all  --csv --log-file small.csv ./small
 clean:
 	rm -f convolutionSeparable main.o convolutionSeparable_gold.o convolutionSeparable.o
