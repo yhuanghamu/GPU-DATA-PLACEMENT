@@ -1,0 +1,274 @@
+==16324== NVPROF is profiling process 16324, command: ./optimized
+==16324== Warning: Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==16324== Profiling application: ./optimized
+==16324== Profiling result:
+==16324== Event result:
+"Device","Kernel","Invocations","Event Name","Min","Max","Avg"
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"tex0_cache_sector_queries",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"tex1_cache_sector_queries",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"tex2_cache_sector_queries",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"tex3_cache_sector_queries",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"tex0_cache_sector_misses",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"tex1_cache_sector_misses",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"tex2_cache_sector_misses",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"tex3_cache_sector_misses",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"fb_subp0_read_sectors",6134585,6134585,6134585
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"fb_subp1_read_sectors",6134191,6134191,6134191
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"fb_subp0_write_sectors",6143420,6143420,6143420
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"fb_subp1_write_sectors",6143419,6143419,6143419
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp0_write_sector_misses",2457605,2457605,2457605
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp1_write_sector_misses",2457603,2457603,2457603
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp2_write_sector_misses",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp3_write_sector_misses",2457602,2457602,2457602
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp0_read_sector_misses",2457612,2457612,2457612
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp1_read_sector_misses",2457604,2457604,2457604
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp2_read_sector_misses",2457616,2457616,2457616
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp3_read_sector_misses",2457609,2457609,2457609
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp0_write_l1_sector_queries",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp1_write_l1_sector_queries",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp2_write_l1_sector_queries",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp3_write_l1_sector_queries",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp0_read_l1_sector_queries",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp1_read_l1_sector_queries",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp2_read_l1_sector_queries",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp3_read_l1_sector_queries",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp0_read_l1_hit_sectors",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp1_read_l1_hit_sectors",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp2_read_l1_hit_sectors",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp3_read_l1_hit_sectors",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp0_read_tex_sector_queries",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp1_read_tex_sector_queries",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp2_read_tex_sector_queries",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp3_read_tex_sector_queries",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp0_read_tex_hit_sectors",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp1_read_tex_hit_sectors",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp2_read_tex_hit_sectors",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp3_read_tex_hit_sectors",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp0_gld_thread_count_32b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp1_gld_thread_count_32b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp2_gld_thread_count_32b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp3_gld_thread_count_32b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp0_gld_thread_count_64b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp1_gld_thread_count_64b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp2_gld_thread_count_64b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp3_gld_thread_count_64b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp0_gld_thread_count_128b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp1_gld_thread_count_128b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp2_gld_thread_count_128b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp3_gld_thread_count_128b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp0_gld_warp_count_32b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp1_gld_warp_count_32b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp2_gld_warp_count_32b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp3_gld_warp_count_32b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp0_gld_warp_count_64b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp1_gld_warp_count_64b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp2_gld_warp_count_64b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp3_gld_warp_count_64b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp0_gld_warp_count_128b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp1_gld_warp_count_128b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp2_gld_warp_count_128b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_subp3_gld_warp_count_128b",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp0_read_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp1_read_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp2_read_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp3_read_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp0_write_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp1_write_sysmem_sector_queries",4,4,4
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp2_write_sysmem_sector_queries",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp3_write_sysmem_sector_queries",4,4,4
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp0_total_read_sector_queries",2457665,2457665,2457665
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp1_total_read_sector_queries",2457640,2457640,2457640
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp2_total_read_sector_queries",2457603,2457603,2457603
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp3_total_read_sector_queries",2457603,2457603,2457603
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp0_total_write_sector_queries",2457608,2457608,2457608
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp1_total_write_sector_queries",2457603,2457603,2457603
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp2_total_write_sector_queries",2457602,2457602,2457602
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_subp3_total_write_sector_queries",2457606,2457606,2457606
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"elapsed_cycles_sm",51986173,51986173,51986173
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gld_inst_8bit",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gld_inst_16bit",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gld_inst_32bit",78643200,78643200,78643200
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gld_inst_64bit",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gld_inst_128bit",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gst_inst_8bit",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gst_inst_16bit",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gst_inst_32bit",78643200,78643200,78643200
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gst_inst_64bit",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gst_inst_128bit",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_gld_inst_8bit",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_gld_inst_16bit",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_gld_inst_32bit",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_gld_inst_64bit",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"rocache_gld_inst_128bit",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"prof_trigger_00",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"prof_trigger_01",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"prof_trigger_02",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"prof_trigger_03",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"prof_trigger_04",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"prof_trigger_05",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"prof_trigger_06",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"prof_trigger_07",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"atom_cas_count",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"warps_launched",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"threads_launched",78643200,78643200,78643200
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"inst_executed",68812800,68812800,68812800
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"inst_issued1",49206965,49206965,49206965
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"inst_issued2",12288000,12288000,12288000
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"thread_inst_executed",2202009600,2202009600,2202009600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"shared_load",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"shared_store",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"local_load",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"local_store",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gld_request",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gst_request",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"active_cycles",51974576,51974576,51974576
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"active_warps",2949439998,2949439998,2949439998
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"sm_cta_launched",76800,76800,76800
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"not_predicated_off_thread_inst_executed",2202009600,2202009600,2202009600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l1_local_load_hit",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l1_local_load_miss",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l1_local_store_hit",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l1_local_store_miss",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l1_global_load_hit",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l1_global_load_miss",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"uncached_global_load_transaction",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"global_store_transaction",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"shared_load_replay",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"shared_store_replay",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"global_ld_mem_divergence_replays",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"global_st_mem_divergence_replays",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"local_load_transactions",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"local_store_transactions",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l1_shared_load_transactions",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l1_shared_store_transactions",2458620,2458620,2458620
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"__l1_global_load_transactions",2505028,2505028,2505028
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"__l1_global_store_transactions",2465585,2465585,2465585
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"atom_count",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gred_count",0,0,0
+
+==16324== Metric result:
+"Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l1_cache_global_hit_rate","L1 Global Hit Rate",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l1_cache_local_hit_rate","L1 Local Hit Rate",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"sm_efficiency","Multiprocessor Activity",99.853950%,99.853950%,99.853950%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"ipc","Executed IPC",1.323618,1.323618,1.323618
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"achieved_occupancy","Achieved Occupancy",0.886447,0.886447,0.886447
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gld_requested_throughput","Requested Global Load Throughput",43.950487GB/s,43.950487GB/s,43.950487GB/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gst_requested_throughput","Requested Global Store Throughput",43.950487GB/s,43.950487GB/s,43.950487GB/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"sm_efficiency_instance","Multiprocessor Activity",99.853950%,99.853950%,99.853950%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"ipc_instance","Executed IPC",1.323618,1.323618,1.323618
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"inst_replay_overhead","Instruction Replay Overhead",0.072227,0.072227,0.072227
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"shared_replay_overhead","Shared Memory Replay Overhead",0.000000,0.000000,0.000000
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"global_replay_overhead","Global Memory Replay Overhead",0.000000,0.000000,0.000000
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"global_cache_replay_overhead","Global Memory Cache Replay Overhead",0.000000,0.000000,0.000000
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"tex_cache_hit_rate","Texture Cache Hit Rate",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"tex_cache_throughput","Texture Cache Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"dram_read_throughput","Device Memory Read Throughput",54.852161GB/s,54.852161GB/s,54.852161GB/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"dram_write_throughput","Device Memory Write Throughput",54.932918GB/s,54.932918GB/s,54.932918GB/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gst_throughput","Global Store Throughput",43.950487GB/s,43.950487GB/s,43.950487GB/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gld_throughput","Global Load Throughput",43.950487GB/s,43.950487GB/s,43.950487GB/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"local_replay_overhead","Local Memory Cache Replay Overhead",0.000000,0.000000,0.000000
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"shared_efficiency","Shared Memory Efficiency",49.989626%,49.989626%,49.989626%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gld_efficiency","Global Memory Load Efficiency",100.000000%,100.000000%,100.000000%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gst_efficiency","Global Memory Store Efficiency",100.000000%,100.000000%,100.000000%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_l1_read_hit_rate","L2 Hit Rate (L1 Reads)",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_texture_read_hit_rate","L2 Hit Rate (Texture Reads)",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_l1_read_throughput","L2 Throughput (L1 Reads)",43.950487GB/s,43.950487GB/s,43.950487GB/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_texture_read_throughput","L2 Throughput (Texture Reads)",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"local_memory_overhead","Local Memory Overhead",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"warp_execution_efficiency","Warp Execution Efficiency",100.000000%,100.000000%,100.000000%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"nc_gld_requested_throughput","Requested Non-Coherent Global Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"issued_ipc","Issued IPC",1.421356,1.421356,1.421356
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"inst_per_warp","Instructions per warp",28.000000,28.000000,28.000000
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"issue_slot_utilization","Issue Slot Utilization",29.616005%,29.616005%,29.616005%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"local_load_transactions_per_request","Local Memory Load Transactions Per Request",0.000000,0.000000,0.000000
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"local_store_transactions_per_request","Local Memory Store Transactions Per Request",0.000000,0.000000,0.000000
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",1.000000,1.000000,1.000000
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"shared_store_transactions_per_request","Shared Memory Store Transactions Per Request",1.000415,1.000415,1.000415
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gld_transactions_per_request","Global Load Transactions Per Request",1.000000,1.000000,1.000000
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gst_transactions_per_request","Global Store Transactions Per Request",1.000000,1.000000,1.000000
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"local_load_transactions","Local Load Transactions",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"local_store_transactions","Local Store Transactions",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"shared_load_transactions","Shared Load Transactions",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"shared_store_transactions","Shared Store Transactions",2458620,2458620,2458620
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gld_transactions","Global Load Transactions",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"gst_transactions","Global Store Transactions",2457600,2457600,2457600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"sysmem_read_transactions","System Memory Read Transactions",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"sysmem_write_transactions","System Memory Write Transactions",8,8,8
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"tex_cache_transactions","Texture Cache Transactions",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"dram_read_transactions","Device Memory Read Transactions",12268776,12268776,12268776
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"dram_write_transactions","Device Memory Write Transactions",12286839,12286839,12286839
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_read_transactions","L2 Read Transactions",9830511,9830511,9830511
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_write_transactions","L2 Write Transactions",9830419,9830419,9830419
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"local_load_throughput","Local Memory Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"local_store_throughput","Local Memory Store Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"shared_load_throughput","Shared Memory Load Throughput",87.900975GB/s,87.900975GB/s,87.900975GB/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"shared_store_throughput","Shared Memory Store Throughput",87.937457GB/s,87.937457GB/s,87.937457GB/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_read_throughput","L2 Throughput (Reads)",43.950984GB/s,43.950984GB/s,43.950984GB/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_write_throughput","L2 Throughput (Writes)",43.950572GB/s,43.950572GB/s,43.950572GB/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"sysmem_read_throughput","System Memory Read Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"sysmem_write_throughput","System Memory Write Throughput",35.766000KB/s,35.766000KB/s,35.766000KB/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"warp_nonpred_execution_efficiency","Warp Non-Predicated Execution Efficiency",100.000000%,100.000000%,100.000000%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"cf_issued","Issued Control-Flow Instructions",4916171,4916171,4916171
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"cf_executed","Executed Control-Flow Instructions",4915200,4915200,4915200
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"ldst_issued","Issued Load/Store Instructions",12340093,12340093,12340093
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"ldst_executed","Executed Load/Store Instructions",9830400,9830400,9830400
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"flop_count_sp","Floating Point Operations(Single Precision)",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"flop_count_sp_add","Floating Point Operations(Single Precision Add)",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"flop_count_sp_mul","Floating Point Operation(Single Precision Mul)",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"flop_count_sp_fma","Floating Point Operations(Single Precision FMA)",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"flop_count_dp","Floating Point Operations(Double Precision)",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"flop_count_dp_add","Floating Point Operations(Double Precision Add)",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"flop_count_dp_mul","Floating Point Operations(Double Precision Mul)",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"flop_count_dp_fma","Floating Point Operations(Double Precison FMA)",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"flop_count_sp_special","Floating Point Operations(Single Precision Special)",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"stall_inst_fetch","Issue Stall Reasons (Instructions Fetch)",3.377540%,3.377540%,3.377540%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"stall_exec_dependency","Issue Stall Reasons (Execution Dependency)",14.015404%,14.015404%,14.015404%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"stall_memory_dependency","Issue Stall Reasons (Data Request)",33.290282%,33.290282%,33.290282%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"stall_texture","Issue Stall Reasons (Texture)",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"stall_sync","Issue Stall Reasons (Synchronization)",23.912357%,23.912357%,23.912357%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"stall_other","Issue Stall Reasons (Other)",1.488972%,1.488972%,1.488972%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l1_shared_utilization","L1/Shared Memory Utilization","Low (2)","Low (2)","Low (2)"
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_utilization","L2 Cache Utilization","Low (3)","Low (3)","Low (3)"
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"tex_utilization","Texture Cache Utilization","Idle (0)","Idle (0)","Idle (0)"
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"dram_utilization","Device Memory Utilization","Mid (5)","Mid (5)","Mid (5)"
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"sysmem_utilization","System Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"ldst_fu_utilization","Load/Store Function Unit Utilization","Low (3)","Low (3)","Low (3)"
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"alu_fu_utilization","Arithmetic Function Unit Utilization","Mid (5)","Mid (5)","Mid (5)"
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"cf_fu_utilization","Control-Flow Function Unit Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"tex_fu_utilization","Texture Function Unit Utilization","Idle (0)","Idle (0)","Idle (0)"
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"inst_executed","Instructions Executed",68812800,68812800,68812800
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"inst_issued","Instructions Issued",73782965,73782965,73782965
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"issue_slots","Issue Slots",61494965,61494965,61494965
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"nc_l2_read_throughput","L2 Throughput (Non-Coherent Reads)",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"nc_l2_read_transactions","L2 Non-Coherent Read Transactions",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"nc_cache_global_hit_rate","Non-Coherent Global Hit Rate",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"nc_gld_throughput","Non-Coherent Global Memory Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"nc_gld_efficiency","Non-Coherent Global Load Efficiency",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_atomic_throughput","L2 Throughput (Atomic requests)",0.000000B/s,0.000000B/s,0.000000B/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"inst_fp_32","FP Instructions(Single)",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"inst_fp_64","FP Instructions(Double)",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"inst_integer","Integer Instructions",1179648000,1179648000,1179648000
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"inst_bit_convert","Bit-Convert Instructions",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"inst_control","Control-Flow Instructions",78643200,78643200,78643200
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"inst_compute_ld_st","Load/Store Instructions",314572800,314572800,314572800
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"inst_misc","Misc Instructions",629145600,629145600,629145600
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"inst_inter_thread_communication","Inter-Thread Instructions",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"atomic_replay_overhead","Atomic Replay Overhead",0.000000,0.000000,0.000000
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"atomic_transactions","Atomic Transactions",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"atomic_transactions_per_request","Atomic Transactions Per Request",0.000000,0.000000,0.000000
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_l1_read_transactions","L2 Read Transactions (L1 read requests)",9830400,9830400,9830400
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_l1_write_transactions","L2 Write Transactions (L1 write requests)",9830400,9830400,9830400
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_tex_read_transactions","L2 Transactions (Texture Reads)",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_l1_write_throughput","L2 Throughput (L1 Writes)",43.950487GB/s,43.950487GB/s,43.950487GB/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"l2_atomic_transactions","L2 Transactions (Atomic requests)",0,0,0
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"ecc_transactions","ECC Transactions",4894764,4894764,4894764
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"ecc_throughput","ECC Throughput",21.883877GB/s,21.883877GB/s,21.883877GB/s
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"stall_pipe_busy","Issue Stall Reasons (Pipe Busy)",17.297829%,17.297829%,17.297829%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"stall_constant_memory_dependency","Issue Stall Reasons (Immediate constant)",0.008696%,0.008696%,0.008696%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"flop_sp_efficiency","FLOP Efficiency(Peak Single)",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"flop_dp_efficiency","FLOP Efficiency(Peak Double)",0.000000%,0.000000%,0.000000%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"stall_memory_throttle","Issue Stall Reasons (Memory Throttle)",0.041763%,0.041763%,0.041763%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"stall_not_selected","Issue Stall Reasons (Not Selected)",6.567158%,6.567158%,6.567158%
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"eligible_warps_per_cycle","Eligible Warps Per Active Cycle",4.800403,4.800403,4.800403
+"Tesla K80 (0)","transposeNoBankConflicts(float*, float*, int, int)",1,"atomic_throughput","Atomic Throughput",0.000000B/s,0.000000B/s,0.000000B/s
