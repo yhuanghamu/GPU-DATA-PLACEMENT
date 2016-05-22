@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define N (1024)
+#ifndef N
+	#define N (1024)
+#endif
 
 __constant__ float c_a[N];
 __constant__ float c_b[N];
@@ -18,7 +20,7 @@ __global__ void vecAdd(float *c)
     int id = blockIdx.x*blockDim.x+threadIdx.x;
 	
     // Make sure we do not go out of bounds
-   // if (id < N)
+    //if (id < N)
         c[id] = c_a[id] + c_b[id];
 }
 

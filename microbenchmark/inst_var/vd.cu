@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define N (1024)
+#ifndef N
+	#define N (1024)
+#endif
 // CUDA kernel. Each thread takes care of one element of c
 __global__ void vecAdd(float *a, float *b, float *c)
 {
@@ -9,7 +11,7 @@ __global__ void vecAdd(float *a, float *b, float *c)
     int id = blockIdx.x*blockDim.x+threadIdx.x;
 	
     // Make sure we do not go out of bounds
-    if (id < N)
+   // if (id < N)
         c[id] = a[id] + b[id];
 }
 

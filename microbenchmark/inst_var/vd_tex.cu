@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <cuda.h>
-#define N (1024)
-
+#ifndef N
+	#define N (1024)
+#endif
 texture<float> tex_a;
 texture<float> tex_b;
 texture<float> tex_c;
