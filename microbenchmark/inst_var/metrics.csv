@@ -1,274 +1,500 @@
-==12126== NVPROF is profiling process 12126, command: ./vd_cnst
-==12126== Warning: Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==12126== Profiling application: ./vd_cnst
-==12126== Profiling result:
-==12126== Event result:
-"Device","Kernel","Invocations","Event Name","Min","Max","Avg"
-"Tesla K80 (0)","vecAdd(float*)",1,"tex0_cache_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"tex1_cache_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"tex2_cache_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"tex3_cache_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"tex0_cache_sector_misses",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"tex1_cache_sector_misses",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"tex2_cache_sector_misses",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"tex3_cache_sector_misses",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"fb_subp0_read_sectors",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"fb_subp1_read_sectors",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"fb_subp0_write_sectors",80,80,80
-"Tesla K80 (0)","vecAdd(float*)",1,"fb_subp1_write_sectors",80,80,80
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp0_write_sector_misses",32,32,32
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp1_write_sector_misses",32,32,32
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp2_write_sector_misses",33,33,33
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp3_write_sector_misses",32,32,32
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp0_read_sector_misses",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp1_read_sector_misses",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp2_read_sector_misses",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp3_read_sector_misses",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp0_write_l1_sector_queries",32,32,32
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp1_write_l1_sector_queries",32,32,32
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp2_write_l1_sector_queries",32,32,32
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp3_write_l1_sector_queries",32,32,32
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp0_read_l1_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp1_read_l1_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp2_read_l1_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp3_read_l1_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp0_read_l1_hit_sectors",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp1_read_l1_hit_sectors",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp2_read_l1_hit_sectors",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp3_read_l1_hit_sectors",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp0_read_tex_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp1_read_tex_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp2_read_tex_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp3_read_tex_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp0_read_tex_hit_sectors",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp1_read_tex_hit_sectors",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp2_read_tex_hit_sectors",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp3_read_tex_hit_sectors",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp0_gld_thread_count_32b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp1_gld_thread_count_32b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp2_gld_thread_count_32b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp3_gld_thread_count_32b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp0_gld_thread_count_64b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp1_gld_thread_count_64b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp2_gld_thread_count_64b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp3_gld_thread_count_64b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp0_gld_thread_count_128b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp1_gld_thread_count_128b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp2_gld_thread_count_128b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp3_gld_thread_count_128b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp0_gld_warp_count_32b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp1_gld_warp_count_32b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp2_gld_warp_count_32b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp3_gld_warp_count_32b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp0_gld_warp_count_64b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp1_gld_warp_count_64b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp2_gld_warp_count_64b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp3_gld_warp_count_64b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp0_gld_warp_count_128b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp1_gld_warp_count_128b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp2_gld_warp_count_128b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_subp3_gld_warp_count_128b",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp0_read_sysmem_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp1_read_sysmem_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp2_read_sysmem_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp3_read_sysmem_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp0_write_sysmem_sector_queries",4,4,4
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp1_write_sysmem_sector_queries",1,1,1
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp2_write_sysmem_sector_queries",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp3_write_sysmem_sector_queries",1,1,1
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp0_total_read_sector_queries",72,72,72
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp1_total_read_sector_queries",75,75,75
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp2_total_read_sector_queries",64,64,64
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp3_total_read_sector_queries",64,64,64
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp0_total_write_sector_queries",33,33,33
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp1_total_write_sector_queries",32,32,32
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp2_total_write_sector_queries",33,33,33
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_subp3_total_write_sector_queries",36,36,36
-"Tesla K80 (0)","vecAdd(float*)",1,"elapsed_cycles_sm",151302,151302,151302
-"Tesla K80 (0)","vecAdd(float*)",1,"gld_inst_8bit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"gld_inst_16bit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"gld_inst_32bit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"gld_inst_64bit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"gld_inst_128bit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"gst_inst_8bit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"gst_inst_16bit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"gst_inst_32bit",1024,1024,1024
-"Tesla K80 (0)","vecAdd(float*)",1,"gst_inst_64bit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"gst_inst_128bit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_gld_inst_8bit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_gld_inst_16bit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_gld_inst_32bit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_gld_inst_64bit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"rocache_gld_inst_128bit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"prof_trigger_00",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"prof_trigger_01",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"prof_trigger_02",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"prof_trigger_03",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"prof_trigger_04",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"prof_trigger_05",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"prof_trigger_06",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"prof_trigger_07",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"atom_cas_count",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"warps_launched",32,32,32
-"Tesla K80 (0)","vecAdd(float*)",1,"threads_launched",1024,1024,1024
-"Tesla K80 (0)","vecAdd(float*)",1,"inst_executed",416,416,416
-"Tesla K80 (0)","vecAdd(float*)",1,"inst_issued1",7983,7983,7983
-"Tesla K80 (0)","vecAdd(float*)",1,"inst_issued2",135,135,135
-"Tesla K80 (0)","vecAdd(float*)",1,"thread_inst_executed",78114,78114,78114
-"Tesla K80 (0)","vecAdd(float*)",1,"shared_load",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"shared_store",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"local_load",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"local_store",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"gld_request",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"gst_request",32,32,32
-"Tesla K80 (0)","vecAdd(float*)",1,"active_cycles",8371,8371,8371
-"Tesla K80 (0)","vecAdd(float*)",1,"active_warps",246500,246500,246500
-"Tesla K80 (0)","vecAdd(float*)",1,"sm_cta_launched",1,1,1
-"Tesla K80 (0)","vecAdd(float*)",1,"not_predicated_off_thread_inst_executed",76162,76162,76162
-"Tesla K80 (0)","vecAdd(float*)",1,"l1_local_load_hit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l1_local_load_miss",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l1_local_store_hit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l1_local_store_miss",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l1_global_load_hit",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l1_global_load_miss",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"uncached_global_load_transaction",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"global_store_transaction",32,32,32
-"Tesla K80 (0)","vecAdd(float*)",1,"shared_load_replay",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"shared_store_replay",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"global_ld_mem_divergence_replays",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"global_st_mem_divergence_replays",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"local_load_transactions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"local_store_transactions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l1_shared_load_transactions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l1_shared_store_transactions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"__l1_global_load_transactions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"__l1_global_store_transactions",32,32,32
-"Tesla K80 (0)","vecAdd(float*)",1,"atom_count",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"gred_count",0,0,0
+Available Metrics:
+                            Name   Description
+Device 0 (Tesla K80):
+        l1_cache_global_hit_rate:  Hit rate in L1 cache for global loads
 
-==12126== Metric result:
-"Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
-"Tesla K80 (0)","vecAdd(float*)",1,"l1_cache_global_hit_rate","L1 Global Hit Rate",0.000000%,0.000000%,0.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"l1_cache_local_hit_rate","L1 Local Hit Rate",0.000000%,0.000000%,0.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"sm_efficiency","Multiprocessor Activity",5.159879%,5.159879%,5.159879%
-"Tesla K80 (0)","vecAdd(float*)",1,"ipc","Executed IPC",0.051812,0.051812,0.051812
-"Tesla K80 (0)","vecAdd(float*)",1,"achieved_occupancy","Achieved Occupancy",0.460108,0.460108,0.460108
-"Tesla K80 (0)","vecAdd(float*)",1,"gld_requested_throughput","Requested Global Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
-"Tesla K80 (0)","vecAdd(float*)",1,"gst_requested_throughput","Requested Global Store Throughput",217.583001MB/s,217.583001MB/s,217.583001MB/s
-"Tesla K80 (0)","vecAdd(float*)",1,"sm_efficiency_instance","Multiprocessor Activity",5.159879%,5.159879%,5.159879%
-"Tesla K80 (0)","vecAdd(float*)",1,"ipc_instance","Executed IPC",0.051812,0.051812,0.051812
-"Tesla K80 (0)","vecAdd(float*)",1,"inst_replay_overhead","Instruction Replay Overhead",18.838942,18.838942,18.838942
-"Tesla K80 (0)","vecAdd(float*)",1,"shared_replay_overhead","Shared Memory Replay Overhead",0.000000,0.000000,0.000000
-"Tesla K80 (0)","vecAdd(float*)",1,"global_replay_overhead","Global Memory Replay Overhead",0.000000,0.000000,0.000000
-"Tesla K80 (0)","vecAdd(float*)",1,"global_cache_replay_overhead","Global Memory Cache Replay Overhead",0.000000,0.000000,0.000000
-"Tesla K80 (0)","vecAdd(float*)",1,"tex_cache_hit_rate","Texture Cache Hit Rate",0.000000%,0.000000%,0.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"tex_cache_throughput","Texture Cache Throughput",0.000000B/s,0.000000B/s,0.000000B/s
-"Tesla K80 (0)","vecAdd(float*)",1,"dram_read_throughput","Device Memory Read Throughput",0.000000B/s,0.000000B/s,0.000000B/s
-"Tesla K80 (0)","vecAdd(float*)",1,"dram_write_throughput","Device Memory Write Throughput",271.978751MB/s,271.978751MB/s,271.978751MB/s
-"Tesla K80 (0)","vecAdd(float*)",1,"gst_throughput","Global Store Throughput",217.583001MB/s,217.583001MB/s,217.583001MB/s
-"Tesla K80 (0)","vecAdd(float*)",1,"gld_throughput","Global Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
-"Tesla K80 (0)","vecAdd(float*)",1,"local_replay_overhead","Local Memory Cache Replay Overhead",0.000000,0.000000,0.000000
-"Tesla K80 (0)","vecAdd(float*)",1,"shared_efficiency","Shared Memory Efficiency",0.000000%,0.000000%,0.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"gld_efficiency","Global Memory Load Efficiency",0.000000%,0.000000%,0.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"gst_efficiency","Global Memory Store Efficiency",100.000000%,100.000000%,100.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_l1_read_hit_rate","L2 Hit Rate (L1 Reads)",0.000000%,0.000000%,0.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_texture_read_hit_rate","L2 Hit Rate (Texture Reads)",0.000000%,0.000000%,0.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_l1_read_throughput","L2 Throughput (L1 Reads)",0.000000B/s,0.000000B/s,0.000000B/s
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_texture_read_throughput","L2 Throughput (Texture Reads)",0.000000B/s,0.000000B/s,0.000000B/s
-"Tesla K80 (0)","vecAdd(float*)",1,"local_memory_overhead","Local Memory Overhead",0.000000%,0.000000%,0.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"warp_execution_efficiency","Warp Execution Efficiency",100.000000%,100.000000%,100.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"nc_gld_requested_throughput","Requested Non-Coherent Global Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
-"Tesla K80 (0)","vecAdd(float*)",1,"issued_ipc","Issued IPC",1.057128,1.057128,1.057128
-"Tesla K80 (0)","vecAdd(float*)",1,"inst_per_warp","Instructions per warp",13.000000,13.000000,13.000000
-"Tesla K80 (0)","vecAdd(float*)",1,"issue_slot_utilization","Issue Slot Utilization",25.995901%,25.995901%,25.995901%
-"Tesla K80 (0)","vecAdd(float*)",1,"local_load_transactions_per_request","Local Memory Load Transactions Per Request",0.000000,0.000000,0.000000
-"Tesla K80 (0)","vecAdd(float*)",1,"local_store_transactions_per_request","Local Memory Store Transactions Per Request",0.000000,0.000000,0.000000
-"Tesla K80 (0)","vecAdd(float*)",1,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",0.000000,0.000000,0.000000
-"Tesla K80 (0)","vecAdd(float*)",1,"shared_store_transactions_per_request","Shared Memory Store Transactions Per Request",0.000000,0.000000,0.000000
-"Tesla K80 (0)","vecAdd(float*)",1,"gld_transactions_per_request","Global Load Transactions Per Request",0.000000,0.000000,0.000000
-"Tesla K80 (0)","vecAdd(float*)",1,"gst_transactions_per_request","Global Store Transactions Per Request",1.000000,1.000000,1.000000
-"Tesla K80 (0)","vecAdd(float*)",1,"local_load_transactions","Local Load Transactions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"local_store_transactions","Local Store Transactions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"shared_load_transactions","Shared Load Transactions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"shared_store_transactions","Shared Store Transactions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"gld_transactions","Global Load Transactions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"gst_transactions","Global Store Transactions",32,32,32
-"Tesla K80 (0)","vecAdd(float*)",1,"sysmem_read_transactions","System Memory Read Transactions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"sysmem_write_transactions","System Memory Write Transactions",6,6,6
-"Tesla K80 (0)","vecAdd(float*)",1,"tex_cache_transactions","Texture Cache Transactions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"dram_read_transactions","Device Memory Read Transactions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"dram_write_transactions","Device Memory Write Transactions",160,160,160
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_read_transactions","L2 Read Transactions",275,275,275
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_write_transactions","L2 Write Transactions",134,134,134
-"Tesla K80 (0)","vecAdd(float*)",1,"local_load_throughput","Local Memory Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
-"Tesla K80 (0)","vecAdd(float*)",1,"local_store_throughput","Local Memory Store Throughput",0.000000B/s,0.000000B/s,0.000000B/s
-"Tesla K80 (0)","vecAdd(float*)",1,"shared_load_throughput","Shared Memory Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
-"Tesla K80 (0)","vecAdd(float*)",1,"shared_store_throughput","Shared Memory Store Throughput",0.000000B/s,0.000000B/s,0.000000B/s
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_read_throughput","L2 Throughput (Reads)",467.463479MB/s,467.463479MB/s,467.463479MB/s
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_write_throughput","L2 Throughput (Writes)",227.782204MB/s,227.782204MB/s,227.782204MB/s
-"Tesla K80 (0)","vecAdd(float*)",1,"sysmem_read_throughput","System Memory Read Throughput",0.000000B/s,0.000000B/s,0.000000B/s
-"Tesla K80 (0)","vecAdd(float*)",1,"sysmem_write_throughput","System Memory Write Throughput",10.199203MB/s,10.199203MB/s,10.199203MB/s
-"Tesla K80 (0)","vecAdd(float*)",1,"warp_nonpred_execution_efficiency","Warp Non-Predicated Execution Efficiency",100.000000%,100.000000%,100.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"cf_issued","Issued Control-Flow Instructions",3974,3974,3974
-"Tesla K80 (0)","vecAdd(float*)",1,"cf_executed","Executed Control-Flow Instructions",2080,2080,2080
-"Tesla K80 (0)","vecAdd(float*)",1,"ldst_issued","Issued Load/Store Instructions",32,32,32
-"Tesla K80 (0)","vecAdd(float*)",1,"ldst_executed","Executed Load/Store Instructions",32,32,32
-"Tesla K80 (0)","vecAdd(float*)",1,"flop_count_sp","Floating Point Operations(Single Precision)",1024,1024,1024
-"Tesla K80 (0)","vecAdd(float*)",1,"flop_count_sp_add","Floating Point Operations(Single Precision Add)",1024,1024,1024
-"Tesla K80 (0)","vecAdd(float*)",1,"flop_count_sp_mul","Floating Point Operation(Single Precision Mul)",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"flop_count_sp_fma","Floating Point Operations(Single Precision FMA)",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"flop_count_dp","Floating Point Operations(Double Precision)",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"flop_count_dp_add","Floating Point Operations(Double Precision Add)",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"flop_count_dp_mul","Floating Point Operations(Double Precision Mul)",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"flop_count_dp_fma","Floating Point Operations(Double Precison FMA)",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"flop_count_sp_special","Floating Point Operations(Single Precision Special)",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"stall_inst_fetch","Issue Stall Reasons (Instructions Fetch)",0.291222%,0.291222%,0.291222%
-"Tesla K80 (0)","vecAdd(float*)",1,"stall_exec_dependency","Issue Stall Reasons (Execution Dependency)",71.433802%,71.433802%,71.433802%
-"Tesla K80 (0)","vecAdd(float*)",1,"stall_memory_dependency","Issue Stall Reasons (Data Request)",0.000000%,0.000000%,0.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"stall_texture","Issue Stall Reasons (Texture)",0.000000%,0.000000%,0.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"stall_sync","Issue Stall Reasons (Synchronization)",0.000000%,0.000000%,0.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"stall_other","Issue Stall Reasons (Other)",0.458973%,0.458973%,0.458973%
-"Tesla K80 (0)","vecAdd(float*)",1,"l1_shared_utilization","L1/Shared Memory Utilization","Low (1)","Low (1)","Low (1)"
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_utilization","L2 Cache Utilization","Low (1)","Low (1)","Low (1)"
-"Tesla K80 (0)","vecAdd(float*)",1,"tex_utilization","Texture Cache Utilization","Idle (0)","Idle (0)","Idle (0)"
-"Tesla K80 (0)","vecAdd(float*)",1,"dram_utilization","Device Memory Utilization","Low (1)","Low (1)","Low (1)"
-"Tesla K80 (0)","vecAdd(float*)",1,"sysmem_utilization","System Memory Utilization","Low (1)","Low (1)","Low (1)"
-"Tesla K80 (0)","vecAdd(float*)",1,"ldst_fu_utilization","Load/Store Function Unit Utilization","Low (1)","Low (1)","Low (1)"
-"Tesla K80 (0)","vecAdd(float*)",1,"alu_fu_utilization","Arithmetic Function Unit Utilization","Mid (5)","Mid (5)","Mid (5)"
-"Tesla K80 (0)","vecAdd(float*)",1,"cf_fu_utilization","Control-Flow Function Unit Utilization","Mid (5)","Mid (5)","Mid (5)"
-"Tesla K80 (0)","vecAdd(float*)",1,"tex_fu_utilization","Texture Function Unit Utilization","Idle (0)","Idle (0)","Idle (0)"
-"Tesla K80 (0)","vecAdd(float*)",1,"inst_executed","Instructions Executed",416,416,416
-"Tesla K80 (0)","vecAdd(float*)",1,"inst_issued","Instructions Issued",8253,8253,8253
-"Tesla K80 (0)","vecAdd(float*)",1,"issue_slots","Issue Slots",8118,8118,8118
-"Tesla K80 (0)","vecAdd(float*)",1,"nc_l2_read_throughput","L2 Throughput (Non-Coherent Reads)",0.000000B/s,0.000000B/s,0.000000B/s
-"Tesla K80 (0)","vecAdd(float*)",1,"nc_l2_read_transactions","L2 Non-Coherent Read Transactions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"nc_cache_global_hit_rate","Non-Coherent Global Hit Rate",0.000000%,0.000000%,0.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"nc_gld_throughput","Non-Coherent Global Memory Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
-"Tesla K80 (0)","vecAdd(float*)",1,"nc_gld_efficiency","Non-Coherent Global Load Efficiency",0.000000%,0.000000%,0.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_atomic_throughput","L2 Throughput (Atomic requests)",0.000000B/s,0.000000B/s,0.000000B/s
-"Tesla K80 (0)","vecAdd(float*)",1,"inst_fp_32","FP Instructions(Single)",1024,1024,1024
-"Tesla K80 (0)","vecAdd(float*)",1,"inst_fp_64","FP Instructions(Double)",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"inst_integer","Integer Instructions",4096,4096,4096
-"Tesla K80 (0)","vecAdd(float*)",1,"inst_bit_convert","Bit-Convert Instructions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"inst_control","Control-Flow Instructions",1024,1024,1024
-"Tesla K80 (0)","vecAdd(float*)",1,"inst_compute_ld_st","Load/Store Instructions",3072,3072,3072
-"Tesla K80 (0)","vecAdd(float*)",1,"inst_misc","Misc Instructions",4096,4096,4096
-"Tesla K80 (0)","vecAdd(float*)",1,"inst_inter_thread_communication","Inter-Thread Instructions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"atomic_replay_overhead","Atomic Replay Overhead",0.000000,0.000000,0.000000
-"Tesla K80 (0)","vecAdd(float*)",1,"atomic_transactions","Atomic Transactions",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"atomic_transactions_per_request","Atomic Transactions Per Request",0.000000,0.000000,0.000000
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_l1_read_transactions","L2 Read Transactions (L1 read requests)",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_l1_write_transactions","L2 Write Transactions (L1 write requests)",128,128,128
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_tex_read_transactions","L2 Transactions (Texture Reads)",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_l1_write_throughput","L2 Throughput (L1 Writes)",217.583001MB/s,217.583001MB/s,217.583001MB/s
-"Tesla K80 (0)","vecAdd(float*)",1,"l2_atomic_transactions","L2 Transactions (Atomic requests)",0,0,0
-"Tesla K80 (0)","vecAdd(float*)",1,"ecc_transactions","ECC Transactions",31,31,31
-"Tesla K80 (0)","vecAdd(float*)",1,"ecc_throughput","ECC Throughput",52.695883MB/s,52.695883MB/s,52.695883MB/s
-"Tesla K80 (0)","vecAdd(float*)",1,"stall_pipe_busy","Issue Stall Reasons (Pipe Busy)",23.215198%,23.215198%,23.215198%
-"Tesla K80 (0)","vecAdd(float*)",1,"stall_constant_memory_dependency","Issue Stall Reasons (Immediate constant)",4.334276%,4.334276%,4.334276%
-"Tesla K80 (0)","vecAdd(float*)",1,"flop_sp_efficiency","FLOP Efficiency(Peak Single)",0.001762%,0.001762%,0.001762%
-"Tesla K80 (0)","vecAdd(float*)",1,"flop_dp_efficiency","FLOP Efficiency(Peak Double)",0.000000%,0.000000%,0.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"stall_memory_throttle","Issue Stall Reasons (Memory Throttle)",0.000000%,0.000000%,0.000000%
-"Tesla K80 (0)","vecAdd(float*)",1,"stall_not_selected","Issue Stall Reasons (Not Selected)",0.266528%,0.266528%,0.266528%
-"Tesla K80 (0)","vecAdd(float*)",1,"eligible_warps_per_cycle","Eligible Warps Per Active Cycle",1.120020,1.120020,1.120020
-"Tesla K80 (0)","vecAdd(float*)",1,"atomic_throughput","Atomic Throughput",0.000000B/s,0.000000B/s,0.000000B/s
+         l1_cache_local_hit_rate:  Hit rate in L1 cache for local loads and stores
+
+                   sm_efficiency:  The percentage of time at least one warp is active on a multiprocessor averaged over all multiprocessors on the GPU
+
+                             ipc:  Instructions executed per cycle
+
+              achieved_occupancy:  Ratio of the average active warps per active cycle to the maximum number of warps supported on a multiprocessor
+
+        gld_requested_throughput:  Requested global memory load throughput
+
+        gst_requested_throughput:  Requested global memory store throughput
+
+          sm_efficiency_instance:  The percentage of time at least one warp is active on a multiprocessor
+
+                    ipc_instance:  Instructions executed per cycle for a single multiprocessor
+
+            inst_replay_overhead:  Average number of replays for each instruction executed
+
+          shared_replay_overhead:  Average number of replays due to shared memory conflicts for each instruction executed
+
+          global_replay_overhead:  Average number of replays due to global memory cache misses for each instruction executed
+
+    global_cache_replay_overhead:  Average number of replays due to global memory cache misses for each instruction executed
+
+              tex_cache_hit_rate:  Texture cache hit rate
+
+            tex_cache_throughput:  Texture cache throughput
+
+            dram_read_throughput:  Device memory read throughput
+
+           dram_write_throughput:  Device memory write throughput
+
+                  gst_throughput:  Global memory store throughput
+
+                  gld_throughput:  Global memory load throughput
+
+           local_replay_overhead:  Average number of replays due to local memory accesses for each instruction executed
+
+               shared_efficiency:  Ratio of requested shared memory throughput to required shared memory throughput
+
+                  gld_efficiency:  Ratio of requested global memory load throughput to required global memory load throughput. Values greater than 100% indicate that, on average, the load requests of multiple threads in a warp fetched from the same memory address
+
+                  gst_efficiency:  Ratio of requested global memory store throughput to required global memory store throughput. Values greater than 100% indicate that, on average, the store requests of multiple threads in a warp targeted the same memory address
+
+             l2_l1_read_hit_rate:  Hit rate at L2 cache for all read requests from L1 cache
+
+        l2_texture_read_hit_rate:  Hit rate at L2 cache for all read requests from texture cache
+
+           l2_l1_read_throughput:  Memory read throughput seen at L2 cache for read requests from L1 cache
+
+      l2_texture_read_throughput:  Memory read throughput seen at L2 cache for read requests from the texture cache
+
+           local_memory_overhead:  Ratio of local memory traffic to total memory traffic between the L1 and L2 caches
+
+       warp_execution_efficiency:  Ratio of the average active threads per warp to the maximum number of threads per warp supported on a multiprocessor
+
+     nc_gld_requested_throughput:  Requested throughput for global memory loaded via non-coherent cache
+
+                      issued_ipc:  Instructions issued per cycle
+
+                   inst_per_warp:  Average number of instructions executed by each warp
+
+          issue_slot_utilization:  Percentage of issue slots that issued at least one instruction, averaged across all cycles
+
+local_load_transactions_per_request:  Average number of local memory load transactions performed for each local memory load
+
+local_store_transactions_per_request:  Average number of local memory store transactions performed for each local memory store
+
+shared_load_transactions_per_request:  Average number of shared memory load transactions performed for each shared memory load
+
+shared_store_transactions_per_request:  Average number of shared memory store transactions performed for each shared memory store
+
+    gld_transactions_per_request:  Average number of global memory load transactions performed for each global memory load
+
+    gst_transactions_per_request:  Average number of global memory store transactions performed for each global memory store
+
+         local_load_transactions:  Number of local memory load transactions
+
+        local_store_transactions:  Number of local memory store transactions
+
+        shared_load_transactions:  Number of shared memory load transactions
+
+       shared_store_transactions:  Number of shared memory store transactions
+
+                gld_transactions:  Number of global memory load transactions
+
+                gst_transactions:  Number of global memory store transactions
+
+        sysmem_read_transactions:  Number of system memory read transactions
+
+       sysmem_write_transactions:  Number of system memory write transactions
+
+          tex_cache_transactions:  Texture cache read transactions
+
+          dram_read_transactions:  Device memory read transactions
+
+         dram_write_transactions:  Device memory write transactions
+
+            l2_read_transactions:  Memory read transactions seen at L2 cache for all read requests
+
+           l2_write_transactions:  Memory write transactions seen at L2 cache for all write requests
+
+           local_load_throughput:  Local memory load throughput
+
+          local_store_throughput:  Local memory store throughput
+
+          shared_load_throughput:  Shared memory load throughput
+
+         shared_store_throughput:  Shared memory store throughput
+
+              l2_read_throughput:  Memory read throughput seen at L2 cache for all read requests
+
+             l2_write_throughput:  Memory write throughput seen at L2 cache for all write requests
+
+          sysmem_read_throughput:  System memory read throughput
+
+         sysmem_write_throughput:  System memory write throughput
+
+warp_nonpred_execution_efficiency:  Ratio of the average active threads per warp executing non-predicated instructions to the maximum number of threads per warp supported on a multiprocessor
+
+                       cf_issued:  Number of issued control-flow instructions
+
+                     cf_executed:  Number of executed control-flow instructions
+
+                     ldst_issued:  Number of issued local, global, shared and texture memory load and store instructions
+
+                   ldst_executed:  Number of executed local, global, shared and texture memory load and store instructions
+
+                   flop_count_sp:  Number of single-precision floating-point operations executed by non-predicated threads (add, multiply, multiply-accumulate and special)
+
+               flop_count_sp_add:  Number of single-precision floating-point add operations executed by non-predicated threads
+
+               flop_count_sp_mul:  Number of single-precision floating-point multiply operations executed by non-predicated threads
+
+               flop_count_sp_fma:  Number of single-precision floating-point multiply-accumulate operations executed by non-predicated threads
+
+                   flop_count_dp:  Number of double-precision floating-point operations executed non-predicated threads (add, multiply, multiply-accumulate and special)
+
+               flop_count_dp_add:  Number of double-precision floating-point add operations executed by non-predicated threads
+
+               flop_count_dp_mul:  Number of double-precision floating-point multiply operations executed by non-predicated threads
+
+               flop_count_dp_fma:  Number of double-precision floating-point multiply-accumulate operations executed by non-predicated threads
+
+           flop_count_sp_special:  Number of single-precision floating-point special operations executed by non-predicated threads
+
+                stall_inst_fetch:  Percentage of stalls occurring because the next assembly instruction has not yet been fetched
+
+           stall_exec_dependency:  Percentage of stalls occurring because an input required by the instruction is not yet available
+
+         stall_memory_dependency:  Percentage of stalls occurring because a memory operation cannot be performed due to the required resources not being available or fully utilized, or because too many requests of a given type are outstanding
+
+                   stall_texture:  Percentage of stalls occurring because the texture sub-system is fully utilized or has too many outstanding requests
+
+                      stall_sync:  Percentage of stalls occurring because the warp is blocked at a __syncthreads() call
+
+                     stall_other:  Percentage of stalls occurring due to miscellaneous reasons
+
+           l1_shared_utilization:  The utilization level of the L1/shared memory relative to peak utilization
+
+                  l2_utilization:  The utilization level of the L2 cache relative to the peak utilization
+
+                 tex_utilization:  The utilization level of the texture cache relative to the peak utilization
+
+                dram_utilization:  The utilization level of the device memory relative to the peak utilization
+
+              sysmem_utilization:  The utilization level of the system memory relative to the peak utilization
+
+             ldst_fu_utilization:  The utilization level of the multiprocessor function units that execute global, local and shared memory instructions
+
+              alu_fu_utilization:  The utilization level of the multiprocessor function units that execute integer and floating-point arithmetic instructions
+
+               cf_fu_utilization:  The utilization level of the multiprocessor function units that execute control-flow instructions
+
+              tex_fu_utilization:  The utilization level of the multiprocessor function units that execute texture instructions
+
+                   inst_executed:  The number of instructions executed
+
+                     inst_issued:  The number of instructions issued
+
+                     issue_slots:  The number of issue slots used
+
+           nc_l2_read_throughput:  Memory read throughput for non-coherent global read requests seen at L2 cache
+
+         nc_l2_read_transactions:  Memory read transactions seen at L2 cache for non-coherent global read requests
+
+        nc_cache_global_hit_rate:  Hit rate in non-coherent cache for global loads
+
+               nc_gld_throughput:  Non-coherent global memory load throughput
+
+               nc_gld_efficiency:  Ratio of requested non-coherent global memory load throughput to required non-coherent global memory load throughput
+
+            l2_atomic_throughput:  Memory read throughput seen at L2 cache for atomic and reduction requests
+
+                      inst_fp_32:  Number of single-precision floating-point instructions executed by non-predicated threads (arithmetric, compare, etc.)
+
+                      inst_fp_64:  Number of double-precision floating-point instructions executed by non-predicated threads (arithmetric, compare, etc.)
+
+                    inst_integer:  Number of integer instructions executed by non-predicated threads
+
+                inst_bit_convert:  Number of bit-conversion instructions executed by non-predicated threads
+
+                    inst_control:  Number of control-flow instructions executed by non-predicated threads (jump, branch, etc.)
+
+              inst_compute_ld_st:  Number of compute load/store instructions executed by non-predicated threads
+
+                       inst_misc:  Number of miscellaneous instructions executed by non-predicated threads
+
+ inst_inter_thread_communication:  Number of inter-thread communication instructions executed by non-predicated threads
+
+          atomic_replay_overhead:  Average number of replays due to atomic and reduction bank conflicts for each instruction executed
+
+             atomic_transactions:  Global memory atomic and reduction transactions
+
+ atomic_transactions_per_request:  Average number of global memory atomic and reduction transactions performed for each atomic and reduction instruction
+
+         l2_l1_read_transactions:  Memory read transactions seen at L2 cache for all read requests from L1 cache
+
+        l2_l1_write_transactions:  Memory write transactions seen at L2 cache for all write requests from L1 cache
+
+        l2_tex_read_transactions:  Memory read transactions seen at L2 cache for read requests from the texture cache
+
+          l2_l1_write_throughput:  Memory write throughput seen at L2 cache for write requests from L1 cache
+
+          l2_atomic_transactions:  Memory read transactions seen at L2 cache for atomic and reduction requests
+
+                ecc_transactions:  Number of ECC transactions between L2 and DRAM
+
+                  ecc_throughput:  ECC throughput from L2 to DRAM
+
+                 stall_pipe_busy:  Percentage of stalls occurring because a compute operation cannot be performed because the compute pipeline is busy
+
+stall_constant_memory_dependency:  Percentage of stalls occurring because of immediate constant cache miss
+
+              flop_sp_efficiency:  Ratio of achieved to peak single-precision floating-point operations
+
+              flop_dp_efficiency:  Ratio of achieved to peak double-precision floating-point operations
+
+           stall_memory_throttle:  Percentage of stalls occurring because of memory throttle
+
+              stall_not_selected:  Percentage of stalls occurring because warp was not selected
+
+        eligible_warps_per_cycle:  Average number of warps that are eligible to issue per active cycle
+
+               atomic_throughput:  Global memory atomic and reduction throughput
+
+Device 1 (Tesla K80):
+        l1_cache_global_hit_rate:  Hit rate in L1 cache for global loads
+
+         l1_cache_local_hit_rate:  Hit rate in L1 cache for local loads and stores
+
+                   sm_efficiency:  The percentage of time at least one warp is active on a multiprocessor averaged over all multiprocessors on the GPU
+
+                             ipc:  Instructions executed per cycle
+
+              achieved_occupancy:  Ratio of the average active warps per active cycle to the maximum number of warps supported on a multiprocessor
+
+        gld_requested_throughput:  Requested global memory load throughput
+
+        gst_requested_throughput:  Requested global memory store throughput
+
+          sm_efficiency_instance:  The percentage of time at least one warp is active on a multiprocessor
+
+                    ipc_instance:  Instructions executed per cycle for a single multiprocessor
+
+            inst_replay_overhead:  Average number of replays for each instruction executed
+
+          shared_replay_overhead:  Average number of replays due to shared memory conflicts for each instruction executed
+
+          global_replay_overhead:  Average number of replays due to global memory cache misses for each instruction executed
+
+    global_cache_replay_overhead:  Average number of replays due to global memory cache misses for each instruction executed
+
+              tex_cache_hit_rate:  Texture cache hit rate
+
+            tex_cache_throughput:  Texture cache throughput
+
+            dram_read_throughput:  Device memory read throughput
+
+           dram_write_throughput:  Device memory write throughput
+
+                  gst_throughput:  Global memory store throughput
+
+                  gld_throughput:  Global memory load throughput
+
+           local_replay_overhead:  Average number of replays due to local memory accesses for each instruction executed
+
+               shared_efficiency:  Ratio of requested shared memory throughput to required shared memory throughput
+
+                  gld_efficiency:  Ratio of requested global memory load throughput to required global memory load throughput. Values greater than 100% indicate that, on average, the load requests of multiple threads in a warp fetched from the same memory address
+
+                  gst_efficiency:  Ratio of requested global memory store throughput to required global memory store throughput. Values greater than 100% indicate that, on average, the store requests of multiple threads in a warp targeted the same memory address
+
+             l2_l1_read_hit_rate:  Hit rate at L2 cache for all read requests from L1 cache
+
+        l2_texture_read_hit_rate:  Hit rate at L2 cache for all read requests from texture cache
+
+           l2_l1_read_throughput:  Memory read throughput seen at L2 cache for read requests from L1 cache
+
+      l2_texture_read_throughput:  Memory read throughput seen at L2 cache for read requests from the texture cache
+
+           local_memory_overhead:  Ratio of local memory traffic to total memory traffic between the L1 and L2 caches
+
+       warp_execution_efficiency:  Ratio of the average active threads per warp to the maximum number of threads per warp supported on a multiprocessor
+
+     nc_gld_requested_throughput:  Requested throughput for global memory loaded via non-coherent cache
+
+                      issued_ipc:  Instructions issued per cycle
+
+                   inst_per_warp:  Average number of instructions executed by each warp
+
+          issue_slot_utilization:  Percentage of issue slots that issued at least one instruction, averaged across all cycles
+
+local_load_transactions_per_request:  Average number of local memory load transactions performed for each local memory load
+
+local_store_transactions_per_request:  Average number of local memory store transactions performed for each local memory store
+
+shared_load_transactions_per_request:  Average number of shared memory load transactions performed for each shared memory load
+
+shared_store_transactions_per_request:  Average number of shared memory store transactions performed for each shared memory store
+
+    gld_transactions_per_request:  Average number of global memory load transactions performed for each global memory load
+
+    gst_transactions_per_request:  Average number of global memory store transactions performed for each global memory store
+
+         local_load_transactions:  Number of local memory load transactions
+
+        local_store_transactions:  Number of local memory store transactions
+
+        shared_load_transactions:  Number of shared memory load transactions
+
+       shared_store_transactions:  Number of shared memory store transactions
+
+                gld_transactions:  Number of global memory load transactions
+
+                gst_transactions:  Number of global memory store transactions
+
+        sysmem_read_transactions:  Number of system memory read transactions
+
+       sysmem_write_transactions:  Number of system memory write transactions
+
+          tex_cache_transactions:  Texture cache read transactions
+
+          dram_read_transactions:  Device memory read transactions
+
+         dram_write_transactions:  Device memory write transactions
+
+            l2_read_transactions:  Memory read transactions seen at L2 cache for all read requests
+
+           l2_write_transactions:  Memory write transactions seen at L2 cache for all write requests
+
+           local_load_throughput:  Local memory load throughput
+
+          local_store_throughput:  Local memory store throughput
+
+          shared_load_throughput:  Shared memory load throughput
+
+         shared_store_throughput:  Shared memory store throughput
+
+              l2_read_throughput:  Memory read throughput seen at L2 cache for all read requests
+
+             l2_write_throughput:  Memory write throughput seen at L2 cache for all write requests
+
+          sysmem_read_throughput:  System memory read throughput
+
+         sysmem_write_throughput:  System memory write throughput
+
+warp_nonpred_execution_efficiency:  Ratio of the average active threads per warp executing non-predicated instructions to the maximum number of threads per warp supported on a multiprocessor
+
+                       cf_issued:  Number of issued control-flow instructions
+
+                     cf_executed:  Number of executed control-flow instructions
+
+                     ldst_issued:  Number of issued local, global, shared and texture memory load and store instructions
+
+                   ldst_executed:  Number of executed local, global, shared and texture memory load and store instructions
+
+                   flop_count_sp:  Number of single-precision floating-point operations executed by non-predicated threads (add, multiply, multiply-accumulate and special)
+
+               flop_count_sp_add:  Number of single-precision floating-point add operations executed by non-predicated threads
+
+               flop_count_sp_mul:  Number of single-precision floating-point multiply operations executed by non-predicated threads
+
+               flop_count_sp_fma:  Number of single-precision floating-point multiply-accumulate operations executed by non-predicated threads
+
+                   flop_count_dp:  Number of double-precision floating-point operations executed non-predicated threads (add, multiply, multiply-accumulate and special)
+
+               flop_count_dp_add:  Number of double-precision floating-point add operations executed by non-predicated threads
+
+               flop_count_dp_mul:  Number of double-precision floating-point multiply operations executed by non-predicated threads
+
+               flop_count_dp_fma:  Number of double-precision floating-point multiply-accumulate operations executed by non-predicated threads
+
+           flop_count_sp_special:  Number of single-precision floating-point special operations executed by non-predicated threads
+
+                stall_inst_fetch:  Percentage of stalls occurring because the next assembly instruction has not yet been fetched
+
+           stall_exec_dependency:  Percentage of stalls occurring because an input required by the instruction is not yet available
+
+         stall_memory_dependency:  Percentage of stalls occurring because a memory operation cannot be performed due to the required resources not being available or fully utilized, or because too many requests of a given type are outstanding
+
+                   stall_texture:  Percentage of stalls occurring because the texture sub-system is fully utilized or has too many outstanding requests
+
+                      stall_sync:  Percentage of stalls occurring because the warp is blocked at a __syncthreads() call
+
+                     stall_other:  Percentage of stalls occurring due to miscellaneous reasons
+
+           l1_shared_utilization:  The utilization level of the L1/shared memory relative to peak utilization
+
+                  l2_utilization:  The utilization level of the L2 cache relative to the peak utilization
+
+                 tex_utilization:  The utilization level of the texture cache relative to the peak utilization
+
+                dram_utilization:  The utilization level of the device memory relative to the peak utilization
+
+              sysmem_utilization:  The utilization level of the system memory relative to the peak utilization
+
+             ldst_fu_utilization:  The utilization level of the multiprocessor function units that execute global, local and shared memory instructions
+
+              alu_fu_utilization:  The utilization level of the multiprocessor function units that execute integer and floating-point arithmetic instructions
+
+               cf_fu_utilization:  The utilization level of the multiprocessor function units that execute control-flow instructions
+
+              tex_fu_utilization:  The utilization level of the multiprocessor function units that execute texture instructions
+
+                   inst_executed:  The number of instructions executed
+
+                     inst_issued:  The number of instructions issued
+
+                     issue_slots:  The number of issue slots used
+
+           nc_l2_read_throughput:  Memory read throughput for non-coherent global read requests seen at L2 cache
+
+         nc_l2_read_transactions:  Memory read transactions seen at L2 cache for non-coherent global read requests
+
+        nc_cache_global_hit_rate:  Hit rate in non-coherent cache for global loads
+
+               nc_gld_throughput:  Non-coherent global memory load throughput
+
+               nc_gld_efficiency:  Ratio of requested non-coherent global memory load throughput to required non-coherent global memory load throughput
+
+            l2_atomic_throughput:  Memory read throughput seen at L2 cache for atomic and reduction requests
+
+                      inst_fp_32:  Number of single-precision floating-point instructions executed by non-predicated threads (arithmetric, compare, etc.)
+
+                      inst_fp_64:  Number of double-precision floating-point instructions executed by non-predicated threads (arithmetric, compare, etc.)
+
+                    inst_integer:  Number of integer instructions executed by non-predicated threads
+
+                inst_bit_convert:  Number of bit-conversion instructions executed by non-predicated threads
+
+                    inst_control:  Number of control-flow instructions executed by non-predicated threads (jump, branch, etc.)
+
+              inst_compute_ld_st:  Number of compute load/store instructions executed by non-predicated threads
+
+                       inst_misc:  Number of miscellaneous instructions executed by non-predicated threads
+
+ inst_inter_thread_communication:  Number of inter-thread communication instructions executed by non-predicated threads
+
+          atomic_replay_overhead:  Average number of replays due to atomic and reduction bank conflicts for each instruction executed
+
+             atomic_transactions:  Global memory atomic and reduction transactions
+
+ atomic_transactions_per_request:  Average number of global memory atomic and reduction transactions performed for each atomic and reduction instruction
+
+         l2_l1_read_transactions:  Memory read transactions seen at L2 cache for all read requests from L1 cache
+
+        l2_l1_write_transactions:  Memory write transactions seen at L2 cache for all write requests from L1 cache
+
+        l2_tex_read_transactions:  Memory read transactions seen at L2 cache for read requests from the texture cache
+
+          l2_l1_write_throughput:  Memory write throughput seen at L2 cache for write requests from L1 cache
+
+          l2_atomic_transactions:  Memory read transactions seen at L2 cache for atomic and reduction requests
+
+                ecc_transactions:  Number of ECC transactions between L2 and DRAM
+
+                  ecc_throughput:  ECC throughput from L2 to DRAM
+
+                 stall_pipe_busy:  Percentage of stalls occurring because a compute operation cannot be performed because the compute pipeline is busy
+
+stall_constant_memory_dependency:  Percentage of stalls occurring because of immediate constant cache miss
+
+              flop_sp_efficiency:  Ratio of achieved to peak single-precision floating-point operations
+
+              flop_dp_efficiency:  Ratio of achieved to peak double-precision floating-point operations
+
+           stall_memory_throttle:  Percentage of stalls occurring because of memory throttle
+
+              stall_not_selected:  Percentage of stalls occurring because warp was not selected
+
+        eligible_warps_per_cycle:  Average number of warps that are eligible to issue per active cycle
+
+               atomic_throughput:  Global memory atomic and reduction throughput
+
