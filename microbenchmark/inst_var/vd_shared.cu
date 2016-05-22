@@ -68,7 +68,7 @@ int main( int argc, char* argv[] )
     int blockSize, gridSize;
 	
     // Number of threads in each thread block
-    blockSize = 1024;
+    blockSize = 256;
 	
     // Number of thread blocks in grid
     gridSize = (int)ceil((float)N/blockSize);

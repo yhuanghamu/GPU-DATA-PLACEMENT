@@ -3,7 +3,8 @@
 #include <math.h>
 #ifndef N
 	#define N (1024)
-#endif
+#endif	
+#define BLOCKSIZE (256)
 // CUDA kernel. Each thread takes care of one element of c
 __global__ void vecAdd(float *a, float *b, float *c)
 {
@@ -55,16 +56,16 @@ int main( int argc, char* argv[] )
     cudaMemcpy( d_a, h_a, bytes, cudaMemcpyHostToDevice);
     cudaMemcpy( d_b, h_b, bytes, cudaMemcpyHostToDevice);
 	
-    int blockSize, gridSize;
-	
+    //int blockSize, gridSize;
+    int gridSize;	
     // Number of threads in each thread block
-    blockSize = 1024;
+    //BLOCKSIZE = 1024;
 	
     // Number of thread blocks in grid
-    gridSize = (int)ceil((float)N/blockSize);
+    gridSize = (int)ceil((float)N/BLOCKSIZE);
 	
     // Execute the kernel
-    vecAdd<<<gridSize, blockSize>>>(d_a, d_b, d_c);
+    vecAdd<<<gridSize, BLOCKSIZE>>>(d_a, d_b, d_c);
 	
     // Copy array back to host
     cudaMemcpy( h_c, d_c, bytes, cudaMemcpyDeviceToHost );
