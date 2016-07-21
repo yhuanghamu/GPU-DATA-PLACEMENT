@@ -1,0 +1,134 @@
+	.headerflags	@"EF_CUDA_TEXMODE_UNIFIED EF_CUDA_64BIT_ADDRESS EF_CUDA_SM20 EF_CUDA_PTX_SM(EF_CUDA_SM20)"
+
+
+//--------------------- .nv.info._Z6vecAddPfS_S_  --------------------------
+	.section	.nv.info._Z6vecAddPfS_S_,"",@"SHT_CUDA_INFO"
+	.align	4
+
+
+	//----- nvinfo : EIATTR_PARAM_CBANK
+	.align		4
+        /*0000*/ 	.byte	0x04, 0x0a
+        /*0002*/ 	.short	(.L_2 - .L_1)
+	.align		4
+.L_1:
+        /*0004*/ 	.word	index@(.nv.constant0._Z6vecAddPfS_S_)
+        /*0008*/ 	.short	0x0020
+        /*000a*/ 	.short	0x0018
+
+
+	//----- nvinfo : EIATTR_CBANK_PARAM_SIZE
+	.align		4
+.L_2:
+        /*000c*/ 	.byte	0x03, 0x19
+        /*000e*/ 	.short	0x0018
+
+
+	//----- nvinfo : EIATTR_KPARAM_INFO
+	.align		4
+        /*0010*/ 	.byte	0x04, 0x17
+        /*0012*/ 	.short	(.L_4 - .L_3)
+.L_3:
+        /*0014*/ 	.word	0x00000000
+        /*0018*/ 	.short	0x0002
+        /*001a*/ 	.short	0x0010
+        /*001c*/ 	.byte	0x00, 0xf0, 0x21, 0x00
+
+
+	//----- nvinfo : EIATTR_KPARAM_INFO
+	.align		4
+.L_4:
+        /*0020*/ 	.byte	0x04, 0x17
+        /*0022*/ 	.short	(.L_6 - .L_5)
+.L_5:
+        /*0024*/ 	.word	0x00000000
+        /*0028*/ 	.short	0x0001
+        /*002a*/ 	.short	0x0008
+        /*002c*/ 	.byte	0x00, 0xf0, 0x21, 0x00
+
+
+	//----- nvinfo : EIATTR_KPARAM_INFO
+	.align		4
+.L_6:
+        /*0030*/ 	.byte	0x04, 0x17
+        /*0032*/ 	.short	(.L_8 - .L_7)
+.L_7:
+        /*0034*/ 	.word	0x00000000
+        /*0038*/ 	.short	0x0000
+        /*003a*/ 	.short	0x0000
+        /*003c*/ 	.byte	0x00, 0xf0, 0x21, 0x00
+.L_8:
+
+
+//--------------------- .nv.info                  --------------------------
+	.section	.nv.info,"",@"SHT_CUDA_INFO"
+	.align	4
+
+
+	//----- nvinfo : EIATTR_MAX_STACK_SIZE
+	.align		4
+        /*0000*/ 	.byte	0x04, 0x23
+        /*0002*/ 	.short	(.L_10 - .L_9)
+	.align		4
+.L_9:
+        /*0004*/ 	.word	index@(_Z6vecAddPfS_S_)
+        /*0008*/ 	.word	0x00000000
+
+
+	//----- nvinfo : EIATTR_MIN_STACK_SIZE
+	.align		4
+.L_10:
+        /*000c*/ 	.byte	0x04, 0x12
+        /*000e*/ 	.short	(.L_12 - .L_11)
+	.align		4
+.L_11:
+        /*0010*/ 	.word	index@(_Z6vecAddPfS_S_)
+        /*0014*/ 	.word	0x00000000
+
+
+	//----- nvinfo : EIATTR_FRAME_SIZE
+	.align		4
+.L_12:
+        /*0018*/ 	.byte	0x04, 0x11
+        /*001a*/ 	.short	(.L_14 - .L_13)
+	.align		4
+.L_13:
+        /*001c*/ 	.word	index@(_Z6vecAddPfS_S_)
+        /*0020*/ 	.word	0x00000000
+.L_14:
+
+
+//--------------------- .nv.constant0._Z6vecAddPfS_S_ --------------------------
+	.section	.nv.constant0._Z6vecAddPfS_S_,"a",@progbits
+	.align	4
+.nv.constant0._Z6vecAddPfS_S_:
+	.zero		56
+
+
+//--------------------- .text._Z6vecAddPfS_S_     --------------------------
+	.section	.text._Z6vecAddPfS_S_,"ax",@progbits
+	.sectioninfo	@"SHI_REGISTERS=10"
+	.align	4
+        .global         _Z6vecAddPfS_S_
+        .type           _Z6vecAddPfS_S_,@function
+        .size           _Z6vecAddPfS_S_,(.L_15 - _Z6vecAddPfS_S_)
+        .other          _Z6vecAddPfS_S_,@"STO_CUDA_ENTRY STV_DEFAULT"
+_Z6vecAddPfS_S_:
+.text._Z6vecAddPfS_S_:
+        /*0000*/         MOV R1, c[0x1][0x100];
+        /*0008*/         S2R R0, SR_TID.X;
+        /*0010*/         S2R R2, SR_CTAID.X;
+        /*0018*/         MOV32I R5, 0x4;
+        /*0020*/         IMAD R3, R0, c[0x0][0x8], R2;
+        /*0028*/         IMAD.U32.U32 R6.CC, R3, R5, c[0x0][0x20];
+        /*0030*/         IMAD.U32.U32.HI.X R7, R3, R5, c[0x0][0x24];
+        /*0038*/         IMAD.U32.U32 R8.CC, R3, R5, c[0x0][0x28];
+        /*0040*/         LD.E R2, [R6];
+        /*0048*/         IMAD.U32.U32.HI.X R9, R3, R5, c[0x0][0x2c];
+        /*0050*/         IMAD.U32.U32 R4.CC, R3, R5, c[0x0][0x30];
+        /*0058*/         LD.E R0, [R8];
+        /*0060*/         IMAD.U32.U32.HI.X R5, R3, R5, c[0x0][0x34];
+        /*0068*/         FADD R0, R2, R0;
+        /*0070*/         ST.E [R4], R0;
+        /*0078*/         EXIT;
+.L_15:

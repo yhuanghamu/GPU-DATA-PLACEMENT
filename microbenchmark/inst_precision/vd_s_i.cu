@@ -3,15 +3,24 @@
 #include <math.h>
 #define N (1024)
 // CUDA kernel. Each thread takes care of one element of c
-__global__ void vecAdd(float *a, float *b, float *c)
+__global__ void vecAdd(int *a, int *b, int *c)
 {
     // Get our global thread ID
-    int row = threadIdx.x;
-    int col = blockIdx.x;
+	__shared__ int s_a[N],s_b[N];
+	
+    int id = blockIdx.x*blockDim.x+threadIdx.x;
 	
     // Make sure we do not go out of bounds
-//    if (id < N)
-        c[row*blockDim.x+col] = a[row*blockDim.x+col] + b[row*blockDim.x+col];
+   // if (id < N) {
+		s_a[id] = a[id];
+		s_b[id] = b[id];
+		
+  //      }
+	__syncthreads();
+//	if (id < N) {
+		c[id] = s_a[id] + s_b[id];
+//	}
+	
 }
 
 int main( int argc, char* argv[] )
@@ -20,24 +29,24 @@ int main( int argc, char* argv[] )
     //int n = 10000;
 	
     // Host input vectors
-    float *h_a;
-    float *h_b;
+    int *h_a;
+    int *h_b;
     //Host output vector
-    float *h_c;
+    int *h_c;
 	
     // Device input vectors
-    float *d_a;
-    float *d_b;
+    int *d_a;
+    int *d_b;
     //Device output vector
-    float *d_c;
+    int *d_c;
 	
     // Size, in bytes, of each vector
-    size_t bytes = N*sizeof(float);
+    size_t bytes = N*sizeof(int);
 	
     // Allocate memory for each vector on host
-    h_a = (float*)malloc(bytes);
-    h_b = (float*)malloc(bytes);
-    h_c = (float*)malloc(bytes);
+    h_a = (int*)malloc(bytes);
+    h_b = (int*)malloc(bytes);
+    h_c = (int*)malloc(bytes);
 	// Allocate memory for each vector on GPU
     cudaMalloc(&d_a, bytes);
     cudaMalloc(&d_b, bytes);
@@ -57,10 +66,10 @@ int main( int argc, char* argv[] )
     int blockSize, gridSize;
 	
     // Number of threads in each thread block
-    blockSize = 32;
+    blockSize = 1024;
 	
     // Number of thread blocks in grid
-    gridSize = 32;
+    gridSize = (int)ceil((int)N/blockSize);
 	
     // Execute the kernel
     vecAdd<<<gridSize, blockSize>>>(d_a, d_b, d_c);
@@ -69,12 +78,9 @@ int main( int argc, char* argv[] )
     cudaMemcpy( h_c, d_c, bytes, cudaMemcpyDeviceToHost );
 	
     // Sum up vector c and print result divided by n, this should equal 1 within error
-    float sum = 0;
-    for(i=0; i< N; i++) {
+    int sum = 0;
+    for(i=0; i<N; i++)
         sum += h_c[i];
-		//printf("h_c[%d]=%f\n",i,h_c[i]);
-	}
-	//printf("Sum is %f\n",sum);
     printf("final result: %f\n", sum/N);
 	
     // Release device memory

@@ -306,9 +306,9 @@ int main(int argc, char **argv)
     *c_Kernel;
 
 
-    const int imageW = 3072;
-    const int imageH = 3072;
-    const int iterations = 16;
+    const int imageW = 512;
+    const int imageH = 512;
+    const int iterations = 1;
 
     struct timespec t1,t2;
     
@@ -358,13 +358,14 @@ int main(int argc, char **argv)
         }
 
         convolutionRowsGPU(
-            d_Buffer,
-            d_Input,
+           // d_Buffer,
+            d_Output,
+	    d_Input,
             imageW,
             imageH,
             c_Kernel
         );
-
+/*
         convolutionColumnsGPU(
             d_Output,
             d_Buffer,
@@ -372,7 +373,7 @@ int main(int argc, char **argv)
             imageH,
             c_Kernel
         );
-    }
+  */  }
 
     checkCudaErrors(cudaDeviceSynchronize());
     clock_gettime(CLOCK_MONOTONIC,&t2);
@@ -386,14 +387,15 @@ int main(int argc, char **argv)
     printf("Checking the results...\n");
     printf(" ...running convolutionRowCPU()\n");
     convolutionRowCPU(
-        h_Buffer,
-        h_Input,
+       // h_Buffer,
+        h_OutputCPU,
+	h_Input,
         h_Kernel,
         imageW,
         imageH,
         KERNEL_RADIUS
     );
-
+    /*
     printf(" ...running convolutionColumnCPU()\n");
     convolutionColumnCPU(
         h_OutputCPU,
@@ -403,7 +405,7 @@ int main(int argc, char **argv)
         imageH,
         KERNEL_RADIUS
     );
-
+    */
     printf(" ...comparing the results\n");
     double sum = 0, delta = 0;
 

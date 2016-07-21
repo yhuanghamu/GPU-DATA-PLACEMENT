@@ -2,16 +2,24 @@
 #include <stdlib.h>
 #include <math.h>
 #define N (1024)
+
+__constant__ float c_a[N];
+__constant__ float c_b[N];
+
+void setConstant(float *h_a, float *h_b)
+{
+    cudaMemcpyToSymbol(c_a, h_a, N * sizeof(float));
+	cudaMemcpyToSymbol(c_b, h_b, N * sizeof(float));
+}
 // CUDA kernel. Each thread takes care of one element of c
-__global__ void vecAdd(float *a, float *b, float *c)
+__global__ void vecAdd(float *c)
 {
     // Get our global thread ID
-    int row = threadIdx.x;
-    int col = blockIdx.x;
+    int id = blockIdx.x*blockDim.x+threadIdx.x;
 	
     // Make sure we do not go out of bounds
-//    if (id < N)
-        c[row*blockDim.x+col] = a[row*blockDim.x+col] + b[row*blockDim.x+col];
+   // if (id < N)
+        c[id] = c_a[id] + c_b[id];
 }
 
 int main( int argc, char* argv[] )
@@ -57,24 +65,21 @@ int main( int argc, char* argv[] )
     int blockSize, gridSize;
 	
     // Number of threads in each thread block
-    blockSize = 32;
+    blockSize = 1024;
 	
     // Number of thread blocks in grid
-    gridSize = 32;
-	
+    gridSize = (int)ceil((float)N/blockSize);
+	setConstant(h_a, h_b);
     // Execute the kernel
-    vecAdd<<<gridSize, blockSize>>>(d_a, d_b, d_c);
+    vecAdd<<<gridSize, blockSize>>>(d_c);
 	
     // Copy array back to host
     cudaMemcpy( h_c, d_c, bytes, cudaMemcpyDeviceToHost );
 	
     // Sum up vector c and print result divided by n, this should equal 1 within error
     float sum = 0;
-    for(i=0; i< N; i++) {
+    for(i=0; i<N; i++)
         sum += h_c[i];
-		//printf("h_c[%d]=%f\n",i,h_c[i]);
-	}
-	//printf("Sum is %f\n",sum);
     printf("final result: %f\n", sum/N);
 	
     // Release device memory

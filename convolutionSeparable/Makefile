@@ -145,40 +145,40 @@ run: build
 #	$@
 1:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+#	./$@
 2:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+#	./$@
 2_re:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+#	./$@
 3:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+#	./$@
 4:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+#	./$@
 #4_overhead:
 #	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 #	./$@
 5:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+#	./$@
 6:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+#	./$@
 con_rule:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+#	./$@
 convolution_cpu:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+#	./$@
 convolution:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+#	./$@
 convolution_index:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+#	./$@
 #convolution_prof:
 #	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
 #	./$@
@@ -193,7 +193,7 @@ convolution_index:
 #	./$@
 small:
 	$(NVCC) $(NVCCFLAGS) $(EXTRA_NVCCFLAGS) $(GENCODE_FLAGS) -o $@ $@.cu
-	./$@
+#	./$@
 prof: 1 2 2_re 3 4 5 6 con_rule convolution_cpu convolution convolution_index small
 	nvprof  --events all --metrics all  --csv --log-file 1.csv ./1
 	nvprof  --events all --metrics all  --csv --log-file 2.csv ./2
@@ -208,4 +208,4 @@ prof: 1 2 2_re 3 4 5 6 con_rule convolution_cpu convolution convolution_index sm
 	nvprof  --events all --metrics all  --csv --log-file convolution_index.csv ./convolution_index
 	nvprof  --events all --metrics all  --csv --log-file small.csv ./small
 clean:
-	rm -f convolutionSeparable main.o convolutionSeparable_gold.o convolutionSeparable.o
+	rm -f 1 2 2_re 3 4 5 6 con_rule convolution_cpu convolution convolution_index small convolutionSeparable main.o convolutionSeparable_gold.o convolutionSeparable.o

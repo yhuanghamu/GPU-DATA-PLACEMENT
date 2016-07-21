@@ -3,15 +3,14 @@
 #include <math.h>
 #define N (1024)
 // CUDA kernel. Each thread takes care of one element of c
-__global__ void vecAdd(float *a, float *b, float *c)
+__global__ void vecAdd(double *a, float *b, float *c)
 {
     // Get our global thread ID
-    int row = threadIdx.x;
-    int col = blockIdx.x;
+    int id = blockIdx.x*blockDim.x+threadIdx.x;
 	
     // Make sure we do not go out of bounds
 //    if (id < N)
-        c[row*blockDim.x+col] = a[row*blockDim.x+col] + b[row*blockDim.x+col];
+        c[id] = a[id] + b[id];
 }
 
 int main( int argc, char* argv[] )
@@ -20,22 +19,22 @@ int main( int argc, char* argv[] )
     //int n = 10000;
 	
     // Host input vectors
-    float *h_a;
+    double *h_a;
     float *h_b;
     //Host output vector
     float *h_c;
 	
     // Device input vectors
-    float *d_a;
+    double *d_a;
     float *d_b;
     //Device output vector
     float *d_c;
 	
     // Size, in bytes, of each vector
     size_t bytes = N*sizeof(float);
-	
+    size_t bytes_2 = N*sizeof(double);	
     // Allocate memory for each vector on host
-    h_a = (float*)malloc(bytes);
+    h_a = (double*)malloc(bytes);
     h_b = (float*)malloc(bytes);
     h_c = (float*)malloc(bytes);
 	// Allocate memory for each vector on GPU
@@ -57,10 +56,10 @@ int main( int argc, char* argv[] )
     int blockSize, gridSize;
 	
     // Number of threads in each thread block
-    blockSize = 32;
+    blockSize = 1024;
 	
     // Number of thread blocks in grid
-    gridSize = 32;
+    gridSize = (int)ceil((float)N/blockSize);
 	
     // Execute the kernel
     vecAdd<<<gridSize, blockSize>>>(d_a, d_b, d_c);
