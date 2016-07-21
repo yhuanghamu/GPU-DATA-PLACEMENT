@@ -6,12 +6,12 @@
 __global__ void vecAdd(float *a, float *b, float *c)
 {
     // Get our global thread ID
-    int id = blockIdx.x*blockDim.x+threadIdx.x;
+    int row = threadIdx.x
+    int col = blockIdx.x;
 	
     // Make sure we do not go out of bounds
 //    if (id < N)
-        c[id] = a[id] + b[id];
-        b=a[id]
+        c[blockIdx.x*blockDim.x+threadId.x] = a[blockIdx.x*blockDim.x+threadId.x] + b[blockIdx.x*blockDim.x+threadId.x];
 }
 
 int main( int argc, char* argv[] )
@@ -57,10 +57,10 @@ int main( int argc, char* argv[] )
     int blockSize, gridSize;
 	
     // Number of threads in each thread block
-    blockSize = 1024;
+    blockSize = 32;
 	
     // Number of thread blocks in grid
-    gridSize = (int)ceil((float)N/blockSize);
+    gridSize = 32;
 	
     // Execute the kernel
     vecAdd<<<gridSize, blockSize>>>(d_a, d_b, d_c);
