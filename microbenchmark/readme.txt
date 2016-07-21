@@ -1,5 +1,11 @@
-Sample: CUDA Separable Convolution
-Minimum spec: GeForce 8
+Microbenchmark: Vector addition
+/
+	/2D array
+		vd_c_2D.cu: Constant memory
+		vd_g_2D.cu:	Global memory
+		vd_s_2D.cu:	Shared memory
+		vd_t_2D.cu: Texture memory
+		Makefile
 
 This sample implements a separable convolution filter of a 2D signal with a gaussian kernel.
 Usuage:
