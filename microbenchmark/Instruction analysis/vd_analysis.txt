@@ -3,6 +3,9 @@ c[0x0][0x8]  = block dimension
 c[0x0][0x20] -> address of array a
 c[0x0][0x28] -> address of array b
 ************************************************************
+
+float
+1 index
 //Start
         /*0000*/         MOV R1, c[0x1][0x100];    <1>
         
@@ -32,4 +35,41 @@ c[0x0][0x28] -> address of array b
 //Exit
         /*0078*/         EXIT;<5>
 
-R0 = 0
+************************************************************
+MOV R1, c[0x1][0x100];
+S2R R0, SR_CTAID.X;
+S2R R2, SR_TID.X;
+IMAD R3, R0, c[0x0][0x8], R2;
+MOV32I R5, 0x4;
+ISUB R0, 0x400, R3;
+IMAD R6.CC, R3, R5, c[0x0][0x20];
+IMAD.HI.X R7, R3, R5, c[0x0][0x24];
+LD.E R2, [R6];
+IMAD R8.CC, R0, R5, c[0x0][0x28];
+IMAD.HI.X R9, R0, R5, c[0x0][0x2c];
+LD.E R0, [R8];
+IMAD R4.CC, R3, R5, c[0x0][0x30];
+IMAD.HI.X R5, R3, R5, c[0x0][0x34];
+FADD R0, R2, R0;
+ST.E [R4], R0;
+EXIT;
+
+************************************************************
+ MOV R1, c[0x1][0x100];
+ S2R R0, SR_CTAID.X;
+ S2R R2, SR_TID.X;
+ IMAD R2, R0, c[0x0][0x8], R2;
+ MOV32I R3, 0x4;
+ IMAD R8.CC, R0, R3, c[0x0][0x28];
+ IMAD.HI.X R9, R0, R3, c[0x0][0x2c];
+ LD.E R0, [R8];
+ MOV32I R7, 0x8;
+ ISUB R0, 0x400, R2;
+ IMAD R6.CC, R2, R7, c[0x0][0x20];
+ IMAD.HI.X R7, R2, R7, c[0x0][0x24];
+ LD.E.64 R4, [R6];
+ IMAD R6.CC, R2, R3, c[0x0][0x30];
+ IMAD.HI.X R7, R2, R3, c[0x0][0x34];
+ DADD R4, R4, R8;
+ ST.E [R6], R0;
+EXIT;
