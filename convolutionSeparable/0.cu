@@ -299,9 +299,9 @@ int main(int argc, char **argv)
     *d_Buffer;
 
 
-    const int imageW = 3072;
-    const int imageH = 3072;
-    const int iterations = 16;
+    const int imageW = 512;
+    const int imageH = 512;
+    const int iterations = 1;
 
     struct timespec t1,t2;
     
@@ -350,19 +350,21 @@ int main(int argc, char **argv)
         }
 if(i==1) clock_gettime(CLOCK_MONOTONIC,&t1);
         convolutionRowsGPU(
-            d_Buffer,
+            d_Output,
             d_Input,
             imageW,
             imageH
         );
 cudaDeviceSynchronize();
 if(i==1) clock_gettime(CLOCK_MONOTONIC,&t2);
+/*
         convolutionColumnsGPU(
             d_Output,
             d_Buffer,
             imageW,
             imageH
         );
+*/
     }
 
     checkCudaErrors(cudaDeviceSynchronize());
