@@ -127,7 +127,7 @@ void convolutionRowsGPU(
         imageW,
         c_Kernel
     );
-    getLastCudaError("convolutionRowsKernel() execution failed\n");
+//    getLastCudaError("convolutionRowsKernel() execution failed\n");
 }
 
 

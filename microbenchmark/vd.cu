@@ -11,7 +11,7 @@ __global__ void vecAdd(float *a, float *b, float *c)
     // Make sure we do not go out of bounds
 //    if (id < N)
         c[id] = a[id] + b[id];
-        b=a[id]
+//        b=a[id]
 }
 
 int main( int argc, char* argv[] )

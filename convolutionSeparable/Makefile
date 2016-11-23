@@ -1,4 +1,4 @@
-################################################################################
+##############################################################################
 #
 # Copyright 1993-2012 NVIDIA Corporation.  All rights reserved.
 #
@@ -56,7 +56,7 @@ endif
 DARWIN = $(strip $(findstring DARWIN, $(OSUPPER)))
 
 # Location of the CUDA Toolkit binaries and libraries
-CUDA_PATH       ?= /usr/local/cuda-7.0
+CUDA_PATH       ?= /usr/local/cuda
 CUDA_INC_PATH   ?= $(CUDA_PATH)/include
 CUDA_BIN_PATH   ?= $(CUDA_PATH)/bin
 ifneq ($(DARWIN),)
@@ -83,7 +83,7 @@ GENCODE_SM20    := -gencode arch=compute_20,code=sm_20
 GENCODE_SM30    := -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35
 #GENCODE_FLAGS   := $(GENCODE_SM10) $(GENCODE_SM20) $(GENCODE_SM30)
 GENCODE_FLAGS   := $(GENCODE_SM20) $(GENCODE_SM30)
-
+#GENCODE_FLAGS	:= $(GENCODE_SM20)
 # OS-specific build flags
 ifneq ($(DARWIN),) 
       LDFLAGS   := -Xlinker -rpath $(CUDA_LIB_PATH) -L$(CUDA_LIB_PATH) -lcudart

@@ -348,18 +348,19 @@ int main(int argc, char **argv)
         }
 
         convolutionRowsGPU(
-            d_Buffer
+            d_Output
            /* d_Input,
             imageW,
             imageH*/
         );
-
+        /*
         convolutionColumnsGPU(
             d_Output,
             d_Buffer
-            /*imageW,
-            imageH*/
+          //imageW,
+          //  imageH
         );
+	*/
     }
 
     checkCudaErrors(cudaDeviceSynchronize());
@@ -374,13 +375,13 @@ int main(int argc, char **argv)
     printf("Checking the results...\n");
     printf(" ...running convolutionRowCPU()\n");
     convolutionRowCPU(
-        h_Buffer,
+        h_OutputCPU,
         h_Input,
         h_Kernel,
         
         KERNEL_RADIUS
     );
-
+    /*
     printf(" ...running convolutionColumnCPU()\n");
     convolutionColumnCPU(
         h_OutputCPU,
@@ -389,6 +390,7 @@ int main(int argc, char **argv)
         
         KERNEL_RADIUS
     );
+    */
 
     printf(" ...comparing the results\n");
     double sum = 0, delta = 0;
